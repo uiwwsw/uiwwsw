@@ -1,10 +1,26 @@
-<!-- <script context="module" lang="ts">
-	export const prerender = true;
-</script> -->
+<script context="module" lang="ts">
+  import type { WeatherService } from "$architecture/weather/service/weatherService";
+  import { weatherModule } from "$di/weather";
+
+  export const load = async () => {
+    const viewModel:WeatherService = weatherModule;
+    const weather = await viewModel.getLocationWeather('seoul')
+
+    return {
+      props: {
+        viewModel,
+        weather,
+      }
+    };
+  };
+</script>
 
 <script lang="ts">
-  export let todos: any;
-  console.log(todos)
+import type { Weather } from "$architecture/weather/domain/weather";
+
+  export let weather:Weather;
+  export let viewModel:WeatherService;
+  console.log(viewModel.getWeatherFeeling(weather))
 </script>
 
 <svelte:head>
@@ -101,5 +117,5 @@
 </svelte:head>
 
 <div>
-	메인
+	메인{weather.weather[0].description}
 </div>
