@@ -1,0 +1,16 @@
+<script context="module" lang="ts">
+	export const prerender = true;
+</script>
+
+<script lang="ts">
+</script>
+
+<svelte:head>
+	<title>포트폴리오</title>
+	<meta name="description" content="uiwwsw 포트폴리오" />
+	<meta name="keywords" content="uiwwsw, portfolio, frontend, developer, 포트폴리오, 프론트엔드, 개발자" />
+</svelte:head>
+
+<div>
+	포폴
+</div>
