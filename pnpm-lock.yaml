@@ -8,10 +8,12 @@ specifiers:
   '@types/cookie': ^0.5.1
   '@typescript-eslint/eslint-plugin': ^5.27.0
   '@typescript-eslint/parser': ^5.27.0
+  brandi: ^4.0.2
   cookie: ^0.4.1
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
+  openweathermap-ts: ^1.2.10
   prettier: ^2.6.2
   prettier-plugin-svelte: ^2.7.0
   sass: ^1.54.4
@@ -24,7 +26,9 @@ specifiers:
 
 dependencies:
   '@fontsource/fira-mono': 4.5.9
+  brandi: 4.0.2
   cookie: 0.4.2
+  openweathermap-ts: 1.2.10
 
 devDependencies:
   '@playwright/test': 1.25.0
@@ -535,6 +539,10 @@ packages:
     dependencies:
       fill-range: 7.0.1
     dev: true
+
+  /brandi/4.0.2:
+    resolution: {integrity: sha512-y29/yvZuqeHVbQFKVayRk7ewMTe3bEXibHzl35YelrHScVEPHh8gJo91SILpENlZFIPggvbCf8FAJozqEyjvKw==}
+    dev: false
 
   /buffer-crc32/0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -1454,7 +1462,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: true
 
   /node-gyp-build/4.5.0:
     resolution: {integrity: sha512-2iGbaQBV+ITgCz76ZEjmhUKAKVf7xfY1sRl4UiKQspfZMH2h06SyhNsnSVy50cwkFQDGLyif6m/6uFXHkOZ6rg==}
@@ -1493,6 +1500,14 @@ packages:
     dependencies:
       wrappy: 1.0.2
     dev: true
+
+  /openweathermap-ts/1.2.10:
+    resolution: {integrity: sha512-Zckv2aXN8ENSeAeroces2jJciLWb6aLNXEmvG6pmF+BcIMw2kwRo6++/AKUNoU5suOp47UWA6lllDV0TNm//OA==}
+    dependencies:
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /optionator/0.9.1:
     resolution: {integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==}
@@ -1952,7 +1967,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: true
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -2034,14 +2048,12 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: true
 
   /whatwg-url/5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: true
 
   /which/2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}

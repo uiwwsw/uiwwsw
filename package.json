@@ -35,6 +35,8 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
-		"cookie": "^0.4.1"
+		"brandi": "^4.0.2",
+		"cookie": "^0.4.1",
+		"openweathermap-ts": "^1.2.10"
 	}
 }

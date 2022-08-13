@@ -9,6 +9,10 @@
 	guarantees are made. Don't use it to organise your life.)
 */
 
+import OpenWeatherMap from 'openweathermap-ts';
+
+import type { Weather } from 'src/architecture/weather/domain/weather';
+
 const base = 'https://api.svelte.dev';
 
 export function api(method: string, resource: string, data?: Record<string, unknown>) {
@@ -21,7 +25,7 @@ export function api(method: string, resource: string, data?: Record<string, unkn
 	});
 }
 
-export function weather(data?: Record<string, unknown>) {
+export function weatherApi(data?: Weather) {
 	return fetch(
 		'https://api.openweathermap.org/data/2.5/weather?lat=37.566535&lon=126.977969&appid=d5d1fbb0ae319cd00ea307d004a9589b',
 		{
