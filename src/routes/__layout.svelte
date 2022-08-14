@@ -2,7 +2,9 @@
 </script>
 
 <header>
-	<h1>uiwwsw</h1>
+	<h1>
+		<a href="/">uiwwsw</a>
+		</h1>
 	<div>
 		<a href="/portfolio">포트폴리오</a>
 		<a href="/essay">에쎄이</a>
@@ -39,6 +41,9 @@
 		h1 {
 			margin: 0;
 			font-size: 20px;
+		}
+		a {
+			color: var(--solid);
 		}
 	}
 	main{

@@ -7,7 +7,7 @@
     const portfolioModule:PortfolioService = PortfolioModule;
     const essayModule:EssayService = EssayModule;
 
-    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(20)])
+    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(5)])
     return {
       props: {
         weatherModule,
@@ -130,18 +130,14 @@ import type { Portfolio } from "$architecture/portfolio";
       ], -->
 </svelte:head>
 
-<div>
-  {portfolios.length}
-  {#if portfolios.length}
-    {portfolios[0].fullName}
+<div class=""></div>
+{#each portfolios as portfolio}
+  <div>{portfolio.fullName}</div>
+  {#if portfolio.youtubeUrl}
+    <iframe src="https://www.youtube.com/embed/{portfolio.youtubeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   {/if}
-  <!-- {#await portfolios}
-    잠시
-  {:then dwww } 
-    {dwww[0].fullName}
-  {/await} -->
-  <button on:click={()=>goto('/portfolio')}>dddd</button>
-</div>
+{/each}
+
 
 <style lang="scss">
   
