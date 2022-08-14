@@ -1,9 +1,13 @@
-import type { Essay } from '../domain/eassy';
+import type { Essay } from '../domain/essay';
 
-export type GetEssaysUseCase = (id: string) => Essay | undefined;
+export type GetEssaysUseCase = (length: number) => Essay[] | undefined;
 export function getEssaysUseCase(essaies: Essay[]): GetEssaysUseCase {
-	const useCase = (id: string) => {
-		return essaies.find((x) => x.id === id);
+	const _essaies = essaies.sort(() => Math.random() - 0.5);
+	let index: number;
+	const useCase = (length: number) => {
+		if (isNaN(index)) index = 0;
+		else index += length;
+		return _essaies.slice(index, length + index);
 	};
 	return useCase;
 }

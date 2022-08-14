@@ -26,7 +26,7 @@ export class PortfolioAdapter implements PortfolioService {
 		})
 	);
 
-	readonly getSortPortfolios = (async () => getPortfoliosUseCase(await this.portfolios))();
+	readonly sortPortfolios = (async () => getPortfoliosUseCase(await this.portfolios))();
 
 	#portfolios: Portfolio[] = [
 		{
@@ -49,11 +49,9 @@ export class PortfolioAdapter implements PortfolioService {
 
 	//https://api.github.com/users/uiwwsw
 	async getPortfolios(length: number) {
-		const portfolios = await this.getSortPortfolios;
-		return portfolios(length);
+		return (await this.sortPortfolios)(length);
 	}
 	async getPortfolio(repositoryUrl: string) {
-		const portfolios = await this.portfolios;
-		return getPortfolioUseCase(portfolios)(repositoryUrl);
+		return getPortfolioUseCase(await this.portfolios)(repositoryUrl);
 	}
 }

@@ -1,18 +1,19 @@
 <script context="module" lang="ts">
   import type { WeatherService } from "$architecture/weather/service/weatherService";
-  import { WeatherModule } from "$di/weather";
-  import { PortfolioModule } from "$di/portfolio";
+  import { WeatherModule,PortfolioModule, EssayModule } from "$di";
 
   export const load = async () => {
     const weatherModule:WeatherService = WeatherModule;
     const portfolioModule:PortfolioService = PortfolioModule;
-    const weather = await weatherModule.getLocationWeather('seoul')
+    const essayModule:EssayService = EssayModule;
 
+    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(20)])
     return {
       props: {
-        portfolioModule,
         weatherModule,
+        essayModule,
         weather,
+        portfolios
       }
     };
   };
@@ -21,16 +22,19 @@
 <script lang="ts">
 import type { Weather } from "$architecture/weather/domain/weather";
 import type { PortfolioService } from "$architecture/portfolio/service/portfolioService";
+import { goto } from "$app/navigation";
+import type { EssayService } from "$architecture/essay";
+import type { Portfolio } from "$architecture/portfolio";
 
   export let weather:Weather;
+  export let portfolios:Portfolio[];
   export let weatherModule:WeatherService;
-  export let portfolioModule:PortfolioService;
-  const dddd = portfolioModule.getPortfolios(20);
-  const tttt = portfolioModule.getPortfolios(20);
-  (async function () {
-    console.log(await dddd, await tttt)
-  }())
-  console.log(weatherModule.getWeatherFeeling(weather))
+  export let essayModule:EssayService;
+  const dd3213dd = essayModule.getEssays(5);
+  // (async function () {
+  //   console.log(await dd3213dd)
+  // }())
+  // console.log(weatherModule.getWeatherFeeling(weather),portfolios)
 </script>
 
 <svelte:head>
@@ -127,15 +131,18 @@ import type { PortfolioService } from "$architecture/portfolio/service/portfolio
 </svelte:head>
 
 <div>
-	메인{weather.weather[0].description}
-  {#await dddd}
+  {portfolios.length}
+  {#if portfolios.length}
+    {portfolios[0].fullName}
+  {/if}
+  <!-- {#await portfolios}
     잠시
   {:then dwww } 
     {dwww[0].fullName}
-  {/await}
-  {#await tttt}
-    잠시
-  {:then dwww } 
-    {dwww[0].fullName}
-  {/await}
+  {/await} -->
+  <button on:click={()=>goto('/portfolio')}>dddd</button>
 </div>
+
+<style lang="scss">
+  
+</style>

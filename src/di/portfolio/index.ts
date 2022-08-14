@@ -1,5 +1,6 @@
 import { PortfolioAdapter } from '$architecture/portfolio/adapter/portfolioAdapter';
-import { container, TOKENS } from '$di';
+import { container } from '$di/container';
+import { TOKENS } from '$di/token';
 
 container.bind(TOKENS.portfolioService).toInstance(PortfolioAdapter).inTransientScope();
 
