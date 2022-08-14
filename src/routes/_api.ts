@@ -37,3 +37,12 @@ export function weatherApi(data?: Weather) {
 		}
 	);
 }
+// export function portfolioApi(data?: Portfolio[]) {
+// 	return fetch('https://api.github.com/users/uiwwsw/repos', {
+// 		method: 'GET',
+// 		headers: {
+// 			'content-type': 'application/json'
+// 		},
+// 		body: data && JSON.stringify(data)
+// 	});
+// }

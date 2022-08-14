@@ -3,5 +3,5 @@ import { container, TOKENS } from '$di';
 
 container.bind(TOKENS.weatherService).toInstance(WeatherAdapter).inTransientScope();
 
-const weatherModule = container.get(TOKENS.weatherService);
-export { weatherModule };
+const WeatherModule = container.get(TOKENS.weatherService);
+export { WeatherModule };
