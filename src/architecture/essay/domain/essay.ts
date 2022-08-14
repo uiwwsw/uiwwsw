@@ -24,5 +24,4 @@ export interface Essay {
 	readonly url: string;
 	readonly content: string;
 	readonly createdAt: Date;
-	readonly hash: string[];
 }

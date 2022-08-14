@@ -5,7 +5,7 @@ import type { GithubRepo, Portfolio } from '../domain/portfolio';
 export interface PortfolioService {
 	readonly githubRepos: Promise<GithubRepo[]>;
 	readonly portfolios: Promise<Portfolio[]>;
-	readonly getSortPortfolios: Promise<GetPortfoliosUseCase>;
+	readonly sortPortfolios: Promise<GetPortfoliosUseCase>;
 	getPortfolio(repositoryUrl: string): Promise<ReturnType<GetPortfolioUseCase>>;
 	getPortfolios(length: number): Promise<ReturnType<GetPortfoliosUseCase>>;
 }
