@@ -1,14 +1,17 @@
 <script context="module" lang="ts">
   import type { WeatherService } from "$architecture/weather/service/weatherService";
-  import { weatherModule } from "$di/weather";
+  import { WeatherModule } from "$di/weather";
+  import { PortfolioModule } from "$di/portfolio";
 
   export const load = async () => {
-    const viewModel:WeatherService = weatherModule;
-    const weather = await viewModel.getLocationWeather('seoul')
+    const weatherModule:WeatherService = WeatherModule;
+    const portfolioModule:PortfolioService = PortfolioModule;
+    const weather = await weatherModule.getLocationWeather('seoul')
 
     return {
       props: {
-        viewModel,
+        portfolioModule,
+        weatherModule,
         weather,
       }
     };
@@ -17,10 +20,17 @@
 
 <script lang="ts">
 import type { Weather } from "$architecture/weather/domain/weather";
+import type { PortfolioService } from "$architecture/portfolio/service/portfolioService";
 
   export let weather:Weather;
-  export let viewModel:WeatherService;
-  console.log(viewModel.getWeatherFeeling(weather))
+  export let weatherModule:WeatherService;
+  export let portfolioModule:PortfolioService;
+  const dddd = portfolioModule.getPortfolios(10);
+  const tttt = portfolioModule.getPortfolios(10);
+  (async function () {
+    console.log(await dddd, await tttt)
+  }())
+  console.log(weatherModule.getWeatherFeeling(weather))
 </script>
 
 <svelte:head>
@@ -118,4 +128,14 @@ import type { Weather } from "$architecture/weather/domain/weather";
 
 <div>
 	메인{weather.weather[0].description}
+  {#await dddd}
+    잠시
+  {:then dwww } 
+    {dwww[0].fullName}
+  {/await}
+  {#await tttt}
+    잠시
+  {:then dwww } 
+    {dwww[0].fullName}
+  {/await}
 </div>
