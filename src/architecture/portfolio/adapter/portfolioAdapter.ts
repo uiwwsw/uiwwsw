@@ -4,12 +4,29 @@ import type { GithubRepo, Portfolio } from '../domain/portfolio';
 import type { PortfolioService } from '../service/portfolioService';
 
 export class PortfolioAdapter implements PortfolioService {
-	githubRepos: Promise<GithubRepo[]> = fetch('https://api.github.com/users/uiwwsw/repos', {
+	readonly githubRepos: Promise<GithubRepo[]> = fetch('https://api.github.com/users/uiwwsw/repos', {
 		method: 'GET',
 		headers: {
 			'content-type': 'application/json'
 		}
 	}).then(async (x) => await x.json());
+
+	readonly portfolios = this.githubRepos.then((githubRepos) =>
+		githubRepos.map((x) => {
+			const portfolio: Portfolio = {
+				fullName: x.full_name,
+				repositoryUrl: x.html_url,
+				desc: x.description
+			};
+
+			return {
+				...portfolio,
+				...this.#portfolios.find((x) => x.fullName === portfolio.fullName)
+			};
+		})
+	);
+
+	readonly getSortPortfolios = (async () => getPortfoliosUseCase(await this.portfolios))();
 
 	#portfolios: Portfolio[] = [
 		{
@@ -30,26 +47,10 @@ export class PortfolioAdapter implements PortfolioService {
 		}
 	];
 
-	get portfolios() {
-		return this.githubRepos.then((githubRepo) =>
-			githubRepo.map((x) => {
-				const portfolio: Portfolio = {
-					fullName: x.full_name,
-					repositoryUrl: x.html_url,
-					desc: x.description
-				};
-
-				return {
-					...portfolio,
-					...this.#portfolios.find((x) => x.fullName === portfolio.fullName)
-				};
-			})
-		);
-	}
 	//https://api.github.com/users/uiwwsw
 	async getPortfolios(length: number) {
-		const portfolios = await this.portfolios;
-		return getPortfoliosUseCase(portfolios)(length);
+		const portfolios = await this.getSortPortfolios;
+		return portfolios(length);
 	}
 	async getPortfolio(repositoryUrl: string) {
 		const portfolios = await this.portfolios;
