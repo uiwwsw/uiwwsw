@@ -1,45 +1,51 @@
 <script context="module" lang="ts">
-  import type { WeatherService } from "$architecture/weather/service/weatherService";
-  import { EssayModule,PortfolioModule,WeatherModule } from "$di";
+	import type { WeatherService } from '$architecture/weather/service/weatherService';
+	import { EssayModule, PortfolioModule, WeatherModule } from '$di';
 
-  export const load = async () => {
-    const weatherModule:WeatherService = WeatherModule;
-    const portfolioModule:PortfolioService = PortfolioModule;
-    const essayModule:EssayService = EssayModule;
+	export const load = async () => {
+		const weatherModule: WeatherService = WeatherModule;
+		const portfolioModule: PortfolioService = PortfolioModule;
+		const essayModule: EssayService = EssayModule;
 
-    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(20)])
-    return {
-      props: {
-        weatherModule,
-        essayModule,
-        weather,
-        portfolios
-      }
-    };
-  };
+		const [weather, portfolios] = await Promise.all([
+			weatherModule.getLocationWeather('seoul'),
+			portfolioModule.getPortfolios(20)
+		]);
+		return {
+			props: {
+				weatherModule,
+				essayModule,
+				weather,
+				portfolios
+			}
+		};
+	};
 </script>
 
 <script lang="ts">
-import type { EssayService } from "$architecture/essay";
-import type { Portfolio } from "$architecture/portfolio";
-import type { PortfolioService } from "$architecture/portfolio/service/portfolioService";
-import type { Weather } from "$architecture/weather/domain/weather";
+	import type { EssayService } from '$architecture/essay';
+	import type { Portfolio } from '$architecture/portfolio';
+	import type { PortfolioService } from '$architecture/portfolio/service/portfolioService';
+	import type { Weather } from '$architecture/weather/domain/weather';
 
-  export let weather:Weather;
-  export let portfolios:Portfolio[];
-  export let weatherModule:WeatherService;
-  export let essayModule:EssayService;
-  const dd3213dd = essayModule.getEssays(5);
-  // (async function () {
-  //   console.log(await dd3213dd)
-  // }())
-  // console.log(weatherModule.getWeatherFeeling(weather),portfolios)
+	export let weather: Weather;
+	export let portfolios: Portfolio[];
+	export let weatherModule: WeatherService;
+	export let essayModule: EssayService;
+	const dd3213dd = essayModule.getEssays(5);
+	// (async function () {
+	//   console.log(await dd3213dd)
+	// }())
+	// console.log(weatherModule.getWeatherFeeling(weather),portfolios)
 </script>
 
 <svelte:head>
 	<title>메인</title>
 	<meta name="description" content="uiwwsw 메인" />
-	<meta name="keywords" content="uiwwsw, portfolio, frontend, developer, 포트폴리오, 프론트엔드, 개발자" />
+	<meta
+		name="keywords"
+		content="uiwwsw, portfolio, frontend, developer, 포트폴리오, 프론트엔드, 개발자"
+	/>
 	<!-- meta: [
         {
           hid: 'description',
@@ -130,39 +136,57 @@ import type { Weather } from "$architecture/weather/domain/weather";
 </svelte:head>
 
 <div class="portfolio-grid">
-  {#each portfolios as portfolio}
-    <div class="portfolio-grid__item">
-      {portfolio.fullName}
-      {portfolio.desc}
-      <!-- {portfolio.youtubeUrl} -->
-      <!-- {#if portfolio.youtubeUrl}
+	{#each portfolios as portfolio}
+		<div class="portfolio-grid__item">
+			{portfolio.fullName}
+			{portfolio.desc}
+			<!-- {portfolio.youtubeUrl} -->
+			<!-- {#if portfolio.youtubeUrl}
         <iframe src="https://www.youtube.com/embed/{portfolio.youtubeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {:else if portfolio.img}
         <img src={portfolio.img} alt={portfolio.desc}>
       {:else}
         <iframe frame-ancestors="self" src={portfolio.previewUrl ||portfolio.repositoryUrl}></iframe>
       {/if} -->
-    </div>
-  {/each}
+		</div>
+	{/each}
 </div>
 {#each dd3213dd as essay}
-  <div>{essay.content}</div>
+	<div>{essay.content}</div>
 {/each}
 
-
 <style lang="scss">
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
-    grid-template-rows: 100px 100px 50px;
-    gap: 10px;
-    &__item {
-      border: 1px solid var(--solid);
-      &:first-child {
-        grid-column: 1 / 3;
-        grid-row: 1 / 3;
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+		grid-template-rows: 1fr;
+		gap: 10px;
+    animation: gap 2s;
+    @keyframes gap {
+      0% {
+        gap: 0;
+      }
+      100% {
+        gap: 10px;
       }
     }
     
-  }
+		&__item {
+			position: relative;
+      padding: 10px;
+			&:nth-child(3n) {
+        grid-column: 1 / 3;
+				grid-row: span 15;
+			}
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid var(--solid);
+        border-radius: 6px;
+        opacity: .3;
+        pointer-events: none;
+      }
+		}
+	}
 </style>

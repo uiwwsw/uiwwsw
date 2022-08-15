@@ -4,7 +4,7 @@
 <header>
 	<h1>
 		<a href="/">uiwwsw</a>
-		</h1>
+	</h1>
 	<div>
 		<a href="/portfolio">포트폴리오</a>
 		<a href="/essay">에쎄이</a>
@@ -26,7 +26,8 @@
 		flex-direction: column;
 		margin: 0;
 		padding: 0;
-		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 		min-height: 100vh;
 		color: var(--solid);
 		background: var(--background);
@@ -46,7 +47,7 @@
 			color: var(--solid);
 		}
 	}
-	main{
+	main {
 		flex: auto;
 		padding: var(--gutter);
 	}
