@@ -27,6 +27,7 @@
 	import type { Portfolio } from '$architecture/portfolio';
 	import type { PortfolioService } from '$architecture/portfolio/service/portfolioService';
 	import type { Weather } from '$architecture/weather/domain/weather';
+	import Scroll from '../ui/scroll.svelte';
 
 	export let weather: Weather;
 	export let portfolios: Portfolio[];
@@ -154,7 +155,7 @@
 {#each dd3213dd as essay}
 	<div>{essay.content}</div>
 {/each}
-
+<Scroll/>
 <style lang="scss">
 	.portfolio-grid {
 		display: grid;
