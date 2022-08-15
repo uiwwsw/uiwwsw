@@ -1,9 +1,8 @@
+import UxHashSample from '$images/ux-hash-sample.gif';
 import { getPortfolioUseCase } from '../application/getPortfolio';
 import { getPortfoliosUseCase } from '../application/getPortfolios';
 import type { GithubRepo, Portfolio } from '../domain/portfolio';
 import type { PortfolioService } from '../service/portfolioService';
-import UxHashSample from '$images/ux-hash-sample.gif';
-import { getMorePortfoliosUseCase } from '../application/getMorePortfolios';
 export class PortfolioAdapter implements PortfolioService {
 	readonly githubRepos: Promise<GithubRepo[]> = fetch('https://api.github.com/users/uiwwsw/repos', {
 		method: 'GET',
