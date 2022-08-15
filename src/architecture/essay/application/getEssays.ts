@@ -1,6 +1,6 @@
 import type { Essay } from '../domain/essay';
 
-export type GetEssaysUseCase = (length: number) => Essay[] | undefined;
+export type GetEssaysUseCase = (length: number) => Essay[];
 export function getEssaysUseCase(essaies: Essay[]): GetEssaysUseCase {
 	const _essaies = essaies.sort(() => Math.random() - 0.5);
 	let index: number;

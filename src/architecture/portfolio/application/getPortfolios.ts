@@ -1,13 +1,17 @@
 import type { Portfolio } from '../domain/portfolio';
 
-export type GetPortfoliosUseCase = (length: number) => Portfolio[] | undefined;
-export function getPortfoliosUseCase(portfolio: Portfolio[]): GetPortfoliosUseCase {
-	const _portfolios = portfolio.sort(() => Math.random() - 0.5);
-	let index: number;
-	const useCase = (length: number) => {
-		if (isNaN(index)) index = 0;
-		else index += length;
-		return _portfolios.slice(index, length + index);
+export type GetPortfoliosUseCase = (length: number, index?: number) => Portfolio[];
+export function getPortfoliosUseCase(portfolios: Portfolio[]): GetPortfoliosUseCase {
+	const _portfolios = portfolios.sort(() => Math.random() - 0.5);
+	let _index: number;
+	const useCase = (length: number, index?: number) => {
+		if (index === undefined) {
+			if (isNaN(_index)) _index = 0;
+			else _index += length;
+		} else {
+			_index = index;
+		}
+		return _portfolios.slice(_index, length + _index);
 	};
 	return useCase;
 }

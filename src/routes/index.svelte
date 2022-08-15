@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
   import type { WeatherService } from "$architecture/weather/service/weatherService";
-  import { WeatherModule,PortfolioModule, EssayModule } from "$di";
+  import { EssayModule,PortfolioModule,WeatherModule } from "$di";
 
   export const load = async () => {
     const weatherModule:WeatherService = WeatherModule;
     const portfolioModule:PortfolioService = PortfolioModule;
     const essayModule:EssayService = EssayModule;
 
-    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(5)])
+    const [weather, portfolios] = await Promise.all([weatherModule.getLocationWeather('seoul'), portfolioModule.getPortfolios(20)])
     return {
       props: {
         weatherModule,
@@ -20,11 +20,10 @@
 </script>
 
 <script lang="ts">
-import type { Weather } from "$architecture/weather/domain/weather";
-import type { PortfolioService } from "$architecture/portfolio/service/portfolioService";
-import { goto } from "$app/navigation";
 import type { EssayService } from "$architecture/essay";
 import type { Portfolio } from "$architecture/portfolio";
+import type { PortfolioService } from "$architecture/portfolio/service/portfolioService";
+import type { Weather } from "$architecture/weather/domain/weather";
 
   export let weather:Weather;
   export let portfolios:Portfolio[];
@@ -130,15 +129,40 @@ import type { Portfolio } from "$architecture/portfolio";
       ], -->
 </svelte:head>
 
-<div class=""></div>
-{#each portfolios as portfolio}
-  <div>{portfolio.fullName}</div>
-  {#if portfolio.youtubeUrl}
-    <iframe src="https://www.youtube.com/embed/{portfolio.youtubeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  {/if}
+<div class="portfolio-grid">
+  {#each portfolios as portfolio}
+    <div class="portfolio-grid__item">
+      {portfolio.fullName}
+      {portfolio.desc}
+      <!-- {portfolio.youtubeUrl} -->
+      <!-- {#if portfolio.youtubeUrl}
+        <iframe src="https://www.youtube.com/embed/{portfolio.youtubeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {:else if portfolio.img}
+        <img src={portfolio.img} alt={portfolio.desc}>
+      {:else}
+        <iframe frame-ancestors="self" src={portfolio.previewUrl ||portfolio.repositoryUrl}></iframe>
+      {/if} -->
+    </div>
+  {/each}
+</div>
+{#each dd3213dd as essay}
+  <div>{essay.content}</div>
 {/each}
 
 
 <style lang="scss">
-  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-template-rows: 100px 100px 50px;
+    gap: 10px;
+    &__item {
+      border: 1px solid var(--solid);
+      &:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+      }
+    }
+    
+  }
 </style>
