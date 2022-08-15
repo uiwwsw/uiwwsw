@@ -25,7 +25,7 @@ import type { PortfolioService } from "$architecture/portfolio/service/portfolio
   export let weather:Weather;
   export let weatherModule:WeatherService;
   export let portfolioModule:PortfolioService;
-  const dddd = portfolioModule.getPortfolios(20);
+  const dddd = portfolioModule.getPortfolios(20,0);
   (async function () {
     console.log(await dddd)
   }())

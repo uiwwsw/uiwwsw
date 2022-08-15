@@ -16,6 +16,7 @@ const config = {
 		},
 		alias: {
 			$di: 'src/di',
+			$images: 'src/images',
 			$architecture: 'src/architecture'
 		}
 	}

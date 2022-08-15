@@ -212,7 +212,7 @@ export class EssayAdapter implements EssayService {
 
 	readonly sortEssays = getEssaysUseCase(this.essays);
 
-	getEssays(length: number): Essay[] | undefined {
+	getEssays(length: number): Essay[] {
 		return this.sortEssays(length);
 	}
 	getEssay(repositoryUrl: string): Essay | undefined {
