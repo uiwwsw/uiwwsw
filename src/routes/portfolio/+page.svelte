@@ -1,30 +1,8 @@
-<script context="module" lang="ts">
-	import type { WeatherService } from '$architecture/weather/service/weatherService';
-	import { WeatherModule } from '$di/weather';
-	import { PortfolioModule } from '$di/portfolio';
-
-	export const load = async () => {
-		const weatherModule: WeatherService = WeatherModule;
-		const portfolioModule: PortfolioService = PortfolioModule;
-		const weather = await weatherModule.getLocationWeather('seoul');
-
-		return {
-			props: {
-				portfolioModule,
-				weatherModule,
-				weather
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	import type { Weather } from '$architecture/weather/domain/weather';
-	import type { PortfolioService } from '$architecture/portfolio/service/portfolioService';
+	import type { PageData } from './$types';
+	export let data: PageData;
+	const { weather, weatherModule, portfolioModule } = data;
 
-	export let weather: Weather;
-	export let weatherModule: WeatherService;
-	export let portfolioModule: PortfolioService;
 	const dddd = portfolioModule.getPortfolios(20, 0);
 	(async function () {
 		console.log(await dddd);

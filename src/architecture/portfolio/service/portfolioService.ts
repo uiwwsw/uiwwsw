@@ -7,7 +7,7 @@ export interface PortfolioService {
 	readonly portfolios: Promise<Portfolio[]>;
 	// readonly _getMorePortfolios: Promise<GetPortfoliosUseCase>;
 	getPortfolio(repositoryUrl: string): Promise<ReturnType<GetPortfolioUseCase>>;
-	getPortfolios(length: number): Promise<ReturnType<GetPortfoliosUseCase>>;
+	getPortfolios(length: number, index?: number): Promise<ReturnType<GetPortfoliosUseCase>>;
 	// getMorePortfolios(length: number): Promise<ReturnType<GetPortfoliosUseCase>>;
 }
 

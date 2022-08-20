@@ -1,38 +1,16 @@
-<script context="module" lang="ts">
-	import type { WeatherService } from '$architecture/weather/service/weatherService';
-	import { EssayModule, PortfolioModule, WeatherModule } from '$di';
-
-	export const load = async () => {
-		const weatherModule: WeatherService = WeatherModule;
-		const portfolioModule: PortfolioService = PortfolioModule;
-		const essayModule: EssayService = EssayModule;
-
-		const [weather, portfolios] = await Promise.all([
-			weatherModule.getLocationWeather('seoul'),
-			portfolioModule.getPortfolios(20)
-		]);
-		return {
-			props: {
-				weatherModule,
-				essayModule,
-				weather,
-				portfolios
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
+	// throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+	// Suggestion (check code before using, and possibly convert to data.X access later):
+	import type { PageData } from './$types';
+	export let data: PageData;
+	const { weather, portfolios, weatherModule, essayModule } = data;
+
 	import type { EssayService } from '$architecture/essay';
 	import type { Portfolio } from '$architecture/portfolio';
 	import type { PortfolioService } from '$architecture/portfolio/service/portfolioService';
 	import type { Weather } from '$architecture/weather/domain/weather';
 	import Scroll from '../ui/scroll.svelte';
 
-	export let weather: Weather;
-	export let portfolios: Portfolio[];
-	export let weatherModule: WeatherService;
-	export let essayModule: EssayService;
 	const dd3213dd = essayModule.getEssays(5);
 	// (async function () {
 	//   console.log(await dd3213dd)
@@ -155,39 +133,40 @@
 {#each dd3213dd as essay}
 	<div>{essay.content}</div>
 {/each}
-<Scroll/>
+<Scroll />
+
 <style lang="scss">
 	.portfolio-grid {
 		display: grid;
 		grid-template-columns: calc(50% - 5px) calc(50% - 5px);
 		grid-template-rows: 1fr;
 		gap: 10px;
-    animation: gap 2s;
-    @keyframes gap {
-      0% {
-        gap: 0;
-      }
-      100% {
-        gap: 10px;
-      }
-    }
-    
+		animation: gap 2s;
+		@keyframes gap {
+			0% {
+				gap: 0;
+			}
+			100% {
+				gap: 10px;
+			}
+		}
+
 		&__item {
 			position: relative;
-      padding: 10px;
+			padding: 10px;
 			&:nth-child(3n) {
-        grid-column: 1 / 3;
+				grid-column: 1 / 3;
 				grid-row: span 15;
 			}
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid var(--solid);
-        border-radius: 6px;
-        opacity: .3;
-        pointer-events: none;
-      }
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 1px solid var(--solid);
+				border-radius: 6px;
+				opacity: 0.3;
+				pointer-events: none;
+			}
 		}
 	}
 </style>
