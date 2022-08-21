@@ -5,10 +5,6 @@
 	export let data: PageData;
 	const { weather, portfolios, weatherModule, essayModule } = data;
 
-	import type { EssayService } from '$architecture/essay';
-	import type { Portfolio } from '$architecture/portfolio';
-	import type { PortfolioService } from '$architecture/portfolio/service/portfolioService';
-	import type { Weather } from '$architecture/weather/domain/weather';
 	import Scroll from '../ui/scroll.svelte';
 
 	const dd3213dd = essayModule.getEssays(5);
