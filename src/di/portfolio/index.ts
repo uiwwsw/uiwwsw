@@ -2,7 +2,7 @@ import { PortfolioAdapter } from '$architecture/portfolio/adapter/portfolioAdapt
 import { container } from '$di/container';
 import { TOKENS } from '$di/token';
 
-container.bind(TOKENS.portfolioService).toInstance(PortfolioAdapter).inTransientScope();
+container.bind(TOKENS.portfolioService).toInstance(PortfolioAdapter).inContainerScope();
 
-const PortfolioModule = container.get(TOKENS.portfolioService);
-export { PortfolioModule };
+// const PortfolioModule = container.get(TOKENS.portfolioService);
+// export { PortfolioModule };
