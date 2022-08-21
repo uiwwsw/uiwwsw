@@ -113,16 +113,14 @@
 <div class="portfolio-grid">
 	{#each portfolios as portfolio}
 		<div class="portfolio-grid__item">
-			{portfolio.fullName}
-			{portfolio.desc}
-			<!-- {portfolio.youtubeUrl} -->
-			<!-- {#if portfolio.youtubeUrl}
+			{#if portfolio.youtubeUrl}
         <iframe src="https://www.youtube.com/embed/{portfolio.youtubeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {:else if portfolio.img}
         <img src={portfolio.img} alt={portfolio.desc}>
       {:else}
-        <iframe frame-ancestors="self" src={portfolio.previewUrl ||portfolio.repositoryUrl}></iframe>
-      {/if} -->
+      {portfolio.fullName}
+        {portfolio.desc}
+      {/if}
 		</div>
 	{/each}
 </div>
