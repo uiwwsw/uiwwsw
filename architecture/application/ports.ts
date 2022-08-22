@@ -28,10 +28,11 @@ export interface KakaoFeedService {
   fetchData(): Promise<KakaoStoryFeed[]>;
 }
 export interface PortfolioStorageService {
-  portfolio?: Portfolio[];
-  // setPortfolio(portfolio: Portfolio[]): void;
+  portfolio: Portfolio[];
+  updatePortfolio(portfolio: Portfolio[]): void;
   // updateOrders(): void;
 }
+export type StoreService = PortfolioStorageService;
 // export interface PortfolioService {
 //   getPortfolio(githubs: GithubRepo[]): Promise<Portfolio[]>;
 // }
