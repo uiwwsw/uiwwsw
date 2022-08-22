@@ -2,8 +2,23 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-// import ddd from '@/application/ports'
+import { usePortfolio } from "@/services/portfolioStorageAdapter";
+import { useEffect, useMemo } from "react";
+
 const Home: NextPage = () => {
+  const portfolio = usePortfolio();
+  useEffect(() => {
+    return () => {
+      console.log(portfolio.portfolio);
+      console.log("dawdaw");
+    };
+  }, [portfolio]);
+  // useMemo(() => {
+  //   // setTimeout(() => {
+  //   //   portfolio.updatePortfolio([]);
+  //   // }, 1000);
+  //   console.log("ddddd");
+  // }, []);
   return (
     <div className={styles.container}>
       <Head>
