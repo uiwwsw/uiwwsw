@@ -3,7 +3,9 @@
 // import { GithubRepo, Portfolio } from "../domain/portfolio";
 // import { User, UserName } from "../domain/user";
 
+import { KakaoStoryFeed } from "@/domain/essay";
 import { GithubRepo, Portfolio } from "@/domain/portfolio";
+import { Weather } from "@/domain/weather";
 
 // export interface UserStorageService {
 //   user?: User;
@@ -16,8 +18,14 @@ import { GithubRepo, Portfolio } from "@/domain/portfolio";
 //   emptyCart(): void;
 // }
 
+export interface WeatherService {
+  fetchData(): Promise<Weather>;
+}
 export interface GithubRepoService {
   fetchData(): Promise<GithubRepo[]>;
+}
+export interface KakaoFeedService {
+  fetchData(): Promise<KakaoStoryFeed[]>;
 }
 export interface PortfolioStorageService {
   portfolio?: Portfolio[];
