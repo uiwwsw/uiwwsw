@@ -1,26 +1,16 @@
-import { StoreService } from "@/application/ports";
-import React, { ReactNode, useState } from "react";
-import { useContext } from "react";
-import { cookies } from "./fakeData";
-
-const StoreContext = React.createContext<StoreService>({ portfolio: [] });
+import React, { ReactNode, useContext, useState } from "react";
+const StoreContext = React.createContext({});
 export const useStore = () => useContext(StoreContext);
 
 export const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState();
-  const [cart, setCart] = useState({ products: [] });
-  const [orders, setOrders] = useState([]);
+  const [portfolio, setPortfolio] = useState();
 
   const value = {
-    portfolio: [],
-    user,
-    cart,
-    cookies,
-    orders,
-    updateUser: setUser,
-    updateCart: setCart,
-    updateOrders: setOrders,
-    emptyCart: () => setCart({ products: [] }),
+    portfolio,
+    // setPortfolio,
+    // updateCart: setCart,
+    // updateOrders: setOrders,
+    // emptyCart: () => setCart({ products: [] }),
   };
 
   return (

@@ -16,15 +16,16 @@ import { GithubRepo, Portfolio } from "@/domain/portfolio";
 //   emptyCart(): void;
 // }
 
-export interface PortfolioService {
-  getPortfolio(githubs: GithubRepo[]): Promise<Portfolio[]>;
+export interface GithubRepoService {
+  fetchData(): Promise<GithubRepo[]>;
 }
-export interface StoreService {
-  portfolio: Portfolio[];
+export interface PortfolioStorageService {
+  portfolio?: Portfolio[];
+  // setPortfolio(portfolio: Portfolio[]): void;
+  // updateOrders(): void;
 }
-// export interface OrdersStorageService {
-//   orders: Order[];
-//   updateOrders(orders: Order[]): void;
+// export interface PortfolioService {
+//   getPortfolio(githubs: GithubRepo[]): Promise<Portfolio[]>;
 // }
 
 // export interface AuthenticationService {
