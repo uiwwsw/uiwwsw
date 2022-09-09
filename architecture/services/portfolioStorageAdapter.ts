@@ -1,5 +1,5 @@
 import { PortfolioStorageService } from "@/application/ports";
 import { useStore } from "./store";
-export function usePortfolio(): PortfolioStorageService {
+export function usePortfolioService(): PortfolioStorageService {
   return useStore() as PortfolioStorageService;
 }
