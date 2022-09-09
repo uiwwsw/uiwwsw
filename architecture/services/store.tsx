@@ -1,4 +1,3 @@
-import { StoreService } from "@/application/ports";
 import React, { ReactNode, useContext, useState } from "react";
 const StoreContext = React.createContext<unknown>({});
 export const useStore = () => useContext(StoreContext);
