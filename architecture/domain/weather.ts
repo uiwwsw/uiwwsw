@@ -7,13 +7,13 @@
 // 	Clear = '맑음 행복 웃음 환희'
 // }
 export enum WEARHER_MAIN {
-  Thunderstorm = "Thunderstorm",
-  Drizzle = "Drizzle",
-  Rain = "Rain",
-  Snow = "Snow",
-  Atmosphere = "Atmosphere",
-  Clear = "Clear",
-  Clouds = "Clouds",
+	Thunderstorm = 'Thunderstorm',
+	Drizzle = 'Drizzle',
+	Rain = 'Rain',
+	Snow = 'Snow',
+	Atmosphere = 'Atmosphere',
+	Clear = 'Clear',
+	Clouds = 'Clouds',
 }
 // export enum WEATHER_MAIN {
 // 	Thunderstorm = 'Thunderstorm',
@@ -25,45 +25,45 @@ export enum WEARHER_MAIN {
 // }
 // export type WeatherMain = WEATHER_MAIN | string;
 export type Weather = {
-  coord: {
-    lon: number;
-    lat: number;
-  };
-  weather: {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  }[];
-  base: string;
-  main: {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-  };
-  visibility: number;
-  wind: {
-    speed: number;
-    deg: number;
-  };
-  clouds: {
-    all: number;
-  };
-  dt: number;
-  sys: {
-    type: number;
-    id: number;
-    country: string;
-    sunrise: number;
-    sunset: number;
-  };
-  timezone: number;
-  id: number;
-  name: string;
-  cod: number;
+	coord: {
+		lon: number;
+		lat: number;
+	};
+	weather: {
+		id: number;
+		main: string;
+		description: string;
+		icon: string;
+	}[];
+	base: string;
+	main: {
+		temp: number;
+		feels_like: number;
+		temp_min: number;
+		temp_max: number;
+		pressure: number;
+		humidity: number;
+	};
+	visibility: number;
+	wind: {
+		speed: number;
+		deg: number;
+	};
+	clouds: {
+		all: number;
+	};
+	dt: number;
+	sys: {
+		type: number;
+		id: number;
+		country: string;
+		sunrise: number;
+		sunset: number;
+	};
+	timezone: number;
+	id: number;
+	name: string;
+	cod: number;
 } & {
-  visibility?: number;
+	visibility?: number;
 };
