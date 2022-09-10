@@ -11,8 +11,6 @@ function Home({
 	essays,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	console.log(portfolios, weather, essays);
-	const djawlkdaw = 'dajwkl';
-	djawlkdaw = 'dawldjawlk';
 	return (
 		<div className={styles.container}>
 			<Head>
