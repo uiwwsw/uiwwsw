@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
+  '@styled-jsx/plugin-sass': ^4.0.2
   '@types/luxon': ^3.0.1
   '@types/node': 18.7.16
   '@types/react': 18.0.18
@@ -35,6 +36,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
+  '@styled-jsx/plugin-sass': 4.0.2_sass@1.54.9
   '@types/luxon': 3.0.1
   '@types/node': 18.7.16
   '@types/react': 18.0.18
@@ -613,6 +615,19 @@ packages:
       {
         integrity: sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==,
       }
+    dev: true
+
+  /@styled-jsx/plugin-sass/4.0.2_sass@1.54.9:
+    resolution:
+      {
+        integrity: sha512-TVEzLI4z0nswzySN7+n9UHwxSb1+EAHFVYHlaEGJNaPTg65Tkg0LllkPZz9WUCgpH2zG1Jams/4EelWNjwNjIQ==,
+      }
+    engines: { node: '>=12.0.0' }
+    peerDependencies:
+      sass: '*'
+    dependencies:
+      sass: 1.54.9
+      strip-indent: 3.0.0
     dev: true
 
   /@swc/helpers/0.4.11:
