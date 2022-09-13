@@ -1,7 +1,7 @@
 import { FetchEssays } from '@/application/fetchEssays';
 import { FetchPortfolios } from '@/application/fetchPortfolios';
 import { FetchWeather } from '@/application/fetchWeather';
-import { ApiService } from '@/application/ports';
+import { ApiService, StorageService } from '@/application/ports';
 import { token } from 'brandi';
 
 export const TOKEN = {
@@ -9,4 +9,5 @@ export const TOKEN = {
 	fetchWeatherUseCase: token<FetchWeather>('FetchWeather'),
 	fetchEssaysUseCase: token<FetchEssays>('FetchEssays'),
 	apiService: token<ApiService>('ApiService'),
+	storageService: token<StorageService>('StorageService'),
 };

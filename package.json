@@ -19,16 +19,19 @@
 	},
 	"dependencies": {
 		"brandi": "^4.0.2",
+		"cookiejs": "^2.1.2",
 		"luxon": "^3.0.3",
 		"next": "12.3.0",
 		"openweathermap-ts": "^1.2.10",
 		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"react-dom": "18.2.0",
+		"rxjs": "^7.5.6"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.1.2",
 		"@commitlint/config-conventional": "^17.1.0",
 		"@styled-jsx/plugin-sass": "^4.0.2",
+		"@types/kakao-js-sdk": "^1.39.1",
 		"@types/luxon": "^3.0.1",
 		"@types/node": "18.7.16",
 		"@types/react": "18.0.18",
