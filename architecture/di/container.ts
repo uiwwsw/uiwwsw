@@ -1,5 +1,6 @@
 import { ApiAdapter } from '@/adapter/apiAdapter';
 import { ApiMockAdapter } from '@/adapter/apiMockAdapter';
+import { CookieAdapter } from '@/adapter/cookieAdapter';
 import { fetchEssaysUseCase } from '@/application/fetchEssays';
 import { fetchPortfoliosUseCase } from '@/application/fetchPortfolios';
 import { fetchWeatherUseCase } from '@/application/fetchWeather';
@@ -9,6 +10,10 @@ import { TOKEN } from './token';
 export const container = new Container();
 
 container.bind(TOKEN.apiService).toInstance(ApiAdapter).inTransientScope();
+container
+	.bind(TOKEN.storageService)
+	.toInstance(CookieAdapter)
+	.inTransientScope();
 container
 	.when(TAG.mock)
 	.bind(TOKEN.apiService)

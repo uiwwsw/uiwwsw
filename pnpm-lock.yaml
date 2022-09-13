@@ -4,12 +4,14 @@ specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
   '@styled-jsx/plugin-sass': ^4.0.2
+  '@types/kakao-js-sdk': ^1.39.1
   '@types/luxon': ^3.0.1
   '@types/node': 18.7.16
   '@types/react': 18.0.18
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': ^5.36.2
   brandi: ^4.0.2
+  cookiejs: ^2.1.2
   eslint: 8.23.0
   eslint-config-next: 12.3.0
   eslint-config-prettier: ^8.5.0
@@ -22,21 +24,25 @@ specifiers:
   pretty-quick: ^3.1.3
   react: 18.2.0
   react-dom: 18.2.0
+  rxjs: ^7.5.6
   sass: ^1.54.9
   typescript: 4.8.3
 
 dependencies:
   brandi: 4.0.2
+  cookiejs: 2.1.2
   luxon: 3.0.3
   next: 12.3.0_wgobgza36qebbzsbfctw2tohpy
   openweathermap-ts: 1.2.10
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  rxjs: 7.5.6
 
 devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@styled-jsx/plugin-sass': 4.0.2_sass@1.54.9
+  '@types/kakao-js-sdk': 1.39.1
   '@types/luxon': 3.0.1
   '@types/node': 18.7.16
   '@types/react': 18.0.18
@@ -678,6 +684,13 @@ packages:
     resolution:
       {
         integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
+      }
+    dev: true
+
+  /@types/kakao-js-sdk/1.39.1:
+    resolution:
+      {
+        integrity: sha512-kB0nXS97K7zFgIhLi7oDi1zeR7WV6zRNvRwtJ3KxICz8VWcuqnFYwMq1eBzyhOIJsBTCFRhB4tR1IPHKp7qcKw==,
       }
     dev: true
 
@@ -1476,6 +1489,13 @@ packages:
       split2: 3.2.2
       through2: 4.0.2
     dev: true
+
+  /cookiejs/2.1.2:
+    resolution:
+      {
+        integrity: sha512-FXsQ2Ub/bTjlt2aXiJsiT33g6iEXdYTIKabJa9Jn5CZjOyzszJjOGKWyqs+silY+xYmA9eiif2vGAxv2pJndcg==,
+      }
+    dev: false
 
   /core-js-pure/3.25.1:
     resolution:
@@ -4127,7 +4147,6 @@ packages:
       }
     dependencies:
       tslib: 2.4.0
-    dev: true
 
   /safe-buffer/5.2.1:
     resolution:

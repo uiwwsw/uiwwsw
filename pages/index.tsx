@@ -1,16 +1,13 @@
-import { container } from 'architecture/di';
+import { container } from '@/di/container';
 import { TOKEN } from 'architecture/di/token';
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 
 function Home({
 	portfolios,
 	weather,
 	essays,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-	console.log(portfolios, weather, essays);
 	return (
 		<>
 			<div>
@@ -64,5 +61,4 @@ export async function getServerSideProps() {
 //     weather
 //   };
 // };
-
 export default Home;
