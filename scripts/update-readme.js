@@ -10,7 +10,11 @@ const feeds = [
     name: 'GitHub Pages',
     startMarker: '<!--START_GITHUB_PAGES-->',
     endMarker: '<!--END_GITHUB_PAGES-->',
-    url: 'https://uiwwsw.github.io/feed.xml',
+    urls: [
+      'https://uiwwsw.github.io/feed.xml',
+      'https://uiwwsw.github.io/index.xml',
+      'https://uiwwsw.github.io/rss.xml',
+    ],
     maxItems: 5,
   },
   {
@@ -29,18 +33,42 @@ const dateFormatter = new Intl.DateTimeFormat('ko-KR', {
 });
 
 async function fetchFeed(feedConfig) {
-  const response = await fetch(feedConfig.url, {
-    headers: {
-      'User-Agent': 'uiwwsw-readme-bot/1.0 (+https://github.com/uiwwsw)',
-      Accept: 'application/rss+xml, application/atom+xml; charset=utf-8',
-    },
-  });
+  const candidates = Array.isArray(feedConfig.urls)
+    ? feedConfig.urls
+    : [feedConfig.url].filter(Boolean);
 
-  if (!response.ok) {
-    throw new Error(`${feedConfig.name} 피드를 불러오지 못했습니다. status=${response.status}`);
+  if (candidates.length === 0) {
+    throw new Error(`${feedConfig.name} 피드에 사용할 URL이 설정되지 않았습니다.`);
   }
 
-  return response.text();
+  let lastError = null;
+
+  for (const url of candidates) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'uiwwsw-readme-bot/1.0 (+https://github.com/uiwwsw)',
+          Accept: 'application/rss+xml, application/atom+xml; charset=utf-8',
+        },
+        signal: controller.signal,
+      });
+
+      if (!response.ok) {
+        throw new Error(`status=${response.status}`);
+      }
+
+      clearTimeout(timeoutId);
+      return response.text();
+    } catch (error) {
+      lastError = error;
+      console.warn(`  ↪️  ${feedConfig.name} 피드 ${url} 요청 실패: ${error.message}`);
+    }
+    clearTimeout(timeoutId);
+  }
+
+  throw lastError || new Error(`${feedConfig.name} 피드 요청에 실패했습니다.`);
 }
 
 function stripCdata(value = '') {
@@ -103,6 +131,14 @@ function parseFeedContent(xml) {
 function formatFeedItems(items, maxItems) {
   return items
     .filter((item) => item && item.title)
+    .sort((a, b) => {
+      if (a.isoDate && b.isoDate) {
+        return new Date(b.isoDate) - new Date(a.isoDate);
+      }
+      if (a.isoDate) return -1;
+      if (b.isoDate) return 1;
+      return 0;
+    })
     .slice(0, maxItems)
     .map((item) => {
       const formattedDate = item.isoDate ? dateFormatter.format(new Date(item.isoDate)) : null;
