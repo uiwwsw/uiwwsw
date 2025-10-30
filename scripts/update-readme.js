@@ -63,7 +63,11 @@ async function fetchFeed(feedConfig) {
       return response.text();
     } catch (error) {
       lastError = error;
-      console.warn(`  ↪️  ${feedConfig.name} 피드 ${url} 요청 실패: ${error.message}`);
+      const detail =
+        error && typeof error === 'object'
+          ? [error.message, error.code, error.cause && error.cause.code].filter(Boolean).join(' ')
+          : String(error);
+      console.warn(`  ↪️  ${feedConfig.name} 피드 ${url} 요청 실패: ${detail}`);
     }
     clearTimeout(timeoutId);
   }
