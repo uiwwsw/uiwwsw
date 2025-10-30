@@ -1,57 +1,58 @@
-
-<h1 align="center">Changwon Yoon · Senior Frontend Engineer</h1>
+<h1 align="center">Changwon Yoon · TypeScript Interaction & Automation Engineer</h1>
 <p align="center">
-  Crafting immersive web experiences with robust architecture, impeccable UX, and a relentless focus on performance.
+  인터랙션 난제를 직접 해결하고 팀의 반복 작업을 자동화하는, 타입 세이프티에 집착하는 프론트엔드 개발자입니다.
 </p>
 
 <p align="center">
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
   <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
-  <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Blog-uiwwsw.github.io-181717?style=for-the-badge&logo=github" alt="Blog" /></a>
-  <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Home-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Home" /></a>
+  <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Portfolio-uiwwsw.github.io-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
+  <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Demo-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Demo" /></a>
 </p>
 
 ---
 
-## ✨ Snapshot
-- 🌎 Based in **Korea**, collaborating across time zones and disciplines.
-- 🎯 Mission: ship **delightful interfaces** that scale to millions of users.
-- 🤝 Currently open to **consulting, mentoring, and product partnerships**.
+## 🧭 한 줄 요약
+타입세이프한 프론트엔드와 DX 툴링을 동시에 몰아가는 “인터랙션+자동화” 지향의 TypeScript 개발자.
 
-## 🛠 Core Stack
-<div align="center">
+## 🔑 핵심 요약 (5)
+1. **인터랙션/입력 난제 해결 능력**
+   - [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard): composition 이벤트를 직접 처리해 한국어 IME 이슈를 우회하고, 모바일 네이티브 키보드를 차단하는 React 커스텀 입력 라이브러리. 데모와 문서를 함께 제공.
+   - [ux-scroll](https://github.com/uiwwsw/ux-scroll): 스크롤 구간을 기반으로 "애플식" 모션을 선언적으로 구성하는 타입스크립트 연출 엔진.
+2. **DX(Developer Experience) & 자동화 지향**
+   - [react-query-helper](https://github.com/uiwwsw/react-query-helper): API 함수에서 React Query 훅과 옵션을 자동 생성하는 CLI. watch/generate 모드, 템플릿 커스터마이징, Bun/NPM 지원.
+   - [koreanscript](https://github.com/uiwwsw/koreanscript): 한글 키워드로 TS를 작성하고 `--check`로 타입 검사까지 제공하는 실험적 트랜스파일러.
+3. **창의적 UI 실험과 배포 습관**
+   - [visual-novel](https://github.com/uiwwsw/visual-novel): JSON 시나리오 기반 웹 비주얼 노블 엔진. 저장/불러오기, 자산 매핑, 스타트 화면 등 엔진 기능과 Vite+React 기반 개발 경험 제공.
+   - [uiwwsw.github.io](https://uiwwsw.github.io/): 서사·인터랙션 정체성과 스택/프로젝트 철학을 일관되게 커뮤니케이션하는 포트폴리오.
+4. **생태계 전반의 실무 감각**
+   - Bun, pnpm, Vite, Husky/Prettier/ESLint, Changesets 등 워크플로에 익숙하며, React와 Vue를 모두 다루는 풀스택 프론트엔드 역량.
+5. **배포·데모·문서화까지 패키지**
+   - virtual-keyboard, react-query-helper, easter-egg 등 대부분의 레포에 데모 링크, npm 배지, 사용 예제가 갖춰져 있어 즉시 활용 가능.
 
-| Languages | Frameworks & Libraries | Tooling | Cloud & Ops |
-| --- | --- | --- | --- |
-| TypeScript · JavaScript (ESNext) · HTML5 · CSS3/Sass · GraphQL | React · Next.js · Vue · Astro · Redux Toolkit · TanStack Query | Vite · Webpack · Turborepo · pnpm · Storybook · Cypress · Playwright · Jest · Vitest | Vercel · AWS (S3, CloudFront, Lambda) · Docker · GitHub Actions |
+## 🧵 장문 프로필
+타입스크립트 중심의 프론트엔드 엔지니어로서 “사용자 인터랙션의 난제(특히 한글 입력·스크롤 연출)”를 직접 라이브러리로 해결하고, 팀의 반복 작업을 CLI·코드 생성으로 자동화합니다.
 
-</div>
+- **입력 장치와 모션에 대한 집요함**: `virtual-keyboard`로 한국어 IME 컴포지션 문제를 네이티브 이벤트에 의존하지 않는 방식으로 제어하고, 모바일 네이티브 키보드 차단까지 고려합니다. `ux-scroll`은 스크롤 포지션을 세분화해 장면 연출을 선언적으로 다루는 엔진입니다.
+- **팀 생산성을 끌어올리는 도구화**: `react-query-helper`는 API 함수에서 React Query 훅과 옵션을 자동 생성하여 캐싱 전략과 에러 처리 일관성을 보장합니다. watch/generate 모드, 템플릿 확장, Prettier 통합 등 실전 DX 포인트를 세심하게 설계했습니다.
+- **스토리텔링과 인터랙션의 결합**: `visual-novel`은 JSON 시나리오만으로 웹 비주얼 노블을 제작할 수 있는 툴킷으로, 저장/불러오기, 자산 선언, 장면 분기 등 엔진 레벨 기능을 갖추고 Vite+React 기반의 빠른 개발 경험을 제공합니다.
+- **브랜딩과 문서화**: 포트폴리오 사이트 [uiwwsw.github.io](https://uiwwsw.github.io/)에서는 “재미와 유용의 교차점”을 모토로 프로젝트의 배경과 배운 점을 맥락과 함께 기록합니다.
 
-## 🚀 What I Love Building
-- **Frontend Architecture:** Scalable design systems, micro-frontends, and component libraries that empower global teams.
-- **Product Leadership:** Bridging product, design, and engineering to ship outcomes that delight users and drive business growth.
-- **Mentorship & Collaboration:** Growing engineering teams through pairing, code reviews, and pragmatic process improvements.
+정리하면, 고난이도 UX를 도구로 풀어내는 빌더형 프론트엔드로서 입력/모션 같은 저수준 상호작용에 강하고, 이를 팀 생산성과 브랜딩으로 확장합니다.
 
-## 🌟 Highlights
-> “Great products happen when craft meets clarity.”
+## 📌 대표 레포 & 근거 링크
+- [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard) — 한국어 composition 이슈 해결, 커스텀 키보드/입력, 모바일 네이티브 키보드 차단, React Provider 패턴, 데모 제공.
+- [react-query-helper](https://github.com/uiwwsw/react-query-helper) — API→훅/옵션 자동 생성, watch/generate 모드, 템플릿/Prettier 통합, Bun/NPM 설치 가이드.
+- [koreanscript](https://github.com/uiwwsw/koreanscript) — 한글 키워드 기반 TS 트랜스파일러, CLI 및 `--check` 타입 검사, 키워드 매핑 표.
+- [visual-novel](https://github.com/uiwwsw/visual-novel) — JSON 기반 React 비주얼 노블 엔진, 자산/챕터 구조, 저장/불러오기, Vite 기반.
+- [ux-scroll](https://github.com/uiwwsw/ux-scroll) — 애플식 스크롤 애니메이션, 콜백/트랜지션 API, CodePen 데모.
+- [uiwwsw.github.io](https://uiwwsw.github.io/) — 내러티브 중심 개인 사이트(프로젝트 신호/쇼케이스/글), 인터랙션 철학 명시.
+- [easter-egg](https://github.com/uiwwsw/easter-egg) — Konami code 등 키 시퀀스 감지 유틸.
 
-- Rebuilt an enterprise SaaS dashboard, improving Lighthouse performance **54 ➜ 95** and cutting deployment time by **60%**.
-- Architected a unified component system adopted by **6 product squads**, eliminating **70%** of duplicated UI code.
-- Led accessibility audits achieving **WCAG 2.1 AA compliance** across flagship web properties.
-
-## 🗂 Featured Projects
-- **Design System Platform** — Token-driven theming, accessibility-first components, and automated visual regression testing.
-- **Real-time Analytics Portal** — WebSocket-powered dashboards, optimistic UI patterns, and server-driven pagination.
-- **Customer Journey Orchestrator** — Drag-and-drop editor with collaborative presence and granular role-based access control.
-
-## ✍️ Writing & Speaking
-I share field notes on modern frontend architecture, DX, and leadership at **[uiwwsw.github.io](https://uiwwsw.github.io/)** and **[visual-novel-iota.vercel.app](https://visual-novel-iota.vercel.app/)**, and speak at community meetups about shipping fast without sacrificing quality.
-
-## 🤝 Let’s Collaborate
+## 🤝 함께 만들 사람을 찾습니다
 <p align="center">
-  If you have a challenging frontend problem or want to level up your product UI, let's connect.<br/>
-  <strong>Email:</strong> uiwwsw@icloud.com · <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uiwwsw">linkedin.com/in/uiwwsw</a> · <strong>Homepage:</strong> <a href="https://visual-novel-iota.vercel.app/">visual-novel-iota.vercel.app</a>
+  까다로운 인터랙션 문제를 해결하거나 팀 DX를 끌어올리고 싶다면 언제든지 연락 주세요.<br />
+  <strong>Email:</strong> uiwwsw@icloud.com · <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uiwwsw">linkedin.com/in/uiwwsw</a> · <strong>Portfolio:</strong> <a href="https://uiwwsw.github.io/">uiwwsw.github.io</a>
 </p>
 
-<p align="center">Thanks for stopping by — let’s build something remarkable together! 🚀</p>
-
+<p align="center">즐거움과 유용함이 만나는 제품을 함께 만들어봐요. 🚀</p>
