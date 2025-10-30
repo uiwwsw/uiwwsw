@@ -1,35 +1,57 @@
-# Hi, I'm Changwon Yoon — Senior Frontend Engineer
 
-Crafting immersive web experiences with robust architecture, impeccable UX, and a relentless focus on performance.
+<h1 align="center">Changwon Yoon · Senior Frontend Engineer</h1>
+<p align="center">
+  Crafting immersive web experiences with robust architecture, impeccable UX, and a relentless focus on performance.
+</p>
 
-## 🚀 What I Do
-- **Frontend Architecture:** Design scalable design systems, micro-frontend strategies, and component libraries that empower large teams.
-- **Product Leadership:** Bridge product, design, and engineering to ship outcomes that delight users and drive business growth.
-- **Mentorship & Collaboration:** Grow engineering teams through pairing, code reviews, and pragmatic process improvements.
+<p align="center">
+  <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
+  <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
+  <a href="https://twitter.com/uiwwsw"><img src="https://img.shields.io/badge/Twitter-@uiwwsw-1DA1F2?style=for-the-badge&logo=twitter" alt="Twitter" /></a>
+  <a href="https://joonpark.dev"><img src="https://img.shields.io/badge/Blog-joonpark.dev-FF6F61?style=for-the-badge&logo=hashnode" alt="Blog" /></a>
+</p>
 
-## 🧰 Tech & Tools
-- **Languages:** TypeScript, JavaScript (ESNext), HTML5, CSS3/Sass, GraphQL.
-- **Frameworks & Libraries:** React, Next.js, Vue, Astro, Redux Toolkit, TanStack Query.
-- **Tooling:** Vite, Webpack, Turborepo, pnpm, Storybook, Cypress, Playwright, Jest, Vitest.
-- **Cloud & Ops:** Vercel, AWS (S3, CloudFront, Lambda), Docker, GitHub Actions.
+---
 
-## 📈 Highlights
-- Led the rebuild of an enterprise SaaS dashboard, improving Lighthouse performance from 54 → 95 and reducing deployment time by 60%.
-- Architected a unified component system adopted across 6 product squads, eliminating 70% of duplicated UI code.
-- Championed accessibility audits resulting in WCAG 2.1 AA compliance across flagship web properties.
+## ✨ Snapshot
+- 🌎 Based in **Korea**, collaborating across time zones and disciplines.
+- 🎯 Mission: ship **delightful interfaces** that scale to millions of users.
+- 🤝 Currently open to **consulting, mentoring, and product partnerships**.
+
+## 🛠 Core Stack
+<div align="center">
+
+| Languages | Frameworks & Libraries | Tooling | Cloud & Ops |
+| --- | --- | --- | --- |
+| TypeScript · JavaScript (ESNext) · HTML5 · CSS3/Sass · GraphQL | React · Next.js · Vue · Astro · Redux Toolkit · TanStack Query | Vite · Webpack · Turborepo · pnpm · Storybook · Cypress · Playwright · Jest · Vitest | Vercel · AWS (S3, CloudFront, Lambda) · Docker · GitHub Actions |
+
+</div>
+
+## 🚀 What I Love Building
+- **Frontend Architecture:** Scalable design systems, micro-frontends, and component libraries that empower global teams.
+- **Product Leadership:** Bridging product, design, and engineering to ship outcomes that delight users and drive business growth.
+- **Mentorship & Collaboration:** Growing engineering teams through pairing, code reviews, and pragmatic process improvements.
+
+## 🌟 Highlights
+> “Great products happen when craft meets clarity.”
+
+- Rebuilt an enterprise SaaS dashboard, improving Lighthouse performance **54 ➜ 95** and cutting deployment time by **60%**.
+- Architected a unified component system adopted by **6 product squads**, eliminating **70%** of duplicated UI code.
+- Led accessibility audits achieving **WCAG 2.1 AA compliance** across flagship web properties.
 
 ## 🗂 Featured Projects
-- **Design System Platform:** Token-driven theming, accessibility-first components, and automated visual regression testing.
-- **Real-time Analytics Portal:** WebSocket-powered dashboards, optimistic UI patterns, and server-driven pagination.
-- **Customer Journey Orchestrator:** Drag-and-drop editor with collaborative presence and granular role-based access control.
+- **Design System Platform** — Token-driven theming, accessibility-first components, and automated visual regression testing.
+- **Real-time Analytics Portal** — WebSocket-powered dashboards, optimistic UI patterns, and server-driven pagination.
+- **Customer Journey Orchestrator** — Drag-and-drop editor with collaborative presence and granular role-based access control.
 
 ## ✍️ Writing & Speaking
-I share field notes on modern frontend architecture, DX, and leadership at [joonpark.dev](https://joonpark.dev) and speak at community meetups about shipping fast without sacrificing quality.
+I share field notes on modern frontend architecture, DX, and leadership at **[joonpark.dev](https://joonpark.dev)** and speak at community meetups about shipping fast without sacrificing quality.
 
-## 🤝 Let's Collaborate
-If you have a challenging frontend problem or need help leveling up your product UI, feel free to reach out:
-- **Email:** uiwwsw@icloud.com
-- **LinkedIn:** [linkedin.com/in/uiwwsw](https://linkedin.com/in/uiwwsw)
-- **Twitter/X:** [@uiwwsw](https://twitter.com/uiwwsw)
+## 🤝 Let’s Collaborate
+<p align="center">
+  If you have a challenging frontend problem or want to level up your product UI, let's connect.<br/>
+  <strong>Email:</strong> uiwwsw@icloud.com · <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uiwwsw">linkedin.com/in/uiwwsw</a> · <strong>Twitter/X:</strong> <a href="https://twitter.com/uiwwsw">@uiwwsw</a>
+</p>
 
-Thanks for stopping by — let's build something remarkable together!
+<p align="center">Thanks for stopping by — let’s build something remarkable together! 🚀</p>
+
