@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+const { URL } = require('url');
 
 const README_PATH = path.join(__dirname, '..', 'README.md');
 
@@ -32,6 +34,72 @@ const dateFormatter = new Intl.DateTimeFormat('ko-KR', {
   day: '2-digit',
 });
 
+function fetchWithHttps(url, headers, timeout) {
+  return new Promise((resolve, reject) => {
+    const parsedUrl = new URL(url);
+    const request = https.request(
+      {
+        protocol: parsedUrl.protocol,
+        hostname: parsedUrl.hostname,
+        port: parsedUrl.port || (parsedUrl.protocol === 'https:' ? 443 : 80),
+        path: `${parsedUrl.pathname || ''}${parsedUrl.search || ''}`,
+        method: 'GET',
+        headers,
+        family: 4,
+      },
+      (response) => {
+        let rawData = '';
+        response.setEncoding('utf8');
+        response.on('data', (chunk) => {
+          rawData += chunk;
+        });
+        response.on('end', () => {
+          if (response.statusCode >= 200 && response.statusCode < 300) {
+            resolve(rawData);
+          } else {
+            reject(new Error(`status=${response.statusCode}`));
+          }
+        });
+      },
+    );
+
+    request.on('error', reject);
+    request.setTimeout(timeout, () => {
+      request.destroy(new Error('Request timed out'));
+    });
+
+    request.end();
+  });
+}
+
+async function requestFeed(url, timeout) {
+  const headers = {
+    'User-Agent': 'uiwwsw-readme-bot/1.0 (+https://github.com/uiwwsw)',
+    Accept: 'application/rss+xml, application/atom+xml; charset=utf-8',
+  };
+
+  if (typeof fetch === 'function') {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(url, {
+        headers,
+        signal: controller.signal,
+      });
+      if (!response.ok) {
+        throw new Error(`status=${response.status}`);
+      }
+      return await response.text();
+    } catch (error) {
+      console.warn(`    ↪️  기본 fetch 실패, https 모듈로 재시도합니다: ${error.message}`);
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  return fetchWithHttps(url, headers, timeout);
+}
+
 async function fetchFeed(feedConfig) {
   const candidates = Array.isArray(feedConfig.urls)
     ? feedConfig.urls
@@ -44,28 +112,12 @@ async function fetchFeed(feedConfig) {
   let lastError = null;
 
   for (const url of candidates) {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
     try {
-      const response = await fetch(url, {
-        headers: {
-          'User-Agent': 'uiwwsw-readme-bot/1.0 (+https://github.com/uiwwsw)',
-          Accept: 'application/rss+xml, application/atom+xml; charset=utf-8',
-        },
-        signal: controller.signal,
-      });
-
-      if (!response.ok) {
-        throw new Error(`status=${response.status}`);
-      }
-
-      clearTimeout(timeoutId);
-      return response.text();
+      return await requestFeed(url, 10000);
     } catch (error) {
       lastError = error;
       console.warn(`  ↪️  ${feedConfig.name} 피드 ${url} 요청 실패: ${error.message}`);
     }
-    clearTimeout(timeoutId);
   }
 
   throw lastError || new Error(`${feedConfig.name} 피드 요청에 실패했습니다.`);
