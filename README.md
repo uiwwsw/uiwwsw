@@ -20,7 +20,6 @@
 ## 🔑 핵심 요약 (5)
 1. **인터랙션/입력 난제 해결 능력**
  - [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard): composition 이벤트를 직접 처리해 한국어 IME 이슈를 우회하고, 모바일 네이티브 키보드를 차단하는 React 커스텀 입력 라이브러리. 데모와 문서를 함께 제공.
-  - [ux-scroll](https://github.com/uiwwsw/ux-scroll): 스크롤 구간을 기반으로 "애플식" 모션을 선언적으로 구성하는 타입스크립트 연출 엔진.
   - [easter-egg](https://github.com/uiwwsw/easter-egg): Konami Code 등 키 시퀀스를 선언적으로 감지하고 콜백을 실행하는 초경량 JS/TS 유틸리티.
 2. **DX(Developer Experience) & 자동화 지향**
    - [react-query-helper](https://github.com/uiwwsw/react-query-helper): API 함수에서 React Query 훅과 옵션을 자동 생성하는 CLI. watch/generate 모드, 템플릿 커스터마이징, Bun/NPM 지원.
@@ -36,7 +35,7 @@
 ## 🧵 장문 프로필
 타입스크립트 중심의 프론트엔드 엔지니어로서 “사용자 인터랙션의 난제(특히 한글 입력·스크롤 연출)”를 직접 라이브러리로 해결하고, 팀의 반복 작업을 CLI·코드 생성으로 자동화합니다.
 
-- **입력 장치와 모션에 대한 집요함**: `virtual-keyboard`로 한국어 IME 컴포지션 문제를 네이티브 이벤트에 의존하지 않는 방식으로 제어하고, 모바일 네이티브 키보드 차단까지 고려합니다. `ux-scroll`은 스크롤 포지션을 세분화해 장면 연출을 선언적으로 다루는 엔진입니다.
+- **입력 장치와 모션에 대한 집요함**: `virtual-keyboard`로 한국어 IME 컴포지션 문제를 네이티브 이벤트에 의존하지 않는 방식으로 제어하고, 모바일 네이티브 키보드 차단까지 고려합니다.
 - **팀 생산성을 끌어올리는 도구화**: `react-query-helper`는 API 함수에서 React Query 훅과 옵션을 자동 생성하여 캐싱 전략과 에러 처리 일관성을 보장합니다. watch/generate 모드, 템플릿 확장, Prettier 통합 등 실전 DX 포인트를 세심하게 설계했습니다.
 - **스토리텔링과 인터랙션의 결합**: `visual-novel`은 JSON 시나리오만으로 웹 비주얼 노블을 제작할 수 있는 툴킷으로, 저장/불러오기, 자산 선언, 장면 분기 등 엔진 레벨 기능을 갖추고 Vite+React 기반의 빠른 개발 경험을 제공합니다.
 - **브랜딩과 문서화**: 포트폴리오 사이트 [uiwwsw.github.io](https://uiwwsw.github.io/)에서는 “재미와 유용의 교차점”을 모토로 프로젝트의 배경과 배운 점을 맥락과 함께 기록합니다.
