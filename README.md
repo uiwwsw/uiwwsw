@@ -48,8 +48,12 @@
 - [koreanscript](https://github.com/uiwwsw/koreanscript) — 한글 키워드 기반 TS 트랜스파일러, CLI 및 `--check` 타입 검사, 키워드 매핑 표.
 - [visual-novel](https://github.com/uiwwsw/visual-novel) — JSON 기반 React 비주얼 노블 엔진, 자산/챕터 구조, 저장/불러오기, Vite 기반.
 - [ux-scroll](https://github.com/uiwwsw/ux-scroll) — 애플식 스크롤 애니메이션, 콜백/트랜지션 API, CodePen 데모.
+- [uitetris](https://github.com/uiwwnw/uitetris) — 캔버스 기반 테트리스 인터랙션 실험, 하드드롭/홀드/고스트 등 피드백 연출을 직접 구현한 프로젝트.
 - [uiwwsw.github.io](https://uiwwsw.github.io/) — 내러티브 중심 개인 사이트(프로젝트 신호/쇼케이스/글), 인터랙션 철학 명시.
 - [easter-egg](https://github.com/uiwwsw/easter-egg) — Konami code 등 키 시퀀스 감지 유틸.
+
+## 🚧 진행 중
+- 암호화폐 자동투자 프로그램 (Private) — 전략 자동화 파이프라인을 설계/구현 중입니다.
 
 ## 🤝 함께 만들 사람을 찾습니다
 <p align="center">
