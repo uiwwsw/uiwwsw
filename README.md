@@ -7,6 +7,7 @@
 <p align="center">
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
   <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
+  <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Blog-uiwwsw.github.io-181717?style=for-the-badge&logo=github" alt="Blog" /></a>
   <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Home-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Home" /></a>
 </p>
 
@@ -44,7 +45,7 @@
 - **Customer Journey Orchestrator** — Drag-and-drop editor with collaborative presence and granular role-based access control.
 
 ## ✍️ Writing & Speaking
-I share field notes on modern frontend architecture, DX, and leadership at **[visual-novel-iota.vercel.app](https://visual-novel-iota.vercel.app/)** and speak at community meetups about shipping fast without sacrificing quality.
+I share field notes on modern frontend architecture, DX, and leadership at **[uiwwsw.github.io](https://uiwwsw.github.io/)** and **[visual-novel-iota.vercel.app](https://visual-novel-iota.vercel.app/)**, and speak at community meetups about shipping fast without sacrificing quality.
 
 ## 🤝 Let’s Collaborate
 <p align="center">
