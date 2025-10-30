@@ -42,6 +42,22 @@
 
 정리하면, 고난이도 UX를 도구로 풀어내는 빌더형 프론트엔드로서 입력/모션 같은 저수준 상호작용에 강하고, 이를 팀 생산성과 브랜딩으로 확장합니다.
 
+## 📰 새로 올라온 글
+
+### Portfolio · GitHub Pages
+> 💡 `<!--START_GITHUB_PAGES-->` / `<!--END_GITHUB_PAGES-->` 마커는 GitHub Actions가 최신 글 목록을 주입하기 위한 자동화 구간입니다.
+<!--START_GITHUB_PAGES-->
+- (자동 갱신 준비 중입니다.)
+<!--END_GITHUB_PAGES-->
+
+### Velog
+> 💡 `<!--START_VELOG-->` / `<!--END_VELOG-->` 마커 역시 Velog 최신 글을 자동으로 삽입하기 위한 영역입니다.
+<!--START_VELOG-->
+- (자동 갱신 준비 중입니다.)
+<!--END_VELOG-->
+
+> 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
+
 ## 📌 대표 레포 & 근거 링크
 - [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard) — 한국어 composition 이슈 해결, 커스텀 키보드/입력, 모바일 네이티브 키보드 차단, React Provider 패턴, 데모 제공.
 - [react-query-helper](https://github.com/uiwwsw/react-query-helper) — API→훅/옵션 자동 생성, watch/generate 모드, 템플릿/Prettier 통합, Bun/NPM 설치 가이드.
