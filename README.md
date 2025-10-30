@@ -1,4 +1,4 @@
-# Hi, I'm Joon Park — Senior Frontend Engineer
+# Hi, I'm Changwon Yoon — Senior Frontend Engineer
 
 Crafting immersive web experiences with robust architecture, impeccable UX, and a relentless focus on performance.
 
@@ -28,8 +28,8 @@ I share field notes on modern frontend architecture, DX, and leadership at [joon
 
 ## 🤝 Let's Collaborate
 If you have a challenging frontend problem or need help leveling up your product UI, feel free to reach out:
-- **Email:** hello@joonpark.dev
-- **LinkedIn:** [linkedin.com/in/joonpark](https://linkedin.com/in/joonpark)
-- **Twitter/X:** [@jooncodes](https://twitter.com/jooncodes)
+- **Email:** uiwwsw@icloud.com
+- **LinkedIn:** [linkedin.com/in/uiwwsw](https://linkedin.com/in/uiwwsw)
+- **Twitter/X:** [@uiwwsw](https://twitter.com/uiwwsw)
 
 Thanks for stopping by — let's build something remarkable together!
