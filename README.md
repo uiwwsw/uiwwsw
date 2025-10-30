@@ -54,6 +54,7 @@
 
 ## 🚧 진행 중
 - 암호화폐 자동투자 프로그램 (Private) — 전략 자동화 파이프라인을 설계/구현 중입니다.
+- [pre-pay](https://velog.io/@uiwwsw/%EC%84%A0%EB%B6%88%EA%B6%8C%EC%9D%84-%EB%94%94%EC%A7%80%ED%84%B8%EB%A1%9C-%ED%94%84%EB%A6%AC%ED%8E%98%EC%9D%B4-%EC%8B%A4%ED%97%98%EA%B8%B0) (Private) — 동네 가게 선불권을 웹에서 구매·관리할 수 있도록 설계한 디지털 프리페이 실험으로, Next.js 기반 상점/구매자 대시보드와 QR 검증 흐름을 갖춘 비공개 레포입니다.
 
 ## 🤝 함께 만들 사람을 찾습니다
 <p align="center">
