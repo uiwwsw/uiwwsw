@@ -6,6 +6,8 @@
 <p align="center">
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
   <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
+  <a href="https://github.com/uiwwnw"><img src="https://img.shields.io/badge/GitHub-uiwwnw-181717?style=for-the-badge&logo=github" alt="GitHub @uiwwnw" /></a>
+  <a href="https://github.com/brewstar"><img src="https://img.shields.io/badge/GitHub-brewstar-181717?style=for-the-badge&logo=github" alt="GitHub @brewstar" /></a>
   <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Portfolio-uiwwsw.github.io-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
   <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Demo-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Demo" /></a>
 </p>
