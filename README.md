@@ -47,13 +47,13 @@
 ### Portfolio · GitHub Pages
 > 💡 `<!--START_GITHUB_PAGES-->` / `<!--END_GITHUB_PAGES-->` 마커는 GitHub Actions가 최신 글 목록을 주입하기 위한 자동화 구간입니다.
 <!--START_GITHUB_PAGES-->
-- (자동 갱신 준비 중입니다.)
+- (데이터를 불러오지 못했습니다.)
 <!--END_GITHUB_PAGES-->
 
 ### Velog
 > 💡 `<!--START_VELOG-->` / `<!--END_VELOG-->` 마커 역시 Velog 최신 글을 자동으로 삽입하기 위한 영역입니다.
 <!--START_VELOG-->
-- (자동 갱신 준비 중입니다.)
+- (데이터를 불러오지 못했습니다.)
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
