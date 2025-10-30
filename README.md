@@ -45,14 +45,12 @@
 ## 📰 새로 올라온 글
 
 ### Portfolio · GitHub Pages
-> 💡 `<!--START_GITHUB_PAGES-->` / `<!--END_GITHUB_PAGES-->` 마커는 GitHub Actions가 최신 글 목록을 주입하기 위한 자동화 구간입니다.
 <!--START_GITHUB_PAGES-->
 - [오프라인 작업 흐름을 지키는 동기화 전략](https://uiwwsw.github.io/2024/04/15/offline-workflow-sync.html) _( 2024. 04. 15. )_
 - [WebGL 기반 지도 렌더링 파이프라인 재구성](https://uiwwsw.github.io/2024/02/02/map-rendering-pipeline.html) _( 2024. 02. 02. )_
 <!--END_GITHUB_PAGES-->
 
 ### Velog
-> 💡 `<!--START_VELOG-->` / `<!--END_VELOG-->` 마커 역시 Velog 최신 글을 자동으로 삽입하기 위한 영역입니다.
 <!--START_VELOG-->
 - [형질의 구](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
 - [?](https://velog.io/@uiwwsw/6tj8kknh) _( 2025. 10. 30. )_
