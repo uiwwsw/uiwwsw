@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hi, I'm Joon Park — Senior Frontend Engineer
 
-## Getting Started
+Crafting immersive web experiences with robust architecture, impeccable UX, and a relentless focus on performance.
 
-First, run the development server:
+## 🚀 What I Do
+- **Frontend Architecture:** Design scalable design systems, micro-frontend strategies, and component libraries that empower large teams.
+- **Product Leadership:** Bridge product, design, and engineering to ship outcomes that delight users and drive business growth.
+- **Mentorship & Collaboration:** Grow engineering teams through pairing, code reviews, and pragmatic process improvements.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 🧰 Tech & Tools
+- **Languages:** TypeScript, JavaScript (ESNext), HTML5, CSS3/Sass, GraphQL.
+- **Frameworks & Libraries:** React, Next.js, Vue, Astro, Redux Toolkit, TanStack Query.
+- **Tooling:** Vite, Webpack, Turborepo, pnpm, Storybook, Cypress, Playwright, Jest, Vitest.
+- **Cloud & Ops:** Vercel, AWS (S3, CloudFront, Lambda), Docker, GitHub Actions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📈 Highlights
+- Led the rebuild of an enterprise SaaS dashboard, improving Lighthouse performance from 54 → 95 and reducing deployment time by 60%.
+- Architected a unified component system adopted across 6 product squads, eliminating 70% of duplicated UI code.
+- Championed accessibility audits resulting in WCAG 2.1 AA compliance across flagship web properties.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🗂 Featured Projects
+- **Design System Platform:** Token-driven theming, accessibility-first components, and automated visual regression testing.
+- **Real-time Analytics Portal:** WebSocket-powered dashboards, optimistic UI patterns, and server-driven pagination.
+- **Customer Journey Orchestrator:** Drag-and-drop editor with collaborative presence and granular role-based access control.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## ✍️ Writing & Speaking
+I share field notes on modern frontend architecture, DX, and leadership at [joonpark.dev](https://joonpark.dev) and speak at community meetups about shipping fast without sacrificing quality.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 🤝 Let's Collaborate
+If you have a challenging frontend problem or need help leveling up your product UI, feel free to reach out:
+- **Email:** hello@joonpark.dev
+- **LinkedIn:** [linkedin.com/in/joonpark](https://linkedin.com/in/joonpark)
+- **Twitter/X:** [@jooncodes](https://twitter.com/jooncodes)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thanks for stopping by — let's build something remarkable together!
