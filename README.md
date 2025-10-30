@@ -7,8 +7,7 @@
 <p align="center">
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
   <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
-  <a href="https://twitter.com/uiwwsw"><img src="https://img.shields.io/badge/Twitter-@uiwwsw-1DA1F2?style=for-the-badge&logo=twitter" alt="Twitter" /></a>
-  <a href="https://joonpark.dev"><img src="https://img.shields.io/badge/Blog-joonpark.dev-FF6F61?style=for-the-badge&logo=hashnode" alt="Blog" /></a>
+  <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Home-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Home" /></a>
 </p>
 
 ---
@@ -45,12 +44,12 @@
 - **Customer Journey Orchestrator** — Drag-and-drop editor with collaborative presence and granular role-based access control.
 
 ## ✍️ Writing & Speaking
-I share field notes on modern frontend architecture, DX, and leadership at **[joonpark.dev](https://joonpark.dev)** and speak at community meetups about shipping fast without sacrificing quality.
+I share field notes on modern frontend architecture, DX, and leadership at **[visual-novel-iota.vercel.app](https://visual-novel-iota.vercel.app/)** and speak at community meetups about shipping fast without sacrificing quality.
 
 ## 🤝 Let’s Collaborate
 <p align="center">
   If you have a challenging frontend problem or want to level up your product UI, let's connect.<br/>
-  <strong>Email:</strong> uiwwsw@icloud.com · <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uiwwsw">linkedin.com/in/uiwwsw</a> · <strong>Twitter/X:</strong> <a href="https://twitter.com/uiwwsw">@uiwwsw</a>
+  <strong>Email:</strong> uiwwsw@icloud.com · <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uiwwsw">linkedin.com/in/uiwwsw</a> · <strong>Homepage:</strong> <a href="https://visual-novel-iota.vercel.app/">visual-novel-iota.vercel.app</a>
 </p>
 
 <p align="center">Thanks for stopping by — let’s build something remarkable together! 🚀</p>
