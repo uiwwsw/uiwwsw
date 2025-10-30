@@ -19,8 +19,9 @@
 
 ## 🔑 핵심 요약 (5)
 1. **인터랙션/입력 난제 해결 능력**
-   - [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard): composition 이벤트를 직접 처리해 한국어 IME 이슈를 우회하고, 모바일 네이티브 키보드를 차단하는 React 커스텀 입력 라이브러리. 데모와 문서를 함께 제공.
-   - [ux-scroll](https://github.com/uiwwsw/ux-scroll): 스크롤 구간을 기반으로 "애플식" 모션을 선언적으로 구성하는 타입스크립트 연출 엔진.
+ - [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard): composition 이벤트를 직접 처리해 한국어 IME 이슈를 우회하고, 모바일 네이티브 키보드를 차단하는 React 커스텀 입력 라이브러리. 데모와 문서를 함께 제공.
+  - [ux-scroll](https://github.com/uiwwsw/ux-scroll): 스크롤 구간을 기반으로 "애플식" 모션을 선언적으로 구성하는 타입스크립트 연출 엔진.
+  - [easter-egg](https://github.com/uiwwsw/easter-egg): Konami Code 등 키 시퀀스를 선언적으로 감지하고 콜백을 실행하는 초경량 JS/TS 유틸리티.
 2. **DX(Developer Experience) & 자동화 지향**
    - [react-query-helper](https://github.com/uiwwsw/react-query-helper): API 함수에서 React Query 훅과 옵션을 자동 생성하는 CLI. watch/generate 모드, 템플릿 커스터마이징, Bun/NPM 지원.
    - [koreanscript](https://github.com/uiwwsw/koreanscript): 한글 키워드로 TS를 작성하고 `--check`로 타입 검사까지 제공하는 실험적 트랜스파일러.
@@ -50,7 +51,7 @@
 - [ux-scroll](https://github.com/uiwwsw/ux-scroll) — 애플식 스크롤 애니메이션, 콜백/트랜지션 API, CodePen 데모.
 - [uitetris](https://github.com/uiwwnw/uitetris) — 캔버스 기반 테트리스 인터랙션 실험, 하드드롭/홀드/고스트 등 피드백 연출을 직접 구현한 프로젝트.
 - [uiwwsw.github.io](https://uiwwsw.github.io/) — 내러티브 중심 개인 사이트(프로젝트 신호/쇼케이스/글), 인터랙션 철학 명시.
-- [easter-egg](https://github.com/uiwwsw/easter-egg) — Konami code 등 키 시퀀스 감지 유틸.
+- [easter-egg](https://github.com/uiwwsw/easter-egg) — Konami Code, BABA 등 키 입력 시퀀스를 선언적으로 등록/감지하고 반응형으로 이스터에그를 트리거하는 라이브러리. 번들 크기 1KB 미만, TS 지원.
 
 ## 🚧 진행 중
 - 암호화폐 자동투자 프로그램 (Private) — 전략 자동화 파이프라인을 설계/구현 중입니다.
