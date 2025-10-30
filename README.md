@@ -47,13 +47,18 @@
 ### Portfolio · GitHub Pages
 > 💡 `<!--START_GITHUB_PAGES-->` / `<!--END_GITHUB_PAGES-->` 마커는 GitHub Actions가 최신 글 목록을 주입하기 위한 자동화 구간입니다.
 <!--START_GITHUB_PAGES-->
-- (데이터를 불러오지 못했습니다.)
+- [오프라인 작업 흐름을 지키는 동기화 전략](https://uiwwsw.github.io/2024/04/15/offline-workflow-sync.html) _( 2024. 04. 15. )_
+- [WebGL 기반 지도 렌더링 파이프라인 재구성](https://uiwwsw.github.io/2024/02/02/map-rendering-pipeline.html) _( 2024. 02. 02. )_
 <!--END_GITHUB_PAGES-->
 
 ### Velog
 > 💡 `<!--START_VELOG-->` / `<!--END_VELOG-->` 마커 역시 Velog 최신 글을 자동으로 삽입하기 위한 영역입니다.
 <!--START_VELOG-->
-- (데이터를 불러오지 못했습니다.)
+- [형질의 구](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
+- [?](https://velog.io/@uiwwsw/6tj8kknh) _( 2025. 10. 30. )_
+- [사람의 모양](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%8C%EC%9D%98-%EB%AA%A8%EC%96%91) _( 2025. 10. 30. )_
+- [🔥 열심히 일한다는 건 그런 게 아니다](https://velog.io/@uiwwsw/%EC%97%B4%EC%8B%AC%ED%9E%88-%EC%9D%BC%ED%95%9C%EB%8B%A4%EB%8A%94-%EA%B1%B4-%EA%B7%B8%EB%9F%B0-%EA%B2%8C-%EC%95%84%EB%8B%88%EB%8B%A4) _( 2025. 10. 22. )_
+- [🧠 요약된 세상에서 자란 개발자들](https://velog.io/@uiwwsw/%EC%9A%94%EC%95%BD%EB%90%9C-%EC%84%B8%EC%83%81%EC%97%90%EC%84%9C-%EC%9E%90%EB%9E%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4) _( 2025. 10. 22. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
