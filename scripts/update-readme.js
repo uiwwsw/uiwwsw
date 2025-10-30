@@ -207,15 +207,37 @@ function formatFeedItems(items, maxItems) {
     .join('\n');
 }
 
-function extractSection(readmeContent, startMarker, endMarker) {
-  const startIndex = readmeContent.indexOf(startMarker);
-  const endIndex = readmeContent.indexOf(endMarker);
+const PLACEHOLDER_MESSAGES = new Set([
+  '',
+  '- (자동 갱신 준비 중입니다.)',
+  '- (데이터를 불러오지 못했습니다.)',
+]);
 
-  if (startIndex === -1 || endIndex === -1) {
-    throw new Error(`README에 ${startMarker} 또는 ${endMarker} 구간이 없습니다.`);
+function isPlaceholderContent(content) {
+  return PLACEHOLDER_MESSAGES.has(content.trim());
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function findMarkerIndex(readmeContent, marker, fromIndex = 0) {
+  const snippet = readmeContent.slice(fromIndex);
+  const markerPattern = new RegExp(`^\\s*${escapeRegExp(marker)}`, 'm');
+  const match = markerPattern.exec(snippet);
+
+  if (!match) {
+    throw new Error(`README에 ${marker} 마커를 찾지 못했습니다.`);
   }
 
+  return fromIndex + match.index + match[0].indexOf(marker);
+}
+
+function extractSection(readmeContent, startMarker, endMarker) {
+  const startIndex = findMarkerIndex(readmeContent, startMarker);
   const sectionStart = startIndex + startMarker.length;
+  const endIndex = findMarkerIndex(readmeContent, endMarker, sectionStart);
+
   const currentContent = readmeContent
     .slice(sectionStart, endIndex)
     .replace(/^\n+|\n+$/g, '');
@@ -257,12 +279,13 @@ async function main() {
       }
     } catch (error) {
       console.warn(`\n[warn] ${feedConfig.name} 섹션 갱신에 실패했습니다: ${error.message}`);
-      if (!currentContent.trim()) {
+      if (isPlaceholderContent(currentContent)) {
         const fallback = '- (데이터를 불러오지 못했습니다.)';
         const updated = replaceSection(readme, feedConfig.startMarker, feedConfig.endMarker, fallback);
         if (updated !== readme) {
           hasChanges = true;
           readme = updated;
+          console.log(`[info] ${feedConfig.name} 섹션에 오류가 발생해 대체 메시지를 기록했습니다.`);
         }
       } else {
         console.log(`[info] ${feedConfig.name} 섹션을 기존 내용으로 유지합니다.`);
