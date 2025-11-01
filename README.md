@@ -46,8 +46,8 @@
 
 ### Portfolio · GitHub Pages
 <!--START_GITHUB_PAGES-->
-- [오프라인 작업 흐름을 지키는 동기화 전략](https://uiwwsw.github.io/2024/04/15/offline-workflow-sync.html) _( 2024. 04. 15. )_
-- [WebGL 기반 지도 렌더링 파이프라인 재구성](https://uiwwsw.github.io/2024/02/02/map-rendering-pipeline.html) _( 2024. 02. 02. )_
+- [prisma + nextjs =&gt; 찐리뷰](https://uiwwsw.github.io/2025/01/05/prisma-nextjs-real-review.html) _( 2025. 01. 05. )_
+- [6년 전 HTML 테트리스 실험 다시 보기](https://uiwwsw.github.io/projects/2019/10/30/tetris-retro.html) _( 2019. 10. 30. )_
 <!--END_GITHUB_PAGES-->
 
 ### Velog
