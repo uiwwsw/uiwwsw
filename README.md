@@ -52,11 +52,11 @@
 
 ### Velog
 <!--START_VELOG-->
+- [사람-사람](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%8C-%EC%82%AC%EB%9E%8C) _( 2025. 11. 19. )_
 - [형질의 구](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
 - [?](https://velog.io/@uiwwsw/6tj8kknh) _( 2025. 10. 30. )_
 - [사람의 모양](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%8C%EC%9D%98-%EB%AA%A8%EC%96%91) _( 2025. 10. 30. )_
 - [🔥 열심히 일한다는 건 그런 게 아니다](https://velog.io/@uiwwsw/%EC%97%B4%EC%8B%AC%ED%9E%88-%EC%9D%BC%ED%95%9C%EB%8B%A4%EB%8A%94-%EA%B1%B4-%EA%B7%B8%EB%9F%B0-%EA%B2%8C-%EC%95%84%EB%8B%88%EB%8B%A4) _( 2025. 10. 22. )_
-- [🧠 요약된 세상에서 자란 개발자들](https://velog.io/@uiwwsw/%EC%9A%94%EC%95%BD%EB%90%9C-%EC%84%B8%EC%83%81%EC%97%90%EC%84%9C-%EC%9E%90%EB%9E%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4) _( 2025. 10. 22. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
