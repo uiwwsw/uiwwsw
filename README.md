@@ -46,13 +46,14 @@
 
 ### Portfolio · GitHub Pages
 <!--START_GITHUB_PAGES-->
+- [prisma + nextjs =&gt; 머랭트립 군집 지도](https://uiwwsw.github.io/2025/01/06/prisma-nextjs-meringtrip.html) _( 2025. 01. 06. )_
 - [prisma + nextjs =&gt; 찐리뷰](https://uiwwsw.github.io/2025/01/05/prisma-nextjs-real-review.html) _( 2025. 01. 05. )_
 - [6년 전 HTML 테트리스 실험 다시 보기](https://uiwwsw.github.io/projects/2019/10/30/tetris-retro.html) _( 2019. 10. 30. )_
 <!--END_GITHUB_PAGES-->
 
 ### Velog
 <!--START_VELOG-->
-- [사람-사람](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%8C-%EC%82%AC%EB%9E%8C) _( 2025. 11. 19. )_
+- [1000 - 30, 깊이의 간극](https://velog.io/@uiwwsw/1000-30-%EA%B9%8A%EC%9D%B4%EC%9D%98-%EA%B0%84%EA%B7%B9) _( 2025. 11. 19. )_
 - [형질의 구](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
 - [?](https://velog.io/@uiwwsw/6tj8kknh) _( 2025. 10. 30. )_
 - [사람의 모양](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%8C%EC%9D%98-%EB%AA%A8%EC%96%91) _( 2025. 10. 30. )_
