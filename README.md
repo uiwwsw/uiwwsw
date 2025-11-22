@@ -46,7 +46,8 @@
 
 ### Portfolio · GitHub Pages
 <!--START_GITHUB_PAGES-->
-- [prisma + nextjs =&gt; 머랭트립 군집 지도](https://uiwwsw.github.io/2025/01/06/prisma-nextjs-meringtrip.html) _( 2025. 01. 06. )_
+- [QR + Next.js =&gt; 프리페이 선불권 MVP](https://uiwwsw.github.io/2025/01/07/prepay-qrcode-prepay.html) _( 2025. 01. 07. )_
+- [react(ionic) + cloudflare =&gt; 머랭트립 군집 지도](https://uiwwsw.github.io/2025/01/06/prisma-nextjs-meringtrip.html) _( 2025. 01. 06. )_
 - [prisma + nextjs =&gt; 찐리뷰](https://uiwwsw.github.io/2025/01/05/prisma-nextjs-real-review.html) _( 2025. 01. 05. )_
 - [6년 전 HTML 테트리스 실험 다시 보기](https://uiwwsw.github.io/projects/2019/10/30/tetris-retro.html) _( 2019. 10. 30. )_
 <!--END_GITHUB_PAGES-->
