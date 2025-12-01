@@ -54,11 +54,11 @@
 
 ### Velog
 <!--START_VELOG-->
+- [people.filter(isGoodPerson)](https://velog.io/@uiwwsw/people.filterisGoodPerson) _( 2025. 11. 30. )_
 - [봉사 토끼](https://velog.io/@uiwwsw/%EB%B4%89%EC%82%AC-%ED%86%A0%EB%81%BC) _( 2025. 11. 24. )_
 - [프롬프트는 글일까?](https://velog.io/@uiwwsw/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%8A%94-%EA%B8%80%EC%9D%BC%EA%B9%8C) _( 2025. 11. 23. )_
 - [1000 - 30, 깊이의 간극](https://velog.io/@uiwwsw/1000-30-%EA%B9%8A%EC%9D%B4%EC%9D%98-%EA%B0%84%EA%B7%B9) _( 2025. 11. 19. )_
 - [형질의 구](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
-- [?](https://velog.io/@uiwwsw/6tj8kknh) _( 2025. 10. 30. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
