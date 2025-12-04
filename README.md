@@ -1,7 +1,4 @@
 <h1 align="center">Changwon Yoon · TypeScript Interaction & Automation Engineer</h1>
-<p align="center">
-  인터랙션 난제를 직접 해결하고 팀의 반복 작업을 자동화하는, 타입 세이프티에 집착하는 프론트엔드 개발자입니다.
-</p>
 
 <p align="center">
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
