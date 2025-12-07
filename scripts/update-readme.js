@@ -8,17 +8,7 @@ const { URL } = require('url');
 const README_PATH = path.join(__dirname, '..', 'README.md');
 
 const feeds = [
-  {
-    name: 'GitHub Pages',
-    startMarker: '<!--START_GITHUB_PAGES-->',
-    endMarker: '<!--END_GITHUB_PAGES-->',
-    urls: [
-      'https://uiwwsw.github.io/feed.xml',
-      'https://uiwwsw.github.io/index.xml',
-      'https://uiwwsw.github.io/rss.xml',
-    ],
-    maxItems: 5,
-  },
+
   {
     name: 'Velog',
     startMarker: '<!--START_VELOG-->',
