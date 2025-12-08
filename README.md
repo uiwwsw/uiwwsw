@@ -56,11 +56,11 @@
 
 ### Velog
 <!--START_VELOG-->
-- [계산기](https://velog.io/@uiwwsw/%EA%B3%84%EC%82%B0%EA%B8%B0) _( 2025. 12. 07. )_
-- [문맥이라는 능력에 대하여](https://velog.io/@uiwwsw/%EB%AC%B8%EB%A7%A5%EC%9D%B4%EB%9D%BC%EB%8A%94-%EB%8A%A5%EB%A0%A5%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC) _( 2025. 12. 07. )_
 - [프롬프트가 중요한가. 진짜 그것이 핵심인가?](https://velog.io/@uiwwsw/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EA%B0%80-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80.-%EC%A7%84%EC%A7%9C-%EA%B7%B8%EA%B2%83%EC%9D%B4-%ED%95%B5%EC%8B%AC%EC%9D%B8%EA%B0%80) _( 2025. 12. 07. )_
 - [흙탕물](https://velog.io/@uiwwsw/%ED%9D%99%ED%83%95%EB%AC%BC) _( 2025. 12. 03. )_
 - [보이지 않는 선](https://velog.io/@uiwwsw/%EB%B3%B4%EC%9D%B4%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%84%A0) _( 2025. 12. 02. )_
+- [people.filter(isGoodPerson)](https://velog.io/@uiwwsw/people.filterisGoodPerson) _( 2025. 11. 30. )_
+- [봉사 토끼](https://velog.io/@uiwwsw/%EB%B4%89%EC%82%AC-%ED%86%A0%EB%81%BC) _( 2025. 11. 24. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
