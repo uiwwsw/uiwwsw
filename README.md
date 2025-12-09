@@ -31,6 +31,7 @@
 ### 1. **Core Interaction & Input Handling**
 웹 환경에서의 복잡한 입력 처리와 마이크로 인터랙션을 깊이 있게 다룹니다.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
+- **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 무한 스크롤 및 페이징 인터랙션 제어 라이브러리.
 - **[easter-egg](https://github.com/uiwwsw/easter-egg)**: 키 시퀀스 감지 및 이벤트 트리거 유틸리티.
 
 ### 2. **DX(Developer Experience) & Tools**
