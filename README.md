@@ -32,7 +32,6 @@
 웹 환경에서의 복잡한 입력 처리와 마이크로 인터랙션을 깊이 있게 다룹니다.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
 - **[easter-egg](https://github.com/uiwwsw/easter-egg)**: 키 시퀀스 감지 및 이벤트 트리거 유틸리티.
-- **[ux-scroll](https://github.com/uiwwsw/ux-scroll)**: 애플 스타일의 부드러운 스크롤 인터랙션 구현.
 
 ### 2. **DX(Developer Experience) & Tools**
 동료들이 더 편하게 일할 수 있는 환경을 만듭니다.
@@ -42,7 +41,7 @@
 ### 3. **Product & Storytelling**
 기술을 통해 이야기와 경험을 전달합니다.
 - **[visual-novel](https://github.com/uiwwsw/visual-novel)**: JSON 시나리오 기반 웹 비주얼 노블 엔진 (저장/불러오기, 분기 처리).
-- **[uiwwsw.github.io](https://uiwwsw.github.io/)**: 인터랙티브한 스토리텔링이 담긴 개인 포트폴리오.
+- **[uiwwnw.github.io](https://uiwwnw.github.io/)**: 주니어때 개인 포트폴리오.
 
 ## 📝 Latest Blog Posts
 <!--START_VELOG-->
