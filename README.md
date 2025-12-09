@@ -46,11 +46,11 @@
 
 ## 📝 Latest Blog Posts
 <!--START_VELOG-->
+- ["지도 앱 켰다가 뇌 터질 뻔해서 직접 만들었습니다" (feat. UI만 5번 엎은 썰)](https://velog.io/@uiwwsw/%EC%A7%80%EB%8F%84-%EC%95%B1-%EC%BC%B0%EB%8B%A4%EA%B0%80-%EB%87%8C-%ED%84%B0%EC%A7%88-%EB%BB%94%ED%95%B4%EC%84%9C-%EC%A7%81%EC%A0%91-%EB%A7%8C%EB%93%A4%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-feat.-UI%EB%A7%8C-5%EB%B2%88-%EC%97%8E%EC%9D%80-%EC%8D%B0) _( 2025. 12. 09. )_
 - [익선동의 경계, 종로3가역](https://velog.io/@uiwwsw/%EC%9D%B5%EC%84%A0%EB%8F%99%EC%9D%98-%EA%B2%BD%EA%B3%84-%EC%A2%85%EB%A1%9C3%EA%B0%80%EC%97%AD) _( 2025. 12. 09. )_
 - [보이지 않는 선](https://velog.io/@uiwwsw/%EB%B3%B4%EC%9D%B4%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%84%A0) _( 2025. 12. 02. )_
 - [people.filter(isGoodPerson)](https://velog.io/@uiwwsw/people.filterisGoodPerson) _( 2025. 11. 30. )_
 - [봉사 토끼](https://velog.io/@uiwwsw/%EB%B4%89%EC%82%AC-%ED%86%A0%EB%81%BC) _( 2025. 11. 24. )_
-- [0.0001도의 차이, 그 고독한 궤적에 대하여](https://velog.io/@uiwwsw/%ED%98%95%EC%A7%88%EC%9D%98-%EA%B5%AC) _( 2025. 10. 30. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
