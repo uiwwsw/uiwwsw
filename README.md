@@ -36,7 +36,7 @@
 
 ### 2. **DX(Developer Experience) & Tools**
 동료들이 더 편하게 일할 수 있는 환경을 만듭니다.
-- **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장하여 프로젝트에 맞는 컴포넌트를 제공하는 CLI 도구.
+- **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장한 컴포넌트 셋
 - **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: styled-components 기반의 재사용 가능한 UI 컴포넌트 패키지 (NPM).
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
 - **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러 및 타입 검사 도구.
