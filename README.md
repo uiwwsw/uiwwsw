@@ -30,16 +30,16 @@
 
 ### 1. **DX(Developer Experience) & Tools**
 동료들이 더 편하게 일할 수 있는 환경을 만듭니다.
+- **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
 - **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장한 컴포넌트 셋
 - **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: styled-components 기반의 재사용 가능한 UI 컴포넌트 패키지 (NPM).
-- **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
 - **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러 및 타입 검사 도구.
 
 ### 2. **Core Interaction & Input Handling**
 웹 환경에서의 복잡한 입력 처리와 마이크로 인터랙션을 깊이 있게 다룹니다.
-- **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
 - **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 무한 스크롤 및 페이징 인터랙션 제어 라이브러리.
 - **[easter-egg](https://github.com/uiwwsw/easter-egg)**: 키 시퀀스 감지 및 이벤트 트리거 유틸리티.
+- **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
 
 ### 3. **Product & Storytelling**
 기술을 통해 이야기와 경험을 전달합니다.
