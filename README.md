@@ -58,10 +58,11 @@
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
 
 ## 🚧 Current Projects
-- **암호화폐 자동투자 파이프라인**(active): 전략 자동화 및 백테스팅 시스템 설계.
-- **[머랭트립](https://brewstar-code.github.io/meringuetrip/)**(active): 1개 이상 검색할 때 유용한 여행 정보 서비스.
+- **만지작**(ongoing): 커플들을 위한 앱
 - **딜고(dealgo)**(ongoing): 자동차 프로모션 정보 제공 및 크롤링 서비스 (Ionic + Crawler).
 - **Yes or No**(ongoing): 핫한 주제에 대한 투표 및 결과 확인 토이 앱.
+- **암호화폐 자동투자 파이프라인**(active): 전략 자동화 및 백테스팅 시스템 설계.
+- **[머랭트립](https://brewstar-code.github.io/meringuetrip/)**(active): 1개 이상 검색할 때 유용한 여행 정보 서비스.
 - **prepay**(closed): 수기로 작성되는 결제들에 qrcode주문 및 실시간 알림, 기록을 하는 웹서비스.
 - **찐리뷰**(closed): 리뷰 플랫폼. 권리침해라는 이유로 리뷰를 감독하는 시스템문제에 대해, 모든 리뷰를 보게 하되, 리뷰를 리뷰함으로써 마이너스리뷰는 모자이크처리되는 플랫폼
 
