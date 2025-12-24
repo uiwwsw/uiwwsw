@@ -51,7 +51,7 @@
 - [소개팅](https://velog.io/@uiwwsw/%EC%86%8C%EA%B0%9C%ED%8C%85) _( 2025. 12. 23. )_
 - [관계의 증명](https://velog.io/@uiwwsw/%EA%B4%80%EA%B3%84%EC%9D%98-%EC%A6%9D%EB%AA%85) _( 2025. 12. 23. )_
 - [이유](https://velog.io/@uiwwsw/%EC%9D%B4%EC%9C%A0) _( 2025. 12. 23. )_
-- [Untitled](https://velog.io/@uiwwsw/untitle) _( 2025. 12. 23. )_
+- [기울어진 채로, 가만히](https://velog.io/@uiwwsw/untitle) _( 2025. 12. 23. )_
 - [사랑의 끝은 썩 아름답지 못하다.](https://velog.io/@uiwwsw/%EC%82%AC%EB%9E%91%EC%9D%98-%EB%81%9D%EC%9D%80-%EC%8D%A9-%EC%95%84%EB%A6%84%EB%8B%B5%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8B%A4) _( 2025. 12. 17. )_
 <!--END_VELOG-->
 
