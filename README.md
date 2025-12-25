@@ -48,11 +48,11 @@
 
 ## 📝 Latest Blog Posts
 <!--START_VELOG-->
+- ["키 큰 남자가 좋아요"에 대해서](https://velog.io/@uiwwsw/%ED%82%A4%ED%81%B0%EB%82%A8%EC%9E%90%EA%B0%80%EC%A2%8B%EC%95%84%EC%9A%94) _( 2025. 12. 24. )_
 - [어른이](https://velog.io/@uiwwsw/%EC%96%B4%EB%A5%B8%EC%9D%B4) _( 2025. 12. 24. )_
 - [소개팅](https://velog.io/@uiwwsw/%EC%86%8C%EA%B0%9C%ED%8C%85) _( 2025. 12. 23. )_
 - [관계의 증명](https://velog.io/@uiwwsw/%EA%B4%80%EA%B3%84%EC%9D%98-%EC%A6%9D%EB%AA%85) _( 2025. 12. 23. )_
 - [이유](https://velog.io/@uiwwsw/%EC%9D%B4%EC%9C%A0) _( 2025. 12. 23. )_
-- [기울어진 채로, 가만히](https://velog.io/@uiwwsw/%EA%B8%B0%EC%9A%B8%EC%96%B4%EC%A7%84-%EC%B1%84%EB%A1%9C-%EA%B0%80%EB%A7%8C%ED%9E%88) _( 2025. 12. 23. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
