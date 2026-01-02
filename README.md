@@ -36,8 +36,6 @@
 
 ## 🚀 Engineering Impact (Key Competencies)
 
-단순한 기능 구현을 넘어, **DX(개발자 경험) 개선**과 **복잡한 인터랙션 해결**에 강점이 있습니다.
-
 ### 🛠 DX & Tools (Efficiency)
 동료들이 더 편하게 일할 수 있는 환경을 만듭니다.
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
@@ -45,10 +43,10 @@
 - **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: 재사용 가능한 UI 컴포넌트 패키지 (NPM).
 - **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러.
 
-### ⚡ Core Interaction & Input Handling (Stability)
-웹 환경에서의 복잡한 입력 처리와 마이크로 인터랙션을 깊이 있게 다룹니다.
-- **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
-- **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 무한 스크롤 및 페이징 인터랙션 제어 라이브러리.
+### 🧪 Frontier Engineering (Possibilities)
+**"웹에서 어디까지 가능할까?"** 정해진 구현 방식을 넘어 새로운 가능성을 탐구합니다. 남들이 시도하지 않는 기술적 난제에 도전하며 실험적인 인터랙션을 증명해냅니다.
+- **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 웹과 네이티브의 경계를 허무는 한국어 입력 제어 및 가상 키보드 실험.
+- **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 물리적 스크롤의 한계를 넘어 무한한 UX 가능성을 여는 인터랙션 라이브러리.
 
 ---
 
