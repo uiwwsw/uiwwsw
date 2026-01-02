@@ -41,12 +41,17 @@
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
 - **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장한 컴포넌트 셋.
 - **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: 재사용 가능한 UI 컴포넌트 패키지 (NPM).
-- **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러.
 
 ### 🧪 Frontier Engineering (Possibilities)
 **"웹에서 어디까지 가능할까?"** 정해진 구현 방식을 넘어 새로운 가능성을 탐구합니다. 남들이 시도하지 않는 기술적 난제에 도전하며 실험적인 인터랙션을 증명해냅니다.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 웹과 네이티브의 경계를 허무는 한국어 입력 제어 및 가상 키보드 실험.
 - **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 물리적 스크롤의 한계를 넘어 무한한 UX 가능성을 여는 인터랙션 라이브러리.
+
+### 🧩 Wit & Creativity (Fun)
+**"개발은 즐거워야 합니다."** 엉뚱한 상상을 코드로 구현하여 개발자들에게 웃음과 신선한 영감을 주는 것을 즐깁니다.
+- **[koreanscript](https://github.com/uiwwsw/koreanscript)**: "타입스크립트를 한글로 쓴다면?"이라는 호기심을 컴파일러로 구현한 한글 코딩 언어.
+- **[text-player](https://github.com/uiwwsw/text-player)**: 텍스트만 입력하면 키네틱 타이포그래피 스타일의 프레젠테이션처럼 재생/공유되는 비주얼 스토리텔링 도구.
+- **[visual-novel](https://github.com/uiwwsw/visual-novel)**: 복잡한 코드 없이 JSON 시나리오 작성만으로 즉시 플레이 가능한 웹 비주얼 노블 엔진.
 
 ---
 
