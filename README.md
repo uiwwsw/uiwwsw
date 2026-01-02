@@ -52,9 +52,10 @@
 
 ---
 
-## 📝 Latest Blog Posts
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+## 📝 Latest Velog Posts
+<!--START_VELOG-->
+<!--END_VELOG-->
+
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
 
 ---
