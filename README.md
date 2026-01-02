@@ -4,72 +4,70 @@
   <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-blue?style=for-the-badge" alt="Email" /></a>
   <a href="https://linkedin.com/in/uiwwsw"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
   <a href="https://github.com/uiwwnw"><img src="https://img.shields.io/badge/GitHub-uiwwnw-181717?style=for-the-badge&logo=github" alt="GitHub @uiwwnw" /></a>
-  <a href="https://github.com/brewstar"><img src="https://img.shields.io/badge/GitHub-brewstar-181717?style=for-the-badge&logo=github" alt="GitHub @brewstar" /></a>
   <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Portfolio-uiwwsw.github.io-181717?style=for-the-badge&logo=github" alt="Portfolio" /></a>
-  <a href="https://visual-novel-iota.vercel.app/"><img src="https://img.shields.io/badge/Demo-visual--novel--iota.vercel.app-FF6F61?style=for-the-badge&logo=home" alt="Demo" /></a>
 </p>
 
 ---
 
-## 🧭 About Me
-**"사용자와 서비스 흐름에 가장 큰 가치를 주는가"를 끊임없이 고민하는 10년 차 프론트엔드 엔지니어입니다.**
+## 👨‍💻 Professional Summary
+**"솔선수범으로 팀의 문화를 만드는, 행동하는 리더"**
 
-단순한 기능 구현을 넘어, 복잡한 인터랙션과 입력 처리 문제를 집요하게 파고들어 해결하는 것을 즐깁니다.  
-팀의 생산성을 높이기 위해 반복되는 작업을 자동화하고, 필요한 도구(Library/CLI)를 직접 설계하고 만들어내는 빌더(Builder)형 개발자입니다.
+10년 차 프론트엔드 엔지니어로서, 기술적인 깊이뿐만 아니라 **'시간 관리', '업무 효율', '조직 문화'**에 대한 확고한 철학을 가지고 있습니다. **핀테크 도메인**에서의 1인 개발 및 운영 경험을 통해 서비스의 안정성을 최우선으로 하며, 개인의 성장을 넘어 팀 전체의 성장을 이끄는 것을 목표로 합니다.
 
-기술 자체보다는 **기술이 만들어내는 실제 경험과 가치**에 집중하며, 코드가 작성되는 순간보다 그 코드가 사용자에게 닿는 순간을 더 중요하게 생각합니다.
+### 🏆 Work Ethics & Philosophy
 
-<details>
-<summary>더 보기</summary>
+**1. Growth: 물리적 제약을 학습으로 치환하는 끈기**
+> *"환경을 탓하지 않고 성장의 기회로 삼습니다."*
+비전공자의 간극을 메우기 위해 아메바~인터파크 재직 시 왕복 3시간의 장거리 출퇴근 시간을 '이동 도서관'으로 활용했습니다. 단순히 견디는 시간이 아닌, 개발 이론을 확립하는 핵심 학습 시간으로 전환하여 탄탄한 기초를 다졌습니다.
 
-> 오랫동안 프론트엔드 개발을 해오면서 느낀 것은, 결국 개발자는 코드를 잘 짜는 사람이 아니라 ‘지금 무엇이 가장 큰 가치를 만드는가’를 판단할 줄 아는 사람이라는 점입니다. 기술 선택이든 구조 설계든 인터랙션 구현이든, 방향을 결정하는 기준은 항상 사용자와 서비스의 흐름에 있어야 한다고 생각합니다. 품질 역시 코드 자체의 완성도가 아니라, 그 순간 꼭 해결해야 했던 문제를 얼마나 정확하게 풀어냈는지에 의해 결정된다고 믿습니다.
+**2. Efficiency: 업무 밀도를 높이는 전략적 루틴**
+> *"가장 효율적인 시간 운용을 통해 퍼포먼스를 냅니다."*
+와이즈버즈 재직 시, 매일 5시 30분 기상 및 조기 출근으로 업무 집중도를 확보했습니다. 퇴근 시에는 러시아워를 피하기 위해 사무실에 남아 30분간 추가 학습을 진행하는 루틴을 정착시켜, 버려지는 시간을 자기계발 시간으로 전환했습니다.
 
-</details>
+**3. Autonomy: 자율성 속에서 증명한 1인 개발 역량**
+> *"보이지 않는 곳에서도 압도적인 밀도로 일합니다."*
+업라이즈(Heybit)에서 3년간 1인 개발 체제로 초기 구축부터 유지보수까지 전담했습니다. 재택근무와 단축 근무라는 높은 자율성이 주어졌을 때, 오히려 더 엄격한 자기 규율로 서비스 안정성을 확보하며 자율적인 환경에서 성과를 내는 엔지니어임을 입증했습니다.
 
-## 🚀 Key Competencies
+**4. Leadership: 행동으로 전파하는 선한 영향력**
+> *"내가 먼저 좋은 사람이 되어야 좋은 동료가 모입니다."*
+저의 이른 출근과 끊임없는 학습 습관은 팀 내에 자연스럽게 전파되었습니다. 말뿐인 지시가 아닌 솔선수범을 통해 사내 스터디와 리서치 공유 문화를 정착시켰으며, 팀의 기술적 상향 평준화를 이끌어냈습니다.
 
-### 1. **DX(Developer Experience) & Tools**
+---
+
+## 🚀 Engineering Impact (Key Competencies)
+
+단순한 기능 구현을 넘어, **DX(개발자 경험) 개선**과 **복잡한 인터랙션 해결**에 강점이 있습니다.
+
+### 🛠 DX & Tools (Efficiency)
 동료들이 더 편하게 일할 수 있는 환경을 만듭니다.
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)**: API 함수 기반 React Query 훅/옵션 자동 생성 CLI.
-- **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장한 컴포넌트 셋
-- **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: styled-components 기반의 재사용 가능한 UI 컴포넌트 패키지 (NPM).
-- **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러 및 타입 검사 도구.
+- **[shadcn2](https://github.com/uiwwsw/shadcn2)**: shadcn/ui 패턴을 확장한 컴포넌트 셋.
+- **[heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components)**: 재사용 가능한 UI 컴포넌트 패키지 (NPM).
+- **[koreanscript](https://github.com/uiwwsw/koreanscript)**: 한글 키워드 기반 TypeScript 트랜스파일러.
 
-### 2. **Core Interaction & Input Handling**
+### ⚡ Core Interaction & Input Handling (Stability)
 웹 환경에서의 복잡한 입력 처리와 마이크로 인터랙션을 깊이 있게 다룹니다.
-- **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 무한 스크롤 및 페이징 인터랙션 제어 라이브러리.
-- **[easter-egg](https://github.com/uiwwsw/easter-egg)**: 키 시퀀스 감지 및 이벤트 트리거 유틸리티.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)**: 한국어 IME Composition 이슈 해결 및 모바일 네이티브 키보드 제어.
+- **[Infinite-pager](https://github.com/uiwwsw/Infinite-pager)**: 무한 스크롤 및 페이징 인터랙션 제어 라이브러리.
 
-### 3. **Product & Storytelling**
-기술을 통해 이야기와 경험을 전달합니다.
-- **[visual-novel](https://github.com/uiwwsw/visual-novel)**: JSON 시나리오 기반 웹 비주얼 노블 엔진 (저장/불러오기, 분기 처리).
-- **[uiwwnw.github.io](https://uiwwnw.github.io/)**: 주니어때 개인 포트폴리오.
+---
 
 ## 📝 Latest Blog Posts
-<!--START_VELOG-->
-- [10년의 회고](https://velog.io/@uiwwsw/10%EB%85%84%EC%9D%98-%ED%9A%8C%EA%B3%A0) _( 2025. 12. 31. )_
-- [나무에 대한 평가](https://velog.io/@uiwwsw/%EB%82%98%EB%AC%B4%EC%97%90-%EB%8C%80%ED%95%9C-%ED%8F%89%EA%B0%80) _( 2025. 12. 25. )_
-- [어른이](https://velog.io/@uiwwsw/%EC%96%B4%EB%A5%B8%EC%9D%B4) _( 2025. 12. 24. )_
-- [소개팅](https://velog.io/@uiwwsw/%EC%86%8C%EA%B0%9C%ED%8C%85) _( 2025. 12. 23. )_
-- [관계의 증명](https://velog.io/@uiwwsw/%EA%B4%80%EA%B3%84%EC%9D%98-%EC%A6%9D%EB%AA%85) _( 2025. 12. 23. )_
-<!--END_VELOG-->
-
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
 
-## 🚧 Current Projects
+---
+
+## 🚧 Current Projects & Side Hustles
+현업과 병행하여 비즈니스 감각을 유지하기 위한 사이드 프로젝트를 지속합니다.
+
 - **만지작**(ongoing): 커플들을 위한 앱
 - **딜고(dealgo)**(ongoing): 자동차 프로모션 정보 제공 및 크롤링 서비스 (Ionic + Crawler).
-- **Yes or No**(ongoing): 핫한 주제에 대한 투표 및 결과 확인 토이 앱.
 - **[암호화폐 자동투자 파이프라인](https://github.com/uiwwsw/crypto-bot)**(active): 전략 자동화 및 백테스팅 시스템 설계.
 - **[머랭트립](https://brewstar-code.github.io/meringuetrip/)**(active): 1개 이상 검색할 때 유용한 여행 정보 서비스.
-- **[prepay](https://github.com/uiwwsw/pre-pay)**(closed): 수기로 작성되는 결제들에 qrcode주문 및 실시간 알림, 기록을 하는 웹서비스.
-- **[찐리뷰](https://github.com/uiwwsw/taste-district)**(closed): 리뷰 플랫폼. 권리침해라는 이유로 리뷰를 감독하는 시스템문제에 대해, 모든 리뷰를 보게 하되, 리뷰를 리뷰함으로써 마이너스리뷰는 모자이크처리되는 플랫폼
-- **[MakeWire](https://github.com/uiwwsw/make-wire)**(closed): like figma + i18n converter
-  
+
+---
+
 ## 📮 Contact
-협업 제안이나 커피챗은 언제나 환영합니다.
 - **Email**: uiwwsw@icloud.com
 - **LinkedIn**: [linkedin.com/in/uiwwsw](https://linkedin.com/in/uiwwsw)
 - **Portfolio**: [uiwwsw.github.io](https://uiwwsw.github.io/)
-
