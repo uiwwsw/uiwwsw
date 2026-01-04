@@ -57,6 +57,11 @@
 
 ## 📝 Latest Velog Posts
 <!--START_VELOG-->
+- [똑똑한 개발자란 무엇인가 (feat. AI 시대의 생존법)](https://velog.io/@uiwwsw/%EB%98%91%EB%98%91%ED%95%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-feat.-AI-%EC%8B%9C%EB%8C%80%EC%9D%98-%EC%83%9D%EC%A1%B4%EB%B2%95) _( 2026. 01. 04. )_
+- [코난과 숏박스](https://velog.io/@uiwwsw/%EC%BD%94%EB%82%9C%EA%B3%BC-%EC%88%8F%EB%B0%95%EC%8A%A4) _( 2026. 01. 03. )_
+- [나무에 대한 평가](https://velog.io/@uiwwsw/%EB%82%98%EB%AC%B4%EC%97%90-%EB%8C%80%ED%95%9C-%ED%8F%89%EA%B0%80) _( 2025. 12. 25. )_
+- [어른이](https://velog.io/@uiwwsw/%EC%96%B4%EB%A5%B8%EC%9D%B4) _( 2025. 12. 24. )_
+- [소개팅](https://velog.io/@uiwwsw/%EC%86%8C%EA%B0%9C%ED%8C%85) _( 2025. 12. 23. )_
 <!--END_VELOG-->
 
 > 위 목록은 GitHub Actions로 매일 자동 갱신됩니다.
