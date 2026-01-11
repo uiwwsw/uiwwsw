@@ -6,7 +6,7 @@
 <br>
 
 <a href="mailto:uiwwsw@icloud.com"><img src="https://img.shields.io/badge/Email-uiwwsw%40icloud.com-black?style=flat-square&logo=icloud&logoColor=white" alt="Email" /></a>
-<a href="https://kr.linkedin.com/in/%EC%B0%BD%EC%9B%90-%EC%9C%A4-56a895157"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/uiwwsw/"><img src="https://img.shields.io/badge/LinkedIn-uiwwsw-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="https://github.com/uiwwnw"><img src="https://img.shields.io/badge/GitHub-uiwwnw-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 <a href="https://uiwwsw.github.io/"><img src="https://img.shields.io/badge/Portfolio-Archive-555555?style=flat-square&logo=About.me&logoColor=white" alt="Portfolio" /></a>
 
