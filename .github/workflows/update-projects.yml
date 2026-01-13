@@ -1,0 +1,61 @@
+name: Update Project List
+
+on:
+  schedule:
+    # 매월 1일 00:00 KST (UTC+9) 실행
+    - cron: '0 15 1 * *'
+  workflow_dispatch: # 수동 실행도 가능
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/update-projects.yml'
+      - 'scripts/update-projects.js'
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        cd ${{ github.workspace }}
+        npm install
+        
+    - name: Update project list
+      run: |
+        cd ${{ github.workspace }}
+        npm run update:projects
+        
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain README.md)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m "📝 Update project list - $(date +'%Y-%m-%d')"
+        git push
+        
+    - name: No changes detected
+      if: steps.verify-changed-files.outputs.changed == 'false'
+      run: |
+        echo "✅ No changes to project list"
