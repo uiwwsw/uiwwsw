@@ -67,7 +67,7 @@ async function fetchLatestVelogPosts() {
             const itemContent = match[0];
 
             // 제목 추출
-            const titleMatch = itemContent.match(/<title><!\[CDATA\[([^\]]*)\]\]><\/title>/);
+            const titleMatch = itemContent.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/);
             const title = titleMatch ? titleMatch[1] : '';
 
             // 링크 추출
