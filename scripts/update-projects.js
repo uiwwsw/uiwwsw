@@ -274,11 +274,14 @@ async function updateReadme(services, velogPosts, pinnedRepos) {
     // 플랫폼 아이콘
     const getPlatformIcons = (platforms) => {
         const icons = [];
-        if (platforms.some(p => p.type === 'ios')) {
-            icons.push('[<img src="https://img.shields.io/badge/App_Store-0D96F6?style=flat-square&logo=apple&logoColor=white" alt="App Store" />](https://apps.apple.com/kr/developer/yoon-changwon/id6756718662)');
+        const iosPlatform = platforms.find(p => p.type === 'ios');
+        const androidPlatform = platforms.find(p => p.type === 'android');
+
+        if (iosPlatform) {
+            icons.push(`[<img src="https://img.shields.io/badge/App_Store-0D96F6?style=flat-square&logo=apple&logoColor=white" alt="App Store" />](${iosPlatform.url})`);
         }
-        if (platforms.some(p => p.type === 'android')) {
-            icons.push('[<img src="https://img.shields.io/badge/Google_Play-3DDC84?style=flat-square&logo=google-play&logoColor=white" alt="Google Play" />](https://play.google.com/store/apps/developer?id=Brewstar)');
+        if (androidPlatform) {
+            icons.push(`[<img src="https://img.shields.io/badge/Google_Play-3DDC84?style=flat-square&logo=google-play&logoColor=white" alt="Google Play" />](${androidPlatform.url})`);
         }
         return icons.join(' ');
     };
