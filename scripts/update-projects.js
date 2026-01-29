@@ -5,7 +5,7 @@ const path = require('path');
 // 기본 URL
 const BASE_URL = 'https://brewstar-code.github.io';
 const SERVICES_URL = `${BASE_URL}/services/`;
-const VELOG_RSS_URL = 'https://v2.velog.io/rss/@uiwwsw';
+const VELOG_GRAPHQL_URL = 'https://v2cdn.velog.io/graphql';
 const GITHUB_PROFILE_URL = 'https://github.com/uiwwsw';
 
 /**
@@ -43,64 +43,103 @@ function getTechBadge(tech) {
 function fetchPage(url) {
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
-            let data = '';
-            res.on('data', (chunk) => data += chunk);
-            res.on('end', () => resolve(data));
+            const chunks = [];
+            res.on('data', (chunk) => chunks.push(chunk));
+            res.on('end', () => resolve(Buffer.concat(chunks).toString()));
         }).on('error', reject);
     });
 }
 
 /**
- * Velog RSS 피드에서 최신 글 가져오기
+ * Velog RSS 피드에서 최신 글 가져오기 (에세이 제외) - GraphQL 사용
  */
 async function fetchLatestVelogPosts() {
     try {
-        console.log('📝 Velog RSS 피드 가져오는 중...');
-        const rssXML = await fetchPage(VELOG_RSS_URL);
+        console.log('📝 Velog 포스트 가져오는 중... (GraphQL)');
 
-        // XML 파싱 - <item> 태그 추출
-        const itemPattern = /<item>[\s\S]*?<\/item>/g;
-        const items = [];
-        let match;
-
-        while ((match = itemPattern.exec(rssXML)) !== null) {
-            const itemContent = match[0];
-
-            // 제목 추출
-            const titleMatch = itemContent.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/);
-            const title = titleMatch ? titleMatch[1] : '';
-
-            // 링크 추출
-            const linkMatch = itemContent.match(/<link>([^<]*)<\/link>/);
-            const link = linkMatch ? linkMatch[1] : '';
-
-            // 날짜 추출 및 포맷 변환
-            const pubDateMatch = itemContent.match(/<pubDate>([^<]*)<\/pubDate>/);
-            if (pubDateMatch) {
-                const pubDate = new Date(pubDateMatch[1]);
-                const formattedDate = pubDate.toLocaleDateString('ko-KR', {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                }).replace(/(\d{4})\. (\d{2})\. (\d{2})\./, '$1. $2. $3.');
-
-                items.push({
-                    title,
-                    link,
-                    date: formattedDate
-                });
+        const query = `
+            query Posts($username: String, $limit: Int) {
+                posts(username: $username, limit: $limit) {
+                    id
+                    title
+                    url_slug
+                    released_at
+                    series {
+                        name
+                    }
+                }
             }
+        `;
+
+        const variables = {
+            username: 'uiwwsw',
+            limit: 100 // 전체 글을 가져오기 위해 충분히 큰 수
+        };
+
+        const postData = JSON.stringify({ query, variables });
+
+        const response = await new Promise((resolve, reject) => {
+            const req = https.request(VELOG_GRAPHQL_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            }, (res) => {
+                const chunks = [];
+                res.on('data', chunk => chunks.push(chunk));
+                res.on('end', () => resolve(Buffer.concat(chunks).toString()));
+            });
+
+            req.on('error', reject);
+            req.write(postData);
+            req.end();
+        });
+
+        const parsed = JSON.parse(response);
+        if (parsed.errors) {
+            throw new Error(JSON.stringify(parsed.errors));
         }
 
-        // 최신 5개만 반환
-        const latestPosts = items.slice(0, 5);
-        console.log(`✅ 최신 ${latestPosts.length}개 글 가져오기 완료`);
+        const posts = parsed.data.posts;
+        console.log(`🔍 총 ${posts.length}개의 글 발견.`);
 
-        return latestPosts;
+        const validPosts = [];
+
+        for (const post of posts) {
+            if (validPosts.length >= 5) break;
+
+            // 시리즈 확인
+            const seriesName = post.series ? post.series.name : null;
+
+            // "essay" 시리즈 제외 (대소문자 구분 없이 포함 여부 확인 혹은 정확한 매칭)
+            // 사용자 요구: "essay시리즈면 패스하기"
+            if (seriesName && /essay/i.test(seriesName)) {
+                console.log(`    ⏭️ [SKIP] 에세이 시리즈입니다: ${post.title}`);
+                continue;
+            }
+
+            // 날짜 포맷 변환
+            const pubDate = new Date(post.released_at);
+            const formattedDate = pubDate.toLocaleDateString('ko-KR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            }).replace(/(\d{4})\. (\d{2})\. (\d{2})\./, '$1. $2. $3.');
+
+            validPosts.push({
+                title: post.title,
+                link: `https://velog.io/@uiwwsw/${post.url_slug}`,
+                date: formattedDate
+            });
+            console.log(`    ✅ [ADD] 기술글 포함: ${post.title}`);
+        }
+
+        console.log(`✅ 최종 ${validPosts.length}개 기술글 가져오기 완료`);
+        return validPosts;
 
     } catch (error) {
-        console.error('❌ Velog RSS 피드 가져오기 실패:', error.message);
-        // 오류 시 빈 배열 반환 (기존 글 유지)
+        console.error('❌ Velog 포스트 가져오기 실패:', error.message);
         return [];
     }
 }
@@ -342,7 +381,7 @@ ${service.tagline}`).join('\n\n')}
 
 ---
 
-${openSourceSection}## ✒️ Essays & Thoughts
+${openSourceSection}## 💻 Technical Posts
 > *Code is logical, but people are emotional. I write about both.*
 
 <!--START_VELOG-->
