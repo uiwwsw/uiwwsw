@@ -38,7 +38,7 @@
 
 
 
-��기 선불권을 가장 똑똑하게
+수기 선불권을 가장 똑똑하게
 
 ---
 
@@ -76,22 +76,22 @@
 
 ---
 
-## ✒️ Essays & Thoughts
+## 💻 Technical Posts
 > *Code is logical, but people are emotional. I write about both.*
 
 <!--START_VELOG-->
-- [뭐든지 말이 되는 세상](https://velog.io/@uiwwsw/%ED%8B%80%EB%A6%B0-%EB%A7%90%EC%9D%B4%EB%9D%BC%EB%8A%94-%EA%B2%83) _( 2026. 01. 23. )_
-- [untitled, for now](https://velog.io/@uiwwsw/untitled-for-now) _( 2026. 01. 23. )_
-- [](https://velog.io/@uiwwsw/Retrospective-%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80%EB%B3%B4%EB%8B%A4-%EC%99%84%EC%84%B1%EB%8F%84%EC%97%90-%EC%A7%91%EC%B0%A9%ED%95%98%EA%B8%B0-Flutter-%EC%A0%84%ED%99%98%EA%B8%B0) _( 2026. 01. 22. )_
-- [운이 좋았습니다](https://velog.io/@uiwwsw/%EC%9A%B4%EC%9D%B4-%EC%A2%8B%EC%95%98%EC%8A%B5%EB%8B%88%EB%8B%A4) _( 2026. 01. 12. )_
-- [왜 기품 있는 어른은 회사에 남지 않는가](https://velog.io/@uiwwsw/%EC%99%9C-%EA%B8%B0%ED%92%88-%EC%9E%88%EB%8A%94-%EC%96%B4%EB%A5%B8%EC%9D%80-%ED%9A%8C%EC%82%AC%EC%97%90-%EB%82%A8%EC%A7%80-%EC%95%8A%EB%8A%94%EA%B0%80) _( 2026. 01. 06. )_
+- [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 23. )_
+- [다중 장소 검색 서비스 머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰) _( 2025. 12. 09. )_
+- [🚀 스토리북에 버전별 컴포넌트 모으기 — 한 곳에서 깔끔하게 비교하는 법](https://velog.io/@uiwwsw/스토리북에-버전별-컴포넌트-보여주기-낭비-없이-한-곳에-모으는-법) _( 2025. 10. 16. )_
+- [🔐 재미와 보안, 두 마리 토끼를 잡는 이스터에그 구현법](https://velog.io/@uiwwsw/재미와-보안-두-마리-토끼를-잡는-이스터에그-구현법) _( 2025. 07. 22. )_
+- [💳 선불권을 디지털로 – 프리페이 실험기](https://velog.io/@uiwwsw/선불권을-디지털로-프리페이-실험기) _( 2025. 07. 09. )_
 <!--END_VELOG-->
 <br>
 
 ---
 
 📊 **총 3개 프로젝트** (운영중 1개, 작업중 2개)  
-🔄 **마지막 업데이트**: 2026. 01. 28.
+🔄 **마지막 업데이트**: 2026. 01. 30.
 
 <br>
 <div align="right">
