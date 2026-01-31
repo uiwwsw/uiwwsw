@@ -70,10 +70,10 @@ React Query Helper is a CLI tool that automatically generates React Query hooks 
 > *Code is logical, but people are emotional. I write about both.*
 
 <!--START_VELOG-->
-- [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 23. )_
+- [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 22. )_
 - [다중 장소 검색 서비스 머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰) _( 2025. 12. 09. )_
 - [🚀 스토리북에 버전별 컴포넌트 모으기 — 한 곳에서 깔끔하게 비교하는 법](https://velog.io/@uiwwsw/스토리북에-버전별-컴포넌트-보여주기-낭비-없이-한-곳에-모으는-법) _( 2025. 10. 16. )_
-- [🔐 재미와 보안, 두 마리 토끼를 잡는 이스터에그 구현법](https://velog.io/@uiwwsw/재미와-보안-두-마리-토끼를-잡는-이스터에그-구현법) _( 2025. 07. 22. )_
+- [🔐 재미와 보안, 두 마리 토끼를 잡는 이스터에그 구현법](https://velog.io/@uiwwsw/재미와-보안-두-마리-토끼를-잡는-이스터에그-구현법) _( 2025. 07. 21. )_
 - [💳 선불권을 디지털로 – 프리페이 실험기](https://velog.io/@uiwwsw/선불권을-디지털로-프리페이-실험기) _( 2025. 07. 09. )_
 <!--END_VELOG-->
 <br>
