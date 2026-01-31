@@ -11,6 +11,66 @@ const GITHUB_PROFILE_URL = 'https://github.com/uiwwsw';
 /**
  * 기술 스택 뱃지 매핑
  */
+const NPM_SEARCH_URL = 'https://registry.npmjs.org/-/v1/search';
+
+/**
+ * NPM에서 패키지 정보 가져오기
+ */
+async function fetchNpmPackages() {
+    try {
+        console.log('📦 NPM 패키지 정보 가져오는 중...');
+        const query = encodeURIComponent('@uiwwsw');
+        const url = `${NPM_SEARCH_URL}?text=${query}&size=100`;
+
+        const response = await new Promise((resolve, reject) => {
+            https.get(url, (res) => {
+                const chunks = [];
+                res.on('data', (chunk) => chunks.push(chunk));
+                res.on('end', () => resolve(Buffer.concat(chunks).toString()));
+            }).on('error', reject);
+        });
+
+        const data = JSON.parse(response);
+        if (!data.objects) return [];
+
+        const packages = data.objects.map(obj => {
+            const pkg = obj.package;
+            let description = pkg.description || '';
+
+            // HTML 주석 제거
+            description = description.replace(/<!--[\s\S]*?-->/g, '');
+            // 마크다운 이미지/뱃지 제거 (예: ![alt](url))
+            description = description.replace(/!\[.*?\]\(.*?\)/g, '');
+            // 마크다운 링크에서 텍스트만 추출 (예: [text](url) -> text, [](url) -> empty)
+            description = description.replace(/\[([^\]]*)\]\([^\)]+\)/g, '$1');
+            // 끝에 남은 불완전한 링크 제거 (예: [](url...)
+            description = description.replace(/\[[^\]]*\]\([^\)]*$/g, '');
+            // 괄호만 남은 경우 제거 (예: ())
+            description = description.replace(/^\(\s*\)$/g, '');
+            // 앞뒤 공백 제거 및 연속된 공백 정리
+            description = description.trim().replace(/\s+/g, ' ');
+
+            return {
+                name: pkg.name,
+                url: pkg.links.npm,
+                description: description,
+                keywords: pkg.keywords || [],
+                date: pkg.date
+            };
+        });
+
+        console.log(`✅ ${packages.length}개 NPM 패키지 발견`);
+        return packages;
+
+    } catch (error) {
+        console.error('❌ NPM 패키지 가져오기 실패:', error.message);
+        return [];
+    }
+}
+
+/**
+ * 기술 스택 뱃지 매핑
+ */
 const TECH_BADGES = {
     'Flutter': 'https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white',
     'Supabase': 'https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white',
@@ -22,16 +82,26 @@ const TECH_BADGES = {
     'Styled Components': 'https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white',
     'C++': 'https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white',
     'Python': 'https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white',
-    // 필요한 경우 추가
+    // NPM 키워드용 매핑 추가
+    'react': 'https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black',
+    'typescript': 'https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white',
+    'javascript': 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black',
+    'node': 'https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white',
+    'npm': 'https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white',
 };
 
 function getTechBadge(tech) {
     // 괄호 제거 및 정규화
     const normalizedTech = tech.replace(/\s*\(.*?\)/, '');
+    const lowerTech = tech.toLowerCase(); // 소문자 비교
 
     // 매핑된 뱃지가 있으면 반환
     if (TECH_BADGES[tech]) return `![${tech}](${TECH_BADGES[tech]})`;
     if (TECH_BADGES[normalizedTech]) return `![${tech}](${TECH_BADGES[normalizedTech]})`;
+
+    // 소문자 키 매칭 시도
+    const matchingKey = Object.keys(TECH_BADGES).find(key => key.toLowerCase() === lowerTech);
+    if (matchingKey) return `![${tech}](${TECH_BADGES[matchingKey]})`;
 
     // 없으면 기본 뱃지 생성
     return `![${tech}](https://img.shields.io/badge/${encodeURIComponent(tech)}-555555?style=flat-square)`;
@@ -143,80 +213,7 @@ async function fetchLatestVelogPosts() {
         return [];
     }
 }
-/**
- * GitHub 프로필에서 Pinned Repos 가져오기
- */
-async function fetchPinnedRepos() {
-    try {
-        console.log('📌 GitHub Pinned Repos 가져오는 중...');
-        const html = await fetchPage(GITHUB_PROFILE_URL);
 
-        const pinnedRepos = [];
-        // Pinned item 패턴 (HTML 구조에 의존적이므로 주의 필요)
-        const pinnedItemPattern = /<div class="pinned-item-list-item-content">([\s\S]*?)<\/div>/g;
-
-        let match;
-        while ((match = pinnedItemPattern.exec(html)) !== null) {
-            const content = match[1];
-
-            // Repo 링크 및 이름 추출
-            const linkMatch = content.match(/href="(\/[^"]+)"/);
-            const repoPath = linkMatch ? linkMatch[1] : '';
-            const repoName = repoPath.split('/').pop();
-            const repoUrl = `https://github.com${repoPath}`;
-
-            // 설명 추출
-            const descMatch = content.match(/<p class="pinned-item-desc[^"]*">([\s\S]*?)<\/p>/);
-            const description = descMatch ? descMatch[1].trim() : '';
-
-            if (repoUrl) {
-                pinnedRepos.push({
-                    name: repoName,
-                    url: repoUrl,
-                    description,
-                    techStack: [] // 나중에 채움
-                });
-            }
-        }
-
-        console.log(`✅ ${pinnedRepos.length}개 Pinned Repo 발견`);
-
-        // 각 Repo의 상세 정보(기술 스택) 가져오기
-        for (const repo of pinnedRepos) {
-            console.log(`  🔍 ${repo.name} 기술 스택 분석 중...`);
-            try {
-                const repoHtml = await fetchPage(repo.url);
-
-                // Languages 섹션 찾기
-                // GitHub Repo 페이지의 Languages는 보통 Layout-sidebar 내의 "Languages" 헤더 다음에 나옴
-                // 또는 aria-label="Page content" 내에서 찾을 수도 있음.
-                // 여기서는 간단히 "Languages" 텍스트 주변이나, 언어 통계 bar의 aria-label 등을 찾음
-
-                // 방법 1: url이 /languages 인 API 요청은 불가능(인증 필요 없는 페이지 크롤링이므로)
-                // 방법 2: HTML에서 .LanguageList 클래스 찾기 (가장 정확)
-                const languagePattern = /<span class="color-fg-default text-bold mr-1">([^<]*)<\/span>/g;
-                let langMatch;
-                const languages = [];
-                // Layout-sidebar 안쪽을 보는게 안전하지만, 전체 HTML에서 위 패턴은 언어 목록에만 주로 쓰임
-                while ((langMatch = languagePattern.exec(repoHtml)) !== null) {
-                    languages.push(langMatch[1].trim());
-                }
-
-                // 중복 제거 및 상위 3개만 사용
-                repo.techStack = [...new Set(languages)].slice(0, 3);
-
-            } catch (err) {
-                console.error(`  ⚠️ ${repo.name} 기술 스택 가져오기 실패:`, err.message);
-            }
-        }
-
-        return pinnedRepos;
-
-    } catch (error) {
-        console.error('❌ GitHub Pinned Repos 가져오기 실패:', error.message);
-        return [];
-    }
-}
 /**
  * HTML에서 서비스 정보 추출
  */
@@ -298,7 +295,7 @@ function formatVelogPosts(posts) {
 /**
  * README.md 업데이트
  */
-async function updateReadme(services, velogPosts, pinnedRepos) {
+async function updateReadme(services, velogPosts, npmPackages) {
     const runningServices = services.filter(s => s.isRunning);
     const developingServices = services.filter(s => !s.isRunning);
 
@@ -336,12 +333,12 @@ async function updateReadme(services, velogPosts, pinnedRepos) {
 
     // Open Source 섹션 생성
     let openSourceSection = '';
-    if (pinnedRepos && pinnedRepos.length > 0) {
-        openSourceSection = `## 📦 Open Source / Libraries\n\n${pinnedRepos.map(repo =>
-            `### [${repo.name}](${repo.url})
-${getTechStackBadges(repo.techStack)}
+    if (npmPackages && npmPackages.length > 0) {
+        openSourceSection = `## 📦 Open Source / Libraries\n\n${npmPackages.map(pkg =>
+            `### [${pkg.name}](${pkg.url})
+${getTechStackBadges(pkg.keywords)}
 
-${repo.description}`).join('\n\n')}\n\n---\n\n`;
+${pkg.description}`).join('\n\n')}\n\n---\n\n`;
     }
 
     const readmeContent = `<div align="center">
@@ -421,12 +418,12 @@ async function main() {
             console.log(`  - ${service.koreanName} (${service.category})`);
         });
 
-        console.log('📌 Pinned Repos 크롤링 시작...');
-        const pinnedRepos = await fetchPinnedRepos();
+        console.log('📌 NPM 패키지 크롤링 시작...');
+        const npmPackages = await fetchNpmPackages();
 
         console.log('📝 README.md 업데이트 중...');
         const velogPosts = await fetchLatestVelogPosts();
-        await updateReadme(services, velogPosts, pinnedRepos);
+        await updateReadme(services, velogPosts, npmPackages);
 
         console.log('🎉 모든 작업 완료!');
 
