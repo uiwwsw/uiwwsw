@@ -81,7 +81,7 @@ React Query Helper is a CLI tool that automatically generates React Query hooks 
 ---
 
 📊 **총 3개 프로젝트** (운영중 1개, 작업중 2개)  
-🔄 **마지막 업데이트**: 2026. 01. 31.
+🔄 **마지막 업데이트**: 2026. 02. 01.
 
 <br>
 <div align="right">
