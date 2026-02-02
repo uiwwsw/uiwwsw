@@ -1,7 +1,6 @@
 <div align="center">
 
 # Refactoring myself to be a decent human.
-### 웬만하면 괜찮은 사람 쪽으로 가려 합니다.
 
 <br>
 
