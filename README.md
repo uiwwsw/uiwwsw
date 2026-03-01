@@ -1,6 +1,7 @@
 <div align="center">
 
 # Refactoring myself to be a decent human.
+### 웬만하면 괜찮은 사람 쪽으로 가려 합니다.
 
 <br>
 
@@ -43,25 +44,25 @@
 
 ## 📦 Open Source / Libraries
 
-### [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
-![한글](https://img.shields.io/badge/%ED%95%9C%EA%B8%80-555555?style=flat-square) ![키보드](https://img.shields.io/badge/%ED%82%A4%EB%B3%B4%EB%93%9C-555555?style=flat-square) ![가상](https://img.shields.io/badge/%EA%B0%80%EC%83%81-555555?style=flat-square) ![input](https://img.shields.io/badge/input-555555?style=flat-square) ![custom](https://img.shields.io/badge/custom-555555?style=flat-square) ![keyboard](https://img.shields.io/badge/keyboard-555555?style=flat-square) ![폰번호 전용](https://img.shields.io/badge/%ED%8F%B0%EB%B2%88%ED%98%B8%20%EC%A0%84%EC%9A%A9-555555?style=flat-square) ![숫자 전용](https://img.shields.io/badge/%EC%88%AB%EC%9E%90%20%EC%A0%84%EC%9A%A9-555555?style=flat-square) ![composition](https://img.shields.io/badge/composition-555555?style=flat-square) ![IME](https://img.shields.io/badge/IME-555555?style=flat-square) ![hangul](https://img.shields.io/badge/hangul-555555?style=flat-square) ![no composition issue](https://img.shields.io/badge/no%20composition%20issue-555555?style=flat-square) ![korean input](https://img.shields.io/badge/korean%20input-555555?style=flat-square) ![웹 한글 입력](https://img.shields.io/badge/%EC%9B%B9%20%ED%95%9C%EA%B8%80%20%EC%9E%85%EB%A0%A5-555555?style=flat-square) ![조합 이슈 해결](https://img.shields.io/badge/%EC%A1%B0%ED%95%A9%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0-555555?style=flat-square)
-
-**A revolutionary virtual keyboard solution for React that solves the Korean `composition` issue.**
-
 ### [@uiwwsw/easter-egg](https://www.npmjs.com/package/@uiwwsw/easter-egg)
 ![easter-egg](https://img.shields.io/badge/easter-egg-555555?style=flat-square) ![hidden](https://img.shields.io/badge/hidden-555555?style=flat-square) ![surprise](https://img.shields.io/badge/surprise-555555?style=flat-square) ![fun](https://img.shields.io/badge/fun-555555?style=flat-square)
 
 
 
-### [@uiwwsw/infinite-paper](https://www.npmjs.com/package/@uiwwsw/infinite-paper)
-![infinite-scroll](https://img.shields.io/badge/infinite-scroll-555555?style=flat-square) ![pagination](https://img.shields.io/badge/pagination-555555?style=flat-square) ![virtualized-list](https://img.shields.io/badge/virtualized-list-555555?style=flat-square) ![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![data-window](https://img.shields.io/badge/data-window-555555?style=flat-square)
-
-Composable infinite scroll + pagination data window manager with virtualized lists.
-
 ### [@uiwwsw/react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper)
 ![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![react-query](https://img.shields.io/badge/react-query-555555?style=flat-square) ![tanstack-query](https://img.shields.io/badge/tanstack-query-555555?style=flat-square) ![codegen](https://img.shields.io/badge/codegen-555555?style=flat-square) ![generator](https://img.shields.io/badge/generator-555555?style=flat-square) ![cli](https://img.shields.io/badge/cli-555555?style=flat-square) ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![automation](https://img.shields.io/badge/automation-555555?style=flat-square) ![hooks](https://img.shields.io/badge/hooks-555555?style=flat-square)
 
 React Query Helper is a CLI tool that automatically generates React Query hooks and option objects from TypeScript API functions.
+
+### [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
+![한글](https://img.shields.io/badge/%ED%95%9C%EA%B8%80-555555?style=flat-square) ![키보드](https://img.shields.io/badge/%ED%82%A4%EB%B3%B4%EB%93%9C-555555?style=flat-square) ![가상](https://img.shields.io/badge/%EA%B0%80%EC%83%81-555555?style=flat-square) ![input](https://img.shields.io/badge/input-555555?style=flat-square) ![custom](https://img.shields.io/badge/custom-555555?style=flat-square) ![keyboard](https://img.shields.io/badge/keyboard-555555?style=flat-square) ![폰번호 전용](https://img.shields.io/badge/%ED%8F%B0%EB%B2%88%ED%98%B8%20%EC%A0%84%EC%9A%A9-555555?style=flat-square) ![숫자 전용](https://img.shields.io/badge/%EC%88%AB%EC%9E%90%20%EC%A0%84%EC%9A%A9-555555?style=flat-square) ![composition](https://img.shields.io/badge/composition-555555?style=flat-square) ![IME](https://img.shields.io/badge/IME-555555?style=flat-square) ![hangul](https://img.shields.io/badge/hangul-555555?style=flat-square) ![no composition issue](https://img.shields.io/badge/no%20composition%20issue-555555?style=flat-square) ![korean input](https://img.shields.io/badge/korean%20input-555555?style=flat-square) ![웹 한글 입력](https://img.shields.io/badge/%EC%9B%B9%20%ED%95%9C%EA%B8%80%20%EC%9E%85%EB%A0%A5-555555?style=flat-square) ![조합 이슈 해결](https://img.shields.io/badge/%EC%A1%B0%ED%95%A9%20%EC%9D%B4%EC%8A%88%20%ED%95%B4%EA%B2%B0-555555?style=flat-square)
+
+**A revolutionary virtual keyboard solution for React that solves the Korean `composition` issue.**
+
+### [@uiwwsw/infinite-paper](https://www.npmjs.com/package/@uiwwsw/infinite-paper)
+![infinite-scroll](https://img.shields.io/badge/infinite-scroll-555555?style=flat-square) ![pagination](https://img.shields.io/badge/pagination-555555?style=flat-square) ![virtualized-list](https://img.shields.io/badge/virtualized-list-555555?style=flat-square) ![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![data-window](https://img.shields.io/badge/data-window-555555?style=flat-square)
+
+Composable infinite scroll + pagination data window manager with virtualized lists.
 
 ---
 
@@ -80,7 +81,7 @@ React Query Helper is a CLI tool that automatically generates React Query hooks 
 ---
 
 📊 **총 3개 프로젝트** (운영중 1개, 작업중 2개)  
-🔄 **마지막 업데이트**: 2026. 02. 01.
+🔄 **마지막 업데이트**: 2026. 03. 01.
 
 <br>
 <div align="right">
