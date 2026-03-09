@@ -7,6 +7,15 @@ const BASE_URL = 'https://brewstar-code.github.io';
 const SERVICES_URL = `${BASE_URL}/services/`;
 const VELOG_GRAPHQL_URL = 'https://v2cdn.velog.io/graphql';
 const GITHUB_PROFILE_URL = 'https://github.com/uiwwsw';
+const DEFAULT_EXCLUDED_VELOG_SERIES = ['essay', 'photo'];
+const EXTRA_EXCLUDED_VELOG_SERIES = (process.env.VELOG_EXCLUDED_SERIES || '')
+    .split(',')
+    .map((series) => series.trim())
+    .filter(Boolean);
+const EXCLUDED_VELOG_SERIES = [...new Set([
+    ...DEFAULT_EXCLUDED_VELOG_SERIES,
+    ...EXTRA_EXCLUDED_VELOG_SERIES
+])];
 
 /**
  * 기술 스택 뱃지 매핑
@@ -121,11 +130,20 @@ function fetchPage(url) {
 }
 
 /**
- * Velog RSS 피드에서 최신 글 가져오기 (에세이 제외) - GraphQL 사용
+ * Velog RSS 피드에서 최신 글 가져오기 (특정 시리즈 제외) - GraphQL 사용
  */
+function isExcludedVelogSeries(seriesName) {
+    if (!seriesName) return false;
+    const normalized = seriesName.toLowerCase();
+    return EXCLUDED_VELOG_SERIES.some((excludedSeries) =>
+        normalized.includes(excludedSeries.toLowerCase())
+    );
+}
+
 async function fetchLatestVelogPosts() {
     try {
         console.log('📝 Velog 포스트 가져오는 중... (GraphQL)');
+        console.log(`🚫 제외 시리즈: ${EXCLUDED_VELOG_SERIES.join(', ') || '(없음)'}`);
 
         const query = `
             query Posts($username: String, $limit: Int) {
@@ -182,10 +200,9 @@ async function fetchLatestVelogPosts() {
             // 시리즈 확인
             const seriesName = post.series ? post.series.name : null;
 
-            // "essay" 시리즈 제외 (대소문자 구분 없이 포함 여부 확인 혹은 정확한 매칭)
-            // 사용자 요구: "essay시리즈면 패스하기"
-            if (seriesName && /essay/i.test(seriesName)) {
-                console.log(`    ⏭️ [SKIP] 에세이 시리즈입니다: ${post.title}`);
+            // 제외 대상 시리즈인 경우 스킵 (기본값: essay)
+            if (isExcludedVelogSeries(seriesName)) {
+                console.log(`    ⏭️ [SKIP] 제외 시리즈(${seriesName})입니다: ${post.title}`);
                 continue;
             }
 
