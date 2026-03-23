@@ -2,6 +2,7 @@
 
 # Refactoring myself to be a decent human.
 ### 웬만하면 괜찮은 사람 쪽으로 가려 합니다.
+#### 재사용 가능한 UI, 컴포넌트셋, 디자인 시스템을 제품과 라이브러리로 만드는 개발자입니다.
 
 <br>
 
@@ -14,6 +15,24 @@
 
 <br>
 <br>
+
+## 🎨 UI / Component Systems
+
+재사용 가능한 UI를 컴포넌트셋으로 정리하고, Storybook과 버전 정책까지 포함한 디자인 시스템으로 운영하는 일에 강합니다.
+단일 화면 구현보다 variants, tokens, composition edge cases, 배포 가능한 라이브러리 구조를 만드는 쪽을 더 선호합니다.
+
+![Design System](https://img.shields.io/badge/Design_System-555555?style=flat-square) ![Component Library](https://img.shields.io/badge/Component_Library-555555?style=flat-square) ![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white) ![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+
+- [shadcn2](https://github.com/uiwwsw/shadcn2) / [Demo](https://shadcn2.vercel.app)  
+  shadcn 계열 컴포넌트를 Tailwind CSS v4 + Storybook 기반으로 재구성하고, 버전 스냅샷과 deprecation policy까지 설계한 UI 패키지
+- [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)  
+  한글 composition edge case를 해결한 입력 컴포넌트. 구현보다 재사용성과 사용자 입력 경험에 집착한 사례
+- [스토리북에 버전별 컴포넌트 모으기](https://velog.io/@uiwwsw/스토리북에-버전별-컴포넌트-보여주기-낭비-없이-한-곳에-모으는-법)  
+  컴포넌트 버전 관리와 비교 가능한 Storybook 운영 방식을 정리한 글
+- [머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰)  
+  실제 제품 UI를 여러 번 갈아엎으면서 완성도를 끌어올린 사례
+
+---
 
 ## 🚀 운영중인 프로젝트 (1)
 
