@@ -34,6 +34,7 @@
 
 ---
 
+
 ## 🚀 운영중인 프로젝트 (1)
 
 ### [머랭트립 (MeringTrip)](https://brewstar-code.github.io/meringuetrip/)
@@ -89,18 +90,18 @@ Composable infinite scroll + pagination data window manager with virtualized lis
 > *Code is logical, but people are emotional. I write about both.*
 
 <!--START_VELOG-->
+- [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) _( 2026. 03. 18. )_
 - [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 22. )_
 - [다중 장소 검색 서비스 머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰) _( 2025. 12. 09. )_
 - [🚀 스토리북에 버전별 컴포넌트 모으기 — 한 곳에서 깔끔하게 비교하는 법](https://velog.io/@uiwwsw/스토리북에-버전별-컴포넌트-보여주기-낭비-없이-한-곳에-모으는-법) _( 2025. 10. 16. )_
 - [🔐 재미와 보안, 두 마리 토끼를 잡는 이스터에그 구현법](https://velog.io/@uiwwsw/재미와-보안-두-마리-토끼를-잡는-이스터에그-구현법) _( 2025. 07. 21. )_
-- [💳 선불권을 디지털로 – 프리페이 실험기](https://velog.io/@uiwwsw/선불권을-디지털로-프리페이-실험기) _( 2025. 07. 09. )_
 <!--END_VELOG-->
 <br>
 
 ---
 
 📊 **총 3개 프로젝트** (운영중 1개, 작업중 2개)  
-🔄 **마지막 업데이트**: 2026. 03. 09.
+🔄 **마지막 업데이트**: 2026. 03. 23.
 
 <br>
 <div align="right">
