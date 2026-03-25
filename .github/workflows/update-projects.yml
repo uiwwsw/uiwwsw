@@ -2,13 +2,14 @@ name: Update Project List
 
 on:
   schedule:
-    # 매월 1일 00:00 KST (UTC+9) 실행
-    - cron: '0 15 1 * *'
+    # 매주 월요일 09:00 KST (UTC+9) 실행
+    - cron: '0 0 * * 1'
   workflow_dispatch: # 수동 실행도 가능
   push:
     branches: [ main ]
     paths:
       - '.github/workflows/update-projects.yml'
+      - 'scripts/profile-data.js'
       - 'scripts/update-projects.js'
 
 jobs:
