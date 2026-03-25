@@ -142,7 +142,10 @@ function renderQuickStartRows(items) {
 
 function renderBucketItem(item) {
     const label = item.url ? `[${item.label}](${item.url})` : `**${item.label}**`;
-    return `- ${label} — ${item.note}`;
+    const links = item.links && item.links.length > 0
+        ? ` (${item.links.map((link) => `[${link.label}](${link.url})`).join(' · ')})`
+        : '';
+    return `- ${label}${links} — ${item.note}`;
 }
 
 function renderWorkBuckets(buckets) {

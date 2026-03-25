@@ -40,9 +40,9 @@
 서비스를 끝까지 닫아야 할 때는 프론트엔드에 머물지 않고, 필요한 만큼 백엔드와 운영 흐름까지 직접 만듭니다.
 
 - **찐리뷰** — 디플리케이트된 리뷰 플랫폼 웹서비스. PostgreSQL, Next.js, Prisma 기반.
-- [머랭트립](https://brewstar-code.github.io/meringuetrip/) — 출시 후 운영까지 이어진 서비스.
-- [미유미유](https://brewstar-code.github.io/meyoumeyou/) — 작업 중인 서비스.
-- **QR Token** — 작업 중인 서비스.
+- **머랭트립** ([App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690) · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip)) — 반경 검색으로 완성하는 똑똑한 여행 설계.
+- **미유미유** ([App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)) — 커플을 위한 햅틱 연결 앱.
+- **큐알토큰** — 수기 선불권을 가장 똑똑하게. 작업 중인 서비스.
 
 ### 3. DX / Tooling
 
