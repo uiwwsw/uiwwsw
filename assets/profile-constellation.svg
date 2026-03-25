@@ -1,0 +1,153 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">uiwwsw project constellation</title>
+  <desc id="desc">A constellation-like visual map connecting uiwwsw with projects including uiwwsw.github.io, GitHubPrint, virtual-keyboard, shadcn2, and YAVN.</desc>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="72" x2="1192" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07131F"/>
+      <stop offset="1" stop-color="#04070D"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(886 262) rotate(90) scale(182 240)">
+      <stop stop-color="#54B4FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#54B4FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(318 496) rotate(90) scale(134 240)">
+      <stop stop-color="#FFD37A" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFD37A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur24" x="-100" y="-100" width="1480" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="softShadow" x="0" y="0" width="1280" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#02050B" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <rect x="28" y="28" width="1224" height="584" rx="32" fill="url(#bg)"/>
+    <rect x="28.75" y="28.75" width="1222.5" height="582.5" rx="31.25" stroke="#172437" stroke-opacity="0.8" stroke-width="1.5"/>
+  </g>
+
+  <g opacity="0.96">
+    <ellipse cx="886" cy="262" rx="246" ry="176" fill="url(#glowBlue)"/>
+    <ellipse cx="318" cy="496" rx="228" ry="156" fill="url(#glowGold)"/>
+  </g>
+
+  <g opacity="0.45">
+    <path d="M664 112C758 118 840 164 904 248" stroke="#355174" stroke-width="1.5"/>
+    <path d="M664 112C760 132 832 212 840 320" stroke="#355174" stroke-width="1.5"/>
+    <path d="M664 112C742 148 790 248 780 376" stroke="#355174" stroke-width="1.5"/>
+    <path d="M664 112C720 170 724 256 694 434" stroke="#355174" stroke-width="1.5"/>
+    <path d="M664 112C710 204 680 292 616 520" stroke="#355174" stroke-width="1.5"/>
+  </g>
+
+  <g opacity="0.9">
+    <circle cx="142" cy="112" r="1.5" fill="#B9D4FF"/>
+    <circle cx="222" cy="78" r="2" fill="#FCE0A0"/>
+    <circle cx="318" cy="134" r="1.5" fill="#9CC6FF"/>
+    <circle cx="388" cy="88" r="1" fill="#C4D8FF"/>
+    <circle cx="516" cy="74" r="1.5" fill="#F1F5FF"/>
+    <circle cx="1034" cy="118" r="1.5" fill="#B7CBFF"/>
+    <circle cx="1118" cy="174" r="2" fill="#F2CC76"/>
+    <circle cx="1168" cy="244" r="1.5" fill="#E8F0FF"/>
+    <circle cx="1042" cy="428" r="1.5" fill="#B7CBFF"/>
+    <circle cx="1092" cy="492" r="1.5" fill="#F2CC76"/>
+    <circle cx="990" cy="548" r="2" fill="#EDF3FF"/>
+    <circle cx="842" cy="540" r="1.5" fill="#ADC8FF"/>
+    <circle cx="164" cy="534" r="1.5" fill="#E9F0FF"/>
+    <circle cx="252" cy="570" r="2" fill="#F2CC76"/>
+    <circle cx="94" cy="444" r="1" fill="#DEE9FF"/>
+  </g>
+
+  <g opacity="0.8">
+    <path d="M778 178L910 140" stroke="#89B5FF" stroke-opacity="0.8" stroke-width="1.6"/>
+    <path d="M808 258L940 258" stroke="#89B5FF" stroke-opacity="0.8" stroke-width="1.6"/>
+    <path d="M760 334L896 382" stroke="#89B5FF" stroke-opacity="0.8" stroke-width="1.6"/>
+    <path d="M688 430L784 512" stroke="#89B5FF" stroke-opacity="0.8" stroke-width="1.6"/>
+    <path d="M620 514L594 544" stroke="#89B5FF" stroke-opacity="0.8" stroke-width="1.6"/>
+  </g>
+
+  <g transform="translate(88 88)">
+    <text x="0" y="0" fill="#8EA7C8" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="18" letter-spacing="0.24em">IDEA VALIDATION / END-TO-END PRODUCTS / DX / MARKUP UI</text>
+    <text x="0" y="82" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="62" font-weight="700" letter-spacing="-0.04em">
+      <tspan x="0" dy="0">Validate ideas fast.</tspan>
+      <tspan x="0" dy="74">Close products end-to-end.</tspan>
+    </text>
+    <text x="0" y="240" fill="#C7D3E5" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="25" letter-spacing="-0.02em">
+      <tspan x="0" dy="0">Start from frontend. Package repeated work into reusable</tspan>
+      <tspan x="0" dy="38">UI and developer tooling when it is worth keeping.</tspan>
+    </text>
+
+    <g transform="translate(0 306)">
+      <rect x="0" y="0" width="166" height="40" rx="20" fill="#0F1825" stroke="#263A55"/>
+      <text x="20" y="25" fill="#D9E5F6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">Idea validation</text>
+      <rect x="178" y="0" width="188" height="40" rx="20" fill="#0F1825" stroke="#263A55"/>
+      <text x="198" y="25" fill="#D9E5F6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">A to Z products</text>
+      <rect x="378" y="0" width="112" height="40" rx="20" fill="#0F1825" stroke="#263A55"/>
+      <text x="398" y="25" fill="#D9E5F6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">DX</text>
+    </g>
+
+    <g transform="translate(0 362)">
+      <rect x="0" y="0" width="172" height="40" rx="20" fill="#0F1825" stroke="#263A55"/>
+      <text x="20" y="25" fill="#D9E5F6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">Markup / UI systems</text>
+      <rect x="184" y="0" width="164" height="40" rx="20" fill="#0F1825" stroke="#263A55"/>
+      <text x="204" y="25" fill="#D9E5F6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">React/TypeScript</text>
+    </g>
+  </g>
+
+  <g transform="translate(664 112)">
+    <circle cx="0" cy="0" r="12" fill="#FFE195"/>
+    <circle cx="0" cy="0" r="24" fill="#FFE195" fill-opacity="0.12"/>
+    <circle cx="0" cy="0" r="44" fill="#FFE195" fill-opacity="0.08"/>
+
+    <g transform="translate(34 -18)">
+      <rect x="0" y="0" width="112" height="52" rx="16" fill="#101A28" stroke="#2D4769"/>
+      <text x="18" y="23" fill="#F8FAFD" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="14" font-weight="700">uiwwsw</text>
+      <text x="18" y="39" fill="#8EA7C8" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">project map</text>
+    </g>
+  </g>
+
+  <g transform="translate(910 140)">
+    <circle cx="0" cy="0" r="8" fill="#8CD8FF"/>
+    <circle cx="0" cy="0" r="20" fill="#8CD8FF" fill-opacity="0.12"/>
+    <rect x="18" y="-24" width="202" height="54" rx="16" fill="#0D1825" stroke="#27435E"/>
+    <text x="34" y="-2" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">uiwwsw.github.io</text>
+    <text x="34" y="18" fill="#97B4D2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">React + react-three/fiber portfolio</text>
+  </g>
+
+  <g transform="translate(940 258)">
+    <circle cx="0" cy="0" r="8" fill="#94C4FF"/>
+    <circle cx="0" cy="0" r="20" fill="#94C4FF" fill-opacity="0.12"/>
+    <rect x="18" y="-24" width="202" height="54" rx="16" fill="#0D1825" stroke="#27435E"/>
+    <text x="34" y="-2" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">GitHubPrint</text>
+    <text x="34" y="18" fill="#97B4D2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">GitHub to resume and profile docs</text>
+  </g>
+
+  <g transform="translate(896 382)">
+    <circle cx="0" cy="0" r="8" fill="#7DE0D4"/>
+    <circle cx="0" cy="0" r="20" fill="#7DE0D4" fill-opacity="0.12"/>
+    <rect x="18" y="-24" width="182" height="54" rx="16" fill="#0D1825" stroke="#27435E"/>
+    <text x="34" y="-2" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">shadcn2</text>
+    <text x="34" y="18" fill="#97B4D2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">Tailwind v4 UI package</text>
+  </g>
+
+  <g transform="translate(784 512)">
+    <circle cx="0" cy="0" r="8" fill="#D3ADFF"/>
+    <circle cx="0" cy="0" r="20" fill="#D3ADFF" fill-opacity="0.12"/>
+    <rect x="18" y="-24" width="186" height="54" rx="16" fill="#0D1825" stroke="#27435E"/>
+    <text x="34" y="-2" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">YAVN</text>
+    <text x="34" y="18" fill="#97B4D2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">Visual novel engine for the web</text>
+  </g>
+
+  <g transform="translate(594 544)">
+    <circle cx="0" cy="0" r="8" fill="#FFC86F"/>
+    <circle cx="0" cy="0" r="20" fill="#FFC86F" fill-opacity="0.12"/>
+    <rect x="-204" y="-24" width="186" height="54" rx="16" fill="#0D1825" stroke="#27435E"/>
+    <text x="-188" y="-2" fill="#F6F8FC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">virtual-keyboard</text>
+    <text x="-188" y="18" fill="#97B4D2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="12">Korean composition-safe input</text>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="88" y="548" width="1104" height="1" fill="#1A273A"/>
+    <text x="88" y="582" fill="#8EA7C8" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" letter-spacing="0.18em">CURATED FOR GITHUB PROFILE README</text>
+  </g>
+</svg>
