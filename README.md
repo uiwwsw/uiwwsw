@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-constellation.svg" alt="uiwwsw project constellation" width="100%" />
+  <img src="./assets/profile-constellation.svg" alt="uiwwsw profile banner" width="100%" />
 </p>
 
 <p align="center"><strong>Refactoring myself to be a decent human.</strong></p>
