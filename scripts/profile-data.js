@@ -55,6 +55,13 @@ const PROFILE = {
                     note: '그해의 오늘을 바로 보여주는 실험형 서비스.',
                 },
                 {
+                    label: 'make-wire',
+                    links: [
+                        { label: '재현영상', url: 'https://www.youtube.com/watch?v=Wp9AG1U_qmI' },
+                    ],
+                    note: '피그마 기획서를 다국어 JSON으로 출력해, 휘발되던 기획 문서를 개발 코드와 연결하고 다국어 운영 비용을 줄일 수 있는지 빠르게 검증한 프로토타입.',
+                },
+                {
                     label: 'virtual-keyboard',
                     url: 'https://www.npmjs.com/package/@uiwwsw/virtual-keyboard',
                     note: '한글 composition 이슈를 해결하기 위해 만든 입력 라이브러리.',
@@ -136,9 +143,9 @@ const PROFILE = {
                     note: 'styled-components 기반 디자인 시스템 패키지.',
                 },
                 {
-                    label: '주니어 시절 포트폴리오',
+                    label: '초기 마크업 포트폴리오',
                     url: 'https://uiwwnw.github.io/portfolio',
-                    note: '초기 마크업 중심 포트폴리오.',
+                    note: '마크업 중심 작업의 출발점을 담은 초기 포트폴리오.',
                 },
             ],
         },
