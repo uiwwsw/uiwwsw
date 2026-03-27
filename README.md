@@ -32,6 +32,7 @@
 
 - [GitHubPrint](https://githubprint.vercel.app) — GitHub를 개발자 문서와 이력서형 결과로 바꾸는 서비스.
 - [BackThen](https://backthen.vercel.app) — 그해의 오늘을 바로 보여주는 실험형 서비스.
+- **make-wire** ([재현영상](https://www.youtube.com/watch?v=Wp9AG1U_qmI)) — 피그마 기획서를 다국어 JSON으로 출력해, 휘발되던 기획 문서를 개발 코드와 연결하고 다국어 운영 비용을 줄일 수 있는지 빠르게 검증한 프로토타입.
 - [virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard) — 한글 composition 이슈를 해결하기 위해 만든 입력 라이브러리.
 - [koreanscript](https://github.com/uiwwsw/koreanscript) — 한글 키워드로 TypeScript를 쓰는 초간단 트랜스파일러.
 
@@ -59,7 +60,7 @@
 
 - [shadcn2](https://shadcn2.vercel.app) — Tailwind CSS v4 기반 UI 패키지와 Storybook 운영.
 - [heybit-ui-styled-components](https://www.npmjs.com/package/heybit-ui-styled-components) — styled-components 기반 디자인 시스템 패키지.
-- [주니어 시절 포트폴리오](https://uiwwnw.github.io/portfolio) — 초기 마크업 중심 포트폴리오.
+- [초기 마크업 포트폴리오](https://uiwwnw.github.io/portfolio) — 마크업 중심 작업의 출발점을 담은 초기 포트폴리오.
 
 ## Frontend Signals
 
