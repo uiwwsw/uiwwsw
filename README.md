@@ -107,5 +107,5 @@ Description not provided.
 
 ---
 
-**Last profile refresh:** 2026. 03. 27.  
+**Last profile refresh:** 2026. 03. 30.  
 _Updated automatically via GitHub Actions_
