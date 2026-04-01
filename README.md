@@ -2,7 +2,7 @@
   <img src="./assets/profile-constellation.svg" alt="uiwwsw project constellation" width="100%" />
 </p>
 
-<p align="center"><strong>Refactoring myself to be a decent human.</strong></p>
+<p align="center"><strong>Refactoring things until time agrees.</strong></p>
 
 <p align="center"><strong>Frontend engineer who validates ideas fast, closes products end-to-end, and turns repeated work into UI/DX assets.</strong></p>
 
