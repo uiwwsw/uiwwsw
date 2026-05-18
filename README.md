@@ -98,14 +98,14 @@ Description not provided.
 > Code is logical, but people are emotional. I write about both.
 
 <!--START_VELOG-->
+- [바이브코딩의 끝에는 누가 서 있어야 하는가](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가) _( 2026. 05. 12. )_
 - [LinkedIn 실험 일지 1 — 시작](https://velog.io/@uiwwsw/LinkedIn-실험-일지-1-시작) _( 2026. 04. 03. )_
 - [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) _( 2026. 03. 18. )_
 - [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 22. )_
 - [다중 장소 검색 서비스 머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰) _( 2025. 12. 09. )_
-- [🚀 스토리북에 버전별 컴포넌트 모으기 — 한 곳에서 깔끔하게 비교하는 법](https://velog.io/@uiwwsw/스토리북에-버전별-컴포넌트-보여주기-낭비-없이-한-곳에-모으는-법) _( 2025. 10. 16. )_
 <!--END_VELOG-->
 
 ---
 
-**Last profile refresh:** 2026. 05. 11.  
+**Last profile refresh:** 2026. 05. 18.  
 _Updated automatically via GitHub Actions_
