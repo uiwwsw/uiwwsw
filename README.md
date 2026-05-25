@@ -72,15 +72,15 @@
 <details>
 <summary><b>Open-source package index</b> (4)</summary>
 
-### [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
-![한글](https://img.shields.io/badge/%ED%95%9C%EA%B8%80-555555?style=flat-square) ![키보드](https://img.shields.io/badge/%ED%82%A4%EB%B3%B4%EB%93%9C-555555?style=flat-square) ![가상](https://img.shields.io/badge/%EA%B0%80%EC%83%81-555555?style=flat-square) ![input](https://img.shields.io/badge/input-555555?style=flat-square)
-
-A revolutionary virtual keyboard solution for React that solves the Korean composition issue.
-
 ### [@uiwwsw/react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper)
 ![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![react-query](https://img.shields.io/badge/react-query-555555?style=flat-square) ![tanstack-query](https://img.shields.io/badge/tanstack-query-555555?style=flat-square) ![codegen](https://img.shields.io/badge/codegen-555555?style=flat-square)
 
 React Query Helper is a CLI tool that automatically generates React Query hooks and option objects from TypeScript API functions.
+
+### [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
+![한글](https://img.shields.io/badge/%ED%95%9C%EA%B8%80-555555?style=flat-square) ![키보드](https://img.shields.io/badge/%ED%82%A4%EB%B3%B4%EB%93%9C-555555?style=flat-square) ![가상](https://img.shields.io/badge/%EA%B0%80%EC%83%81-555555?style=flat-square) ![input](https://img.shields.io/badge/input-555555?style=flat-square)
+
+A revolutionary virtual keyboard solution for React that solves the Korean composition issue.
 
 ### [@uiwwsw/infinite-paper](https://www.npmjs.com/package/@uiwwsw/infinite-paper)
 ![infinite-scroll](https://img.shields.io/badge/infinite-scroll-555555?style=flat-square) ![pagination](https://img.shields.io/badge/pagination-555555?style=flat-square) ![virtualized-list](https://img.shields.io/badge/virtualized-list-555555?style=flat-square) ![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -98,14 +98,14 @@ Description not provided.
 > Code is logical, but people are emotional. I write about both.
 
 <!--START_VELOG-->
+- [실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) _( 2026. 05. 21. )_
 - [바이브코딩의 끝에는 누가 서 있어야 하는가](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가) _( 2026. 05. 12. )_
 - [LinkedIn 실험 일지 1 — 시작](https://velog.io/@uiwwsw/LinkedIn-실험-일지-1-시작) _( 2026. 04. 03. )_
 - [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) _( 2026. 03. 18. )_
 - [[Retrospective] 머랭트립 리팩토링: 기능 추가보다 '완성도'에 집착하기 (Flutter 전환기)](https://velog.io/@uiwwsw/Retrospective-머랭트립-리팩토링-기능-추가보다-완성도에-집착하기-Flutter-전환기) _( 2026. 01. 22. )_
-- [다중 장소 검색 서비스 머랭트립 개발기](https://velog.io/@uiwwsw/지도-앱-켰다가-뇌-터질-뻔해서-직접-만들었습니다-feat.-UI만-5번-엎은-썰) _( 2025. 12. 09. )_
 <!--END_VELOG-->
 
 ---
 
-**Last profile refresh:** 2026. 05. 18.  
+**Last profile refresh:** 2026. 05. 25.  
 _Updated automatically via GitHub Actions_
