@@ -2,17 +2,15 @@
   <img src="./assets/profile-constellation.svg" alt="uiwwsw project constellation" width="100%" />
 </p>
 
-<p align="center"><strong>Faster with AI. Reliable by design.</strong></p>
-
-<p align="center"><strong>Frontend engineering for products that must ship, evolve, and stay reliable.</strong></p>
+<p align="center"><strong>AI can write the happy path. I engineer what happens next.</strong></p>
 
 <p align="center">
-  React and TypeScript across production UI, app releases, design systems, browser edge cases, and developer tooling. AI accelerates exploration and repetitive work; architecture, fallback design, review, and final verification remain engineer-owned.<br />
-  React와 TypeScript로 제품을 실제 사용자에게 전달하고, 출시 이후에도 바꾸기 쉬운 UI와 도구를 만듭니다. AI는 탐색과 반복 작업의 속도를 높이는 데 활용하되, 설계 판단과 대체 경로, 코드 검토, 최종 검증은 개발자의 책임으로 남깁니다.
+  The edge cases, fallbacks, test states, release paths, and reusable systems that turn AI-assisted drafts into dependable products. React and TypeScript, from browser behavior to shipped apps.<br />
+  AI가 빠르게 만든 정상 흐름 이후의 문제를 다룹니다. 브라우저 edge case, 실패 상태, 검증 가능한 대체 경로, 출시 과정, 다시 쓰이는 도구까지 연결해 코드가 실제 제품 환경에서 버티게 만듭니다.
 </p>
 
 <p align="center">
-  2 shipped apps · 1 live AI-assisted product · 4 public npm packages
+  2 shipped apps · 1 AI product with fallback · 4 public npm packages
 </p>
 
 <p align="center">
@@ -24,57 +22,69 @@
   <a href="https://github.com/uiwwsw"><img src="https://img.shields.io/badge/GitHub-uiwwsw-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
-## Selected Evidence
+## The Work Starts Where "It Works" Ends
 
-| Signal | Evidence | What it demonstrates |
+> Most demos stop at the happy path. Production starts with everything that can drift, fail, repeat, or change.
+
+| When this happens | Engineering decision | Proof |
 | --- | --- | --- |
-| AI + Reliability | [GitHubPrint](https://githubprint.vercel.app) | OpenAI 분석에 스키마 검증과 규칙 기반 대체 경로를 결합해, AI 사용 가능 여부와 관계없이 결과를 제공하는 제품입니다. |
-| End-to-end Delivery | [머랭트립](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690) | 기획과 구현부터 App Store·Google Play 출시, 이후 리팩터링까지 제품의 전체 흐름을 다뤘습니다. |
-| Testability | [@uiwwsw/test-mode](https://github.com/uiwwsw/test-mode) | API mock·patch와 story 기반 테스트 시나리오를 공유 가능한 상태로 만들어 QA와 디버깅의 재현성을 높입니다. |
-| Developer Productivity | [@uiwwsw/react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper) | TypeScript API를 분석해 React Query 코드를 생성하고 팀별 분석기·템플릿 규칙까지 확장하는 CLI입니다. |
-| Browser Correctness | [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard) | 한글 IME composition의 중복 입력, 커서 이동, 조합 깨짐을 입력 모델 수준에서 우회합니다. |
+| AI returns something plausible | Ground the output, validate its shape, and keep a deterministic fallback. | [GitHubPrint](https://githubprint.vercel.app) |
+| The bug only happens in Korean input | Own the input model instead of patching composition symptoms. | [virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard) |
+| QA cannot reproduce the state | Turn API failures into shareable, story-based test states. | [test-mode](https://github.com/uiwwsw/test-mode) |
+| The same glue code appears again | Treat repetition as a code-generation and convention problem. | [react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper) |
+| The prototype has to survive release | Follow the product through both app stores and the refactor after launch. | [머랭트립](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690) |
 
-## How I Build
+## Engineering Case Files
 
-### 1. AI With Guardrails
+### 01. AI is probabilistic. The product cannot be.
 
-AI를 결과 그 자체로 두지 않고 탐색과 반복 구현을 가속하는 도구로 사용합니다. 입력 근거, 스키마, 결정론적 대체 경로, 회귀 검사를 함께 설계해 결과를 검증할 수 있는 경로를 남깁니다.
+**[GitHubPrint](https://githubprint.vercel.app)**
 
-- [GitHubPrint](https://githubprint.vercel.app) — 공개 GitHub 근거를 한·영 개발자 문서로 변환합니다. OpenAI Responses API 분석에 Zod 스키마 검증, 규칙 기반 대체 경로, fixture 기반 품질 회귀 검사를 결합한 실제 배포 제품입니다.
-- [바이브코딩의 끝에는 누가 서 있어야 하는가](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가) — AI가 만든 코드의 최종 판단과 검증 책임은 개발자에게 남는다는 작업 원칙을 정리한 글입니다.
+- **Problem:** AI analysis can fail, drift, or infer beyond the public evidence it received.
+- **Decision:** Collect the source first, validate OpenAI output with Zod, and preserve a deterministic analysis path when AI is unavailable.
+- **Proof:** Live Korean and English routes · PDF and Word export · fixture-based quality regressions
 
-### 2. From Problem to Release
+### 02. A state you cannot reproduce is a state you cannot fix.
 
-요구사항이 완성되기를 기다리기보다 작은 제품과 프로토타입으로 문제를 구체화하고, 프론트엔드 구현에서 배포와 스토어 출시까지 연결합니다.
+**[test-mode](https://github.com/uiwwsw/test-mode)**
 
-- **머랭트립** ([App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690) · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip)) — 반경 검색 기반 여행 설계 앱. 기획·구현·스토어 출시 후 Flutter 전환 리팩터링까지 이어갔습니다.
-- **미유미유** ([App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)) — 커플 간 햅틱 연결 경험을 제품화해 App Store에 출시했습니다.
-- [BackThen](https://backthen.vercel.app) — 그해의 오늘을 바로 탐색하는 작은 웹 제품. 빠른 제작과 배포로 아이디어를 검증했습니다.
-- **make-wire** ([재현영상](https://www.youtube.com/watch?v=Wp9AG1U_qmI)) — Figma 기획서를 다국어 JSON으로 변환해 기획과 코드 사이의 전달 손실을 줄이는 프로토타입입니다.
+- **Problem:** Rare API failures are hard to discuss when every developer, QA, and designer has to recreate them by hand.
+- **Decision:** Model product states as named stories that mock or patch requests across browser and server boundaries.
+- **Proof:** Framework-neutral TypeScript runtime · console control · visible TEST MODE overlay
 
-### 3. Reliability in the Details
+### 03. A browser edge case is still product behavior.
 
-정상 흐름만 구현하는 데서 멈추지 않고 브라우저 입력, 실패 상태, 데이터 계약, 저장 호환성처럼 제품에서 실제로 깨지는 경계를 다룹니다.
+**[virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)**
 
-- [@uiwwsw/test-mode](https://github.com/uiwwsw/test-mode) — API mock·patch, story 기반 시나리오, 화면 표시, 브라우저·서버 연동을 프레임워크 독립 TypeScript 런타임으로 분리해 공유 가능한 테스트 상태를 만듭니다.
-- [@uiwwsw/virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard) — 네이티브 input과 contentEditable에 의존하지 않고 한글 조합을 직접 처리해 중복 입력, 커서 이동, 조합 깨짐을 우회합니다.
-- [YAVN](https://github.com/uiwwsw/yavn) — YAML DSL을 Zod 스키마와 참조 검증으로 보호하고 parser·engine·state·history를 분리한 비주얼노벨 엔진입니다. 회귀 테스트와 프로덕션 빌드를 CI에서 검증합니다.
+- **Problem:** Korean IME composition can duplicate characters, move the cursor, or break controlled input.
+- **Decision:** Own Hangul composition in the input model instead of stacking fixes on native composition events.
+- **Proof:** React package · Hangul, number, and telephone policies · mobile-first demo
 
-### 4. Systems That Compound
+### 04. Repetition is an architecture signal.
 
-반복되는 구현과 팀의 판단 비용을 코드 생성기, UI 패키지, 데이터 흐름 라이브러리, 문서화된 규칙으로 바꿔 다음 작업의 출발점을 높입니다.
+**[react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper)**
 
-- [@uiwwsw/react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper) — TypeScript API에서 query·mutation·infinite option 코드를 생성하고, 팀별 분석기와 템플릿 규칙으로 확장할 수 있는 CLI입니다.
-- [shadcn2](https://shadcn2.vercel.app) — Tailwind CSS v4 UI 패키지에 Storybook 버전 스냅샷, 태그 기반 배포, 폐기·마이그레이션 정책을 함께 운영합니다.
-- [@uiwwsw/infinite-paper](https://www.npmjs.com/package/@uiwwsw/infinite-paper) — 무한 스크롤과 페이지네이션을 같은 데이터 윈도우 모델로 다루는 재사용 가능한 상태 관리 라이브러리입니다.
+- **Problem:** Repeated query glue code spreads inconsistent cache keys, options, and conventions.
+- **Decision:** Analyze TypeScript API functions and generate query, mutation, and infinite options through replaceable analyzers and templates.
+- **Proof:** Published npm CLI · configurable generation rules · extensible analyzer and template modules
 
-## Engineering Approach
+## Shipped, Not Mocked
 
-- **AI With Guardrails**: AI 분석에 근거 수집, 스키마 검증, 결정론적 대체 경로, fixture와 회귀 검사를 함께 둡니다.
-- **Outcome Over Output**: 화면 구현량보다 실제 배포, 스토어 출시, 실패 상태와 사용자 맥락까지 이어지는 결과를 우선합니다.
-- **Quality as a System**: 테스트 시나리오, CI, Storybook, 대체 경로, 배포 워크플로를 통해 품질을 반복 가능한 과정으로 만듭니다.
-- **Build for Change**: API·상태·컴포넌트·생성 규칙을 교체 가능한 경계로 나누고 반복 문제를 재사용 자산으로 남깁니다.
-- **Write for Handoff**: 한·영 제품 경로와 README, 아키텍처 표, 기여 규칙, 마이그레이션 가이드로 구현의 맥락을 전달합니다.
+| Product | Surface | What shipped |
+| --- | --- | --- |
+| [GitHubPrint](https://githubprint.vercel.app) | Web · KO/EN · PDF/Word | 공개 GitHub 근거를 공유 가능한 개발자 문서로 변환해 실제 서비스로 배포했습니다. |
+| **머랭트립** ([App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690) · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip)) | iOS · Android | 반경 검색 기반 여행 설계 앱을 기획·구현·출시하고 Flutter 전환 리팩터링까지 이어갔습니다. |
+| **미유미유** ([App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)) | iOS | 커플 간 햅틱 연결 경험을 제품화해 App Store에 출시했습니다. |
+| [BackThen](https://backthen.vercel.app) | Web | 그해의 오늘을 탐색하는 아이디어를 작은 제품으로 만들고 배포해 사용 맥락을 확인했습니다. |
+
+## Systems, Not One-Offs
+
+| Boundary made explicit | System | Evidence |
+| --- | --- | --- |
+| Validated content DSL | [YAVN](https://github.com/uiwwsw/yavn) | Zod and reference validation · parser/engine/history boundaries · CI tests and build |
+| UI component lifecycle | [shadcn2](https://shadcn2.vercel.app) | Tailwind CSS v4 · Storybook version snapshots · release and migration policy |
+| Paginated data window | [infinite-paper](https://www.npmjs.com/package/@uiwwsw/infinite-paper) | Infinite scroll and pagination through one reusable state model |
+| Design-to-code handoff | [make-wire](https://www.youtube.com/watch?v=Wp9AG1U_qmI) | Figma planning documents exported as multilingual JSON |
 
 <details>
 <summary><b>Open-source package index</b> (4)</summary>
@@ -102,7 +112,7 @@ Add playful hidden interactions to React apps with small, reusable trigger utili
 
 ## Writing
 
-> AI can accelerate code. Engineering judgment makes it dependable.
+> I write down the decision, not just the result.
 
 <!--START_VELOG-->
 - [실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) _( 2026. 05. 22. )_

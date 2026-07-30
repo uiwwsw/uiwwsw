@@ -137,36 +137,38 @@ function renderInlineTags(tags) {
     return tags.map((tag) => `\`${tag}\``).join(' ');
 }
 
-function renderQuickStartRows(items) {
-    return items.map((item) => `| ${item.focus} | [${item.label}](${item.url}) | ${item.reason} |`).join('\n');
-}
-
-function renderQuickLinks(items) {
-    if (!items || !items.length) return '';
-
-    return `## Selected Evidence
-
-| Signal | Evidence | What it demonstrates |
+function renderFailureModes(items) {
+    return `| When this happens | Engineering decision | Proof |
 | --- | --- | --- |
-${renderQuickStartRows(items)}`;
+${items.map((item) => `| ${item.failure} | ${item.decision} | [${item.label}](${item.url}) |`).join('\n')}`;
 }
 
-function renderBucketItem(item) {
-    const label = item.url ? `[${item.label}](${item.url})` : `**${item.label}**`;
-    const links = item.links && item.links.length > 0
-        ? ` (${item.links.map((link) => `[${link.label}](${link.url})`).join(' · ')})`
-        : '';
-    return `- ${label}${links} — ${item.note}`;
+function renderCaseFiles(items) {
+    return items.map((item) => `### ${item.number}. ${item.title}
+
+**[${item.label}](${item.url})**
+
+- **Problem:** ${item.problem}
+- **Decision:** ${item.decision}
+- **Proof:** ${item.proof}`).join('\n\n');
 }
 
-function renderWorkBuckets(buckets) {
-    return buckets.map((bucket) => {
-        return `### ${bucket.title}\n\n${bucket.description}\n\n${bucket.items.map(renderBucketItem).join('\n')}`;
-    }).join('\n\n');
+function renderProductLink(item) {
+    if (item.url) return `[${item.label}](${item.url})`;
+    const links = item.links.map((link) => `[${link.label}](${link.url})`).join(' · ');
+    return `**${item.label}** (${links})`;
 }
 
-function renderSeniorSignals(signals) {
-    return signals.map((signal) => `- **${signal.title}**: ${signal.description}`).join('\n');
+function renderShippedProducts(items) {
+    return `| Product | Surface | What shipped |
+| --- | --- | --- |
+${items.map((item) => `| ${renderProductLink(item)} | ${item.surface} | ${item.outcome} |`).join('\n')}`;
+}
+
+function renderSystemAssets(items) {
+    return `| Boundary made explicit | System | Evidence |
+| --- | --- | --- |
+${items.map((item) => `| ${item.boundary} | [${item.label}](${item.url}) | ${item.proof} |`).join('\n')}`;
 }
 
 function renderPackageIndex(packages) {
@@ -200,7 +202,7 @@ function buildReadme({ velogPosts, npmPackages }) {
     const now = formatDate(new Date().toISOString());
     const stats = [
         `${PROFILE.identity.appReleaseCount} shipped apps`,
-        `${PROFILE.identity.aiProductCount} live AI-assisted product`,
+        `${PROFILE.identity.aiProductCount} AI product with fallback`,
         `${npmPackages.length} public npm packages`,
     ];
 
@@ -208,9 +210,7 @@ function buildReadme({ velogPosts, npmPackages }) {
   <img src="./assets/profile-constellation.svg" alt="uiwwsw project constellation" width="100%" />
 </p>
 
-<p align="center"><strong>${PROFILE.identity.motto}</strong></p>
-
-<p align="center"><strong>${PROFILE.identity.headline}</strong></p>
+<p align="center"><strong>${PROFILE.identity.motto} ${PROFILE.identity.headline}</strong></p>
 
 <p align="center">
   ${PROFILE.identity.summaryEn}<br />
@@ -225,21 +225,29 @@ function buildReadme({ velogPosts, npmPackages }) {
   ${PROFILE.links.map(renderLinkBadge).join('\n  ')}
 </p>
 
-${renderQuickLinks(PROFILE.quickLinks)}
+## The Work Starts Where "It Works" Ends
 
-## How I Build
+> Most demos stop at the happy path. Production starts with everything that can drift, fail, repeat, or change.
 
-${renderWorkBuckets(PROFILE.workBuckets)}
+${renderFailureModes(PROFILE.failureModes)}
 
-## Engineering Approach
+## Engineering Case Files
 
-${renderSeniorSignals(PROFILE.seniorSignals)}
+${renderCaseFiles(PROFILE.caseFiles)}
+
+## Shipped, Not Mocked
+
+${renderShippedProducts(PROFILE.shippedProducts)}
+
+## Systems, Not One-Offs
+
+${renderSystemAssets(PROFILE.systemAssets)}
 
 ${renderPackageIndex(npmPackages)}
 
 ## Writing
 
-> AI can accelerate code. Engineering judgment makes it dependable.
+> I write down the decision, not just the result.
 
 <!--START_VELOG-->
 ${renderVelogPosts(velogPosts)}

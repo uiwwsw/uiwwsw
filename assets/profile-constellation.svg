@@ -1,151 +1,88 @@
 <svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">uiwwsw profile banner</title>
-  <desc id="desc">A profile banner for uiwwsw about AI-assisted frontend engineering, reliable product delivery, and reusable systems.</desc>
-  <defs>
-    <linearGradient id="bg" x1="82" y1="72" x2="1186" y2="582" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#09111C"/>
-      <stop offset="0.52" stop-color="#060B14"/>
-      <stop offset="1" stop-color="#04070D"/>
-    </linearGradient>
-    <radialGradient id="glowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(936 246) rotate(90) scale(220 280)">
-      <stop stop-color="#5CAFFF" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#5CAFFF" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowAmber" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(304 504) rotate(90) scale(168 248)">
-      <stop stop-color="#FFCB70" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#FFCB70" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowTeal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1044 458) rotate(90) scale(132 176)">
-      <stop stop-color="#7CE8D7" stop-opacity="0.16"/>
-      <stop offset="1" stop-color="#7CE8D7" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="blur24" x="-100" y="-100" width="1480" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="24"/>
-    </filter>
-    <filter id="blur16" x="-100" y="-100" width="1480" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
-    <filter id="softShadow" x="0" y="0" width="1280" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#02050B" flood-opacity="0.42"/>
-    </filter>
-    <linearGradient id="line" x1="744" y1="126" x2="1126" y2="516" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8DB7FF" stop-opacity="0.78"/>
-      <stop offset="1" stop-color="#8DE6D7" stop-opacity="0.34"/>
-    </linearGradient>
-  </defs>
+  <title id="title">uiwwsw frontend engineering profile banner</title>
+  <desc id="desc">A production trace showing how uiwwsw turns AI-assisted drafts into dependable frontend products through constraints, verification, and release.</desc>
 
-  <g filter="url(#softShadow)">
-    <rect x="28" y="28" width="1224" height="584" rx="32" fill="url(#bg)"/>
-    <rect x="28.75" y="28.75" width="1222.5" height="582.5" rx="31.25" stroke="#162437" stroke-opacity="0.8" stroke-width="1.5"/>
+  <rect width="1280" height="640" fill="#0A0C0F"/>
+  <rect width="12" height="640" fill="#60D6C2"/>
+
+  <g opacity="0.52" stroke="#242A30" stroke-width="1">
+    <path d="M64 0V640"/>
+    <path d="M256 0V640"/>
+    <path d="M448 0V640"/>
+    <path d="M640 0V640"/>
+    <path d="M832 0V640"/>
+    <path d="M1024 0V640"/>
+    <path d="M1216 0V640"/>
+    <path d="M0 64H1280"/>
+    <path d="M0 192H1280"/>
+    <path d="M0 320H1280"/>
+    <path d="M0 448H1280"/>
+    <path d="M0 576H1280"/>
   </g>
 
-  <g opacity="0.98">
-    <ellipse cx="936" cy="246" rx="252" ry="188" fill="url(#glowBlue)"/>
-    <ellipse cx="304" cy="504" rx="228" ry="158" fill="url(#glowAmber)"/>
-    <ellipse cx="1044" cy="458" rx="176" ry="132" fill="url(#glowTeal)"/>
-  </g>
+  <g transform="translate(64 52)">
+    <text x="0" y="0" fill="#9DA7B2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" font-weight="700">UIWWSW / FRONTEND ENGINEERING</text>
+    <rect x="0" y="26" width="714" height="2" fill="#2B3239"/>
 
-  <g opacity="0.92">
-    <circle cx="116" cy="108" r="1.5" fill="#EAF2FF"/>
-    <circle cx="164" cy="148" r="1" fill="#9EC6FF"/>
-    <circle cx="212" cy="88" r="2" fill="#FFD68A"/>
-    <circle cx="298" cy="136" r="1.5" fill="#DCE9FF"/>
-    <circle cx="372" cy="92" r="1" fill="#A3C8FF"/>
-    <circle cx="502" cy="80" r="1.5" fill="#EDF3FF"/>
-    <circle cx="598" cy="152" r="1" fill="#9EC6FF"/>
-    <circle cx="740" cy="92" r="1.5" fill="#EAF2FF"/>
-    <circle cx="1116" cy="110" r="2" fill="#FFD68A"/>
-    <circle cx="1170" cy="178" r="1.5" fill="#EAF2FF"/>
-    <circle cx="1138" cy="334" r="1" fill="#B4D3FF"/>
-    <circle cx="1194" cy="418" r="1.5" fill="#EAF2FF"/>
-    <circle cx="1092" cy="520" r="2" fill="#FFD68A"/>
-    <circle cx="918" cy="552" r="1.5" fill="#B0CBFF"/>
-    <circle cx="748" cy="532" r="1" fill="#EAF2FF"/>
-    <circle cx="196" cy="544" r="1.5" fill="#EAF2FF"/>
-    <circle cx="288" cy="574" r="2" fill="#FFD68A"/>
-    <circle cx="98" cy="454" r="1" fill="#DCE9FF"/>
-    <circle cx="172" cy="406" r="1.5" fill="#A3C8FF"/>
-    <circle cx="422" cy="516" r="1" fill="#EAF2FF"/>
-  </g>
+    <text x="0" y="84" fill="#F4C95D" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="20" font-weight="700">AI CAN WRITE THE</text>
+    <text x="0" y="178" fill="#F5F7F8" font-family="Georgia, Times New Roman, serif" font-size="88" font-weight="700">happy path.</text>
 
-  <g opacity="0.55">
-    <path d="M744 160C844 140 990 148 1114 246" stroke="#22364E" stroke-width="1.4"/>
-    <path d="M772 420C848 478 982 520 1112 474" stroke="#22364E" stroke-width="1.4"/>
-    <path d="M770 190C740 276 750 380 842 478" stroke="#22364E" stroke-width="1.4"/>
-  </g>
+    <text x="0" y="226" fill="#60D6C2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="20" font-weight="700">I ENGINEER</text>
+    <text x="0" y="310" fill="#F5F7F8" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700">what happens next.</text>
 
-  <g opacity="0.64">
-    <ellipse cx="934" cy="324" rx="202" ry="176" stroke="#19304A" stroke-width="1.2"/>
-    <ellipse cx="934" cy="324" rx="132" ry="116" stroke="#19304A" stroke-width="1.2"/>
-  </g>
+    <text x="0" y="366" fill="#C2CAD2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="22">The constraints, fallbacks, test states, and release paths</text>
+    <text x="0" y="398" fill="#C2CAD2" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="22">that turn AI-assisted drafts into dependable products.</text>
 
-  <g transform="translate(88 96)">
-    <text x="0" y="0" fill="#8FA9CA" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="18" letter-spacing="0.28em">FRONTEND ENGINEERING</text>
-    <text x="0" y="112" fill="#FAFCFF" font-family="Georgia, Times New Roman, serif" font-size="96" font-weight="700" letter-spacing="-0.05em">uiwwsw</text>
-    <text x="0" y="192" fill="#F2F6FD" font-family="Georgia, Times New Roman, serif" font-size="54" letter-spacing="-0.04em">
-      <tspan x="0" dy="0">Faster with AI.</tspan>
-      <tspan x="0" dy="64">Reliable by design.</tspan>
-    </text>
-    <text x="0" y="334" fill="#C4D2E6" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="24" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">React, TypeScript, product delivery, quality systems,</tspan>
-      <tspan x="0" dy="36">AI-assisted workflows, verification, and reusable tools.</tspan>
-    </text>
-
-    <g transform="translate(0 394)">
-      <rect x="0" y="0" width="112" height="40" rx="20" fill="#0E1824" stroke="#283E5C"/>
-      <text x="20" y="25" fill="#DBE7F7" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">product</text>
-      <rect x="124" y="0" width="144" height="40" rx="20" fill="#0E1824" stroke="#283E5C"/>
-      <text x="144" y="25" fill="#DBE7F7" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">ai workflows</text>
-      <rect x="280" y="0" width="132" height="40" rx="20" fill="#0E1824" stroke="#283E5C"/>
-      <text x="300" y="25" fill="#DBE7F7" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">reliability</text>
-      <rect x="424" y="0" width="118" height="40" rx="20" fill="#0E1824" stroke="#283E5C"/>
-      <text x="444" y="25" fill="#DBE7F7" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16">tooling</text>
+    <g transform="translate(0 444)" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="15" font-weight="700">
+      <text x="0" y="0" fill="#F4C95D">EDGE CASES</text>
+      <text x="128" y="0" fill="#626D78">/</text>
+      <text x="152" y="0" fill="#60D6C2">FALLBACKS</text>
+      <text x="268" y="0" fill="#626D78">/</text>
+      <text x="292" y="0" fill="#E68A73">TEST STATES</text>
+      <text x="424" y="0" fill="#626D78">/</text>
+      <text x="448" y="0" fill="#9FB7FF">RELEASE PATHS</text>
     </g>
+
+    <text x="0" y="532" fill="#7F8994" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="15">React / TypeScript / Product UI / Developer Tooling</text>
   </g>
 
-  <g opacity="0.8">
-    <path d="M792 182L914 214L1060 176" stroke="url(#line)" stroke-width="1.8"/>
-    <path d="M914 214L1088 296L1010 448" stroke="url(#line)" stroke-width="1.8"/>
-    <path d="M914 214L772 380L842 498" stroke="url(#line)" stroke-width="1.8"/>
-    <path d="M772 380L934 324L1088 296" stroke="url(#line)" stroke-width="1.8"/>
-    <path d="M934 324L1010 448L842 498" stroke="url(#line)" stroke-width="1.8"/>
-  </g>
+  <rect x="814" y="52" width="2" height="536" fill="#2B3239"/>
 
-  <g>
-    <circle cx="934" cy="324" r="14" fill="#FFE19A"/>
-    <circle cx="934" cy="324" r="34" fill="#FFE19A" fill-opacity="0.14"/>
-    <circle cx="934" cy="324" r="62" fill="#FFE19A" fill-opacity="0.08"/>
+  <g transform="translate(858 52)" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif">
+    <text x="0" y="0" fill="#9DA7B2" font-size="16" font-weight="700">PRODUCTION TRACE</text>
+    <text x="0" y="28" fill="#66717C" font-size="14">from plausible draft to dependable release</text>
 
-    <circle cx="792" cy="182" r="8" fill="#8FD7FF"/>
-    <circle cx="792" cy="182" r="22" fill="#8FD7FF" fill-opacity="0.12"/>
+    <path d="M12 92V410" stroke="#3B444D" stroke-width="2"/>
 
-    <circle cx="914" cy="214" r="9" fill="#B0CFFF"/>
-    <circle cx="914" cy="214" r="24" fill="#B0CFFF" fill-opacity="0.12"/>
+    <g transform="translate(0 82)">
+      <circle cx="12" cy="10" r="10" fill="#F4C95D"/>
+      <text x="38" y="8" fill="#F5F7F8" font-size="18" font-weight="700">01 / DRAFT</text>
+      <text x="38" y="32" fill="#8B96A1" font-size="14">AI-accelerated exploration</text>
+    </g>
 
-    <circle cx="1060" cy="176" r="8" fill="#85E9D5"/>
-    <circle cx="1060" cy="176" r="22" fill="#85E9D5" fill-opacity="0.12"/>
+    <g transform="translate(0 174)">
+      <circle cx="12" cy="10" r="10" fill="#9FB7FF"/>
+      <text x="38" y="8" fill="#F5F7F8" font-size="18" font-weight="700">02 / CONSTRAIN</text>
+      <text x="38" y="32" fill="#8B96A1" font-size="14">contracts, browser behavior, edge cases</text>
+    </g>
 
-    <circle cx="1088" cy="296" r="8" fill="#96C0FF"/>
-    <circle cx="1088" cy="296" r="22" fill="#96C0FF" fill-opacity="0.12"/>
+    <g transform="translate(0 266)">
+      <circle cx="12" cy="10" r="10" fill="#E68A73"/>
+      <text x="38" y="8" fill="#F5F7F8" font-size="18" font-weight="700">03 / VERIFY</text>
+      <text x="38" y="32" fill="#8B96A1" font-size="14">test states, schemas, deterministic fallback</text>
+    </g>
 
-    <circle cx="1010" cy="448" r="9" fill="#D4B2FF"/>
-    <circle cx="1010" cy="448" r="24" fill="#D4B2FF" fill-opacity="0.12"/>
+    <g transform="translate(0 358)">
+      <circle cx="12" cy="10" r="10" fill="#60D6C2"/>
+      <text x="38" y="8" fill="#F5F7F8" font-size="18" font-weight="700">04 / SHIP</text>
+      <text x="38" y="32" fill="#8B96A1" font-size="14">release, observe, refactor, reuse</text>
+    </g>
 
-    <circle cx="842" cy="498" r="8" fill="#FFCB78"/>
-    <circle cx="842" cy="498" r="22" fill="#FFCB78" fill-opacity="0.12"/>
-
-    <circle cx="772" cy="380" r="8" fill="#9BD3FF"/>
-    <circle cx="772" cy="380" r="22" fill="#9BD3FF" fill-opacity="0.12"/>
-  </g>
-
-  <g opacity="0.84">
-    <rect x="850" y="84" width="270" height="58" rx="18" fill="#0C1621" stroke="#213550"/>
-    <text x="876" y="108" fill="#F7FAFE" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="17" font-weight="700">engineering judgment</text>
-    <text x="876" y="128" fill="#91ABCC" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="13">from idea to verified release</text>
-  </g>
-
-  <g opacity="0.88">
-    <rect x="88" y="548" width="1104" height="1" fill="#17263A"/>
-    <text x="88" y="582" fill="#8EA7C8" font-family="Segoe UI, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="16" letter-spacing="0.14em">FRONTEND / AI-ASSISTED DELIVERY / RELIABILITY / TOOLING</text>
+    <g transform="translate(0 472)">
+      <rect width="118" height="3" fill="#F4C95D"/>
+      <rect x="118" width="232" height="3" fill="#60D6C2"/>
+      <text x="0" y="30" fill="#F4C95D" font-size="13" font-weight="700">AI SPEED</text>
+      <text x="212" y="30" fill="#60D6C2" font-size="13" font-weight="700">ENGINEERING JUDGMENT</text>
+    </g>
   </g>
 </svg>
