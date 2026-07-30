@@ -144,9 +144,9 @@ function renderQuickStartRows(items) {
 function renderQuickLinks(items) {
     if (!items || !items.length) return '';
 
-    return `## Start Here
+    return `## Selected Evidence
 
-| Focus | Link | Why |
+| Signal | Evidence | What it demonstrates |
 | --- | --- | --- |
 ${renderQuickStartRows(items)}`;
 }
@@ -199,9 +199,9 @@ function renderVelogPosts(posts) {
 function buildReadme({ velogPosts, npmPackages }) {
     const now = formatDate(new Date().toISOString());
     const stats = [
-        `${PROFILE.workBuckets.length} frontend lanes`,
+        `${PROFILE.identity.appReleaseCount} shipped apps`,
+        `${PROFILE.identity.aiProductCount} live AI-assisted product`,
         `${npmPackages.length} public npm packages`,
-        `${velogPosts.length} latest technical posts`,
     ];
 
     return `<p align="center">
@@ -227,11 +227,11 @@ function buildReadme({ velogPosts, npmPackages }) {
 
 ${renderQuickLinks(PROFILE.quickLinks)}
 
-## How I Work
+## How I Build
 
 ${renderWorkBuckets(PROFILE.workBuckets)}
 
-## Frontend Signals
+## Engineering Approach
 
 ${renderSeniorSignals(PROFILE.seniorSignals)}
 
@@ -239,7 +239,7 @@ ${renderPackageIndex(npmPackages)}
 
 ## Writing
 
-> Code is logical, but people are emotional. I write about both.
+> AI can accelerate code. Engineering judgment makes it dependable.
 
 <!--START_VELOG-->
 ${renderVelogPosts(velogPosts)}
