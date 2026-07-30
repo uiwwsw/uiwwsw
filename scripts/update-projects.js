@@ -199,7 +199,7 @@ function renderVelogPosts(posts) {
 function buildReadme({ velogPosts, npmPackages }) {
     const now = formatDate(new Date().toISOString());
     const stats = [
-        `${PROFILE.workBuckets.length} operating lanes`,
+        `${PROFILE.workBuckets.length} frontend lanes`,
         `${npmPackages.length} public npm packages`,
         `${velogPosts.length} latest technical posts`,
     ];
@@ -231,7 +231,7 @@ ${renderQuickLinks(PROFILE.quickLinks)}
 
 ${renderWorkBuckets(PROFILE.workBuckets)}
 
-## Leadership Signals
+## Frontend Signals
 
 ${renderSeniorSignals(PROFILE.seniorSignals)}
 
