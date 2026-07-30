@@ -1,0 +1,38 @@
+<svg width="1280" height="460" viewBox="0 0 1280 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">uiwwsw frontend engineering profile</title>
+  <desc id="desc">Ship the product. Make the next change easier. A career arc from UI craft to product and engineering standards.</desc>
+
+  <rect width="1280" height="460" fill="#F6F8FA"/>
+  <rect x="0" y="0" width="14" height="460" fill="#D94C3D"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="58" fill="#1F2328" font-size="18" font-weight="700">UIWWSW</text>
+    <text x="155" y="58" fill="#656D76" font-size="18">/ FRONTEND ENGINEERING</text>
+    <text x="1216" y="58" fill="#656D76" font-size="14" text-anchor="end">PRODUCT · SYSTEM · CRAFT</text>
+
+    <rect x="64" y="84" width="1152" height="1" fill="#D0D7DE"/>
+    <text x="64" y="128" fill="#16856F" font-size="14" font-weight="700">BUILD / RELEASE / IMPROVE</text>
+
+    <text x="64" y="222" fill="#1F2328" font-family="Georgia, Times New Roman, serif" font-size="86" font-weight="700">Ship the product.</text>
+    <text x="64" y="302" fill="#1F2328" font-size="66" font-weight="700">Make the next change easier.</text>
+
+    <rect x="64" y="336" width="326" height="5" fill="#D94C3D"/>
+    <rect x="390" y="336" width="278" height="5" fill="#9A6700"/>
+    <rect x="668" y="336" width="548" height="5" fill="#16856F"/>
+
+    <text x="64" y="390" fill="#315DCE" font-size="14" font-weight="700">UI CRAFT</text>
+    <text x="166" y="390" fill="#8C959F" font-size="14">→</text>
+    <text x="198" y="390" fill="#424A53" font-size="14" font-weight="700">PRODUCT FRONTEND</text>
+    <text x="366" y="390" fill="#8C959F" font-size="14">→</text>
+    <text x="398" y="390" fill="#424A53" font-size="14" font-weight="700">OWNERSHIP</text>
+    <text x="505" y="390" fill="#8C959F" font-size="14">→</text>
+    <text x="537" y="390" fill="#424A53" font-size="14" font-weight="700">MIGRATION</text>
+    <text x="641" y="390" fill="#8C959F" font-size="14">→</text>
+    <text x="673" y="390" fill="#424A53" font-size="14" font-weight="700">ARCHITECTURE</text>
+    <text x="808" y="390" fill="#8C959F" font-size="14">→</text>
+    <text x="840" y="390" fill="#424A53" font-size="14" font-weight="700">TEAM STANDARDS</text>
+
+    <text x="64" y="426" fill="#656D76" font-size="13">THE THROUGHLINE, NOT THE TITLE</text>
+    <text x="1216" y="426" fill="#656D76" font-size="13" text-anchor="end">REACT / TYPESCRIPT / PRODUCT DELIVERY</text>
+  </g>
+</svg>

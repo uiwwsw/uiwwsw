@@ -1,4 +1,4 @@
-name: Update Project List
+name: Update Profile Content
 
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
         cd ${{ github.workspace }}
         npm ci
         
-    - name: Update project list
+    - name: Update profile content
       run: |
         cd ${{ github.workspace }}
         npm run update:projects
@@ -54,7 +54,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
-        git commit -m "📝 Update project list - $(date +'%Y-%m-%d')"
+        git commit -m "Update profile content - $(date +'%Y-%m-%d')"
         git push
         
     - name: No changes detected

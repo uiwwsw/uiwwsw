@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "update:projects": "node scripts/update-projects.js"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
   }
 }
