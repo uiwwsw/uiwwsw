@@ -2,10 +2,10 @@ const PROFILE = {
     identity: {
         handle: 'uiwwsw',
         displayName: 'matthew',
-        headline: 'Frontend engineer who validates ideas fast, closes products end-to-end, and turns repeated work into UI/DX assets.',
-        summaryEn: 'I start from frontend, but I do not stop at the screen. I test ideas with small products, build some services end-to-end when needed, and package repeated work as reusable UI and developer tooling.',
-        summaryKo: '저는 프론트엔드에서 시작하지만 화면 구현에서 멈추지 않습니다. 좋은 아이디어는 빠르게 제품으로 검증하고, 필요하면 백엔드까지 붙여 A to Z로 닫고, 반복되는 문제는 UI나 DX 자산으로 다시 정리합니다.',
-        motto: 'Refactoring myself to be a decent human.',
+        headline: 'Frontend-led product builder, engineering leader, and operator who validates ideas, ships end-to-end products, and turns systems into reusable assets.',
+        summaryEn: 'I combine hands-on frontend execution with founder-style product and operating judgment. I validate ideas quickly, connect product, engineering, and operations, and build the repeatable systems that help teams move faster.',
+        summaryKo: '프론트엔드 실행력을 기반으로 제품 판단, 출시, 운영까지 연결합니다. 아이디어는 빠르게 검증하고, 제품과 개발과 운영의 흐름을 맞추며, 대표/이사급 역할에 필요한 판단과 실행을 실제 산출물과 재사용 가능한 UI/DX 자산으로 남깁니다.',
+        motto: 'Build the interface. Own the outcome.',
     },
     links: [
         {
@@ -39,10 +39,50 @@ const PROFILE = {
             src: 'https://img.shields.io/badge/GitHub-uiwwsw-181717?style=flat-square&logo=github&logoColor=white',
         },
     ],
+    quickLinks: [
+        {
+            focus: 'C-level Product',
+            label: 'GitHubPrint',
+            url: 'https://githubprint.vercel.app',
+            reason: '개발자 브랜딩 문제를 제품으로 정의하고 배포한 대표 서비스입니다.',
+        },
+        {
+            focus: 'Founder Ops',
+            label: '머랭트립',
+            url: 'https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690',
+            reason: '기획, 구현, 스토어 출시까지 닫은 모바일 제품 경험입니다.',
+        },
+        {
+            focus: 'Engineering Leverage',
+            label: '@uiwwsw/react-query-helper',
+            url: 'https://www.npmjs.com/package/@uiwwsw/react-query-helper',
+            reason: '반복되는 개발 흐름을 자동화해 팀 속도로 전환하는 도구입니다.',
+        },
+        {
+            focus: 'Frontend Craft',
+            label: '@uiwwsw/virtual-keyboard',
+            url: 'https://www.npmjs.com/package/@uiwwsw/virtual-keyboard',
+            reason: '한글 IME composition 문제를 제품 입력 품질 관점에서 해결합니다.',
+        },
+    ],
+    npmPackageOverrides: {
+        '@uiwwsw/easter-egg': {
+            description: 'Add playful hidden interactions to React apps with small, reusable trigger utilities.',
+        },
+        '@uiwwsw/virtual-keyboard': {
+            description: 'A React virtual keyboard package for controlled Korean input without IME composition edge cases.',
+        },
+    },
+    npmPackageOrder: [
+        '@uiwwsw/react-query-helper',
+        '@uiwwsw/virtual-keyboard',
+        '@uiwwsw/infinite-paper',
+        '@uiwwsw/easter-egg',
+    ],
     workBuckets: [
         {
-            title: '1. 아이디어 검증',
-            description: '좋은 아이디어가 생기면 오래 설명하지 않고, 먼저 작게 만들어서 실제 반응을 확인합니다.',
+            title: '1. Product Validation',
+            description: '좋은 아이디어가 생기면 오래 설명하지 않고, 작게 만들고 배포해서 실제 반응과 사업성을 먼저 확인합니다.',
             items: [
                 {
                     label: 'GitHubPrint',
@@ -74,8 +114,8 @@ const PROFILE = {
             ],
         },
         {
-            title: '2. A to Z 제품 개발',
-            description: '서비스를 끝까지 닫아야 할 때는 프론트엔드에 머물지 않고, 필요한 만큼 백엔드와 운영 흐름까지 직접 만듭니다.',
+            title: '2. End-to-End Ownership',
+            description: '서비스를 끝까지 닫아야 할 때는 화면 구현에 머물지 않고, 필요한 백엔드, 배포, 스토어 출시, 운영 흐름까지 직접 연결합니다.',
             items: [
                 {
                     label: '찐리뷰',
@@ -103,8 +143,8 @@ const PROFILE = {
             ],
         },
         {
-            title: '3. DX / Tooling',
-            description: '반복 작업을 줄이고 개발 속도를 올리기 위한 도구나 라이브러리를 자주 만듭니다.',
+            title: '3. Engineering Leverage',
+            description: '반복 작업을 줄이고 조직의 개발 속도를 올리기 위한 도구, 라이브러리, 워크플로를 자산으로 남깁니다.',
             items: [
                 {
                     label: '@uiwwsw/react-query-helper',
@@ -129,8 +169,8 @@ const PROFILE = {
             ],
         },
         {
-            title: '4. 마크업 / UI 시스템',
-            description: '마크업과 화면 완성도, 그리고 재사용 가능한 UI 구조를 오래 다뤄 왔습니다.',
+            title: '4. Frontend Systems',
+            description: '마크업, 화면 완성도, 접근 가능한 UI 구조, 재사용 가능한 디자인 시스템을 제품 품질의 핵심 운영 자산으로 봅니다.',
             items: [
                 {
                     label: 'shadcn2',
@@ -152,20 +192,20 @@ const PROFILE = {
     ],
     seniorSignals: [
         {
-            title: 'React / TypeScript 중심 서비스 개발',
-            description: '서비스형 웹 제품과 라이브러리를 React/TypeScript 중심으로 꾸준히 만들었습니다.',
+            title: 'Frontend Execution',
+            description: 'React / TypeScript 기반으로 서비스형 웹 제품, 모바일 보조 웹, 오픈소스 패키지를 직접 만들고 개선합니다.',
         },
         {
-            title: '브라우저 문제 해결과 UI 품질',
-            description: '한글 입력 composition 같은 브라우저 edge case를 직접 푸는 타입입니다.',
+            title: 'Product / Business Judgment',
+            description: '아이디어를 설명에서 멈추지 않고 MVP, 배포, 사용자 반응 확인, 다음 의사결정으로 이어갑니다.',
         },
         {
-            title: '재사용 가능한 UI와 DX 자산화',
-            description: '한 번 만든 것을 라이브러리, 패키지, 워크플로로 다시 남기는 편입니다.',
+            title: 'Operations Mindset',
+            description: '출시, 문서화, 반복 업무, 운영 비용까지 고려해 개발 결과물이 실제로 굴러가는 구조를 만듭니다.',
         },
         {
-            title: '필요할 때는 A to Z로 닫는 실행력',
-            description: '프론트엔드에서 시작하지만, 제품을 완성하려면 백엔드와 배포까지 직접 붙입니다.',
+            title: 'C-level Operating Range',
+            description: '프론트엔드 개발자, 기술 리드, 제품 관리자, 운영자, 대표 역할 사이를 오가며 결과를 끝까지 책임지는 타입입니다.',
         },
     ],
     fallbackVelogPosts: [
