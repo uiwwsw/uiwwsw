@@ -105,6 +105,7 @@ function formatDate(dateValue) {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
+            timeZone: 'Asia/Seoul',
         })
         .replace(/(\d{4})\. (\d{2})\. (\d{2})\./, '$1. $2. $3.');
 }
@@ -138,6 +139,16 @@ function renderInlineTags(tags) {
 
 function renderQuickStartRows(items) {
     return items.map((item) => `| ${item.focus} | [${item.label}](${item.url}) | ${item.reason} |`).join('\n');
+}
+
+function renderQuickLinks(items) {
+    if (!items || !items.length) return '';
+
+    return `## Start Here
+
+| Focus | Link | Why |
+| --- | --- | --- |
+${renderQuickStartRows(items)}`;
 }
 
 function renderBucketItem(item) {
@@ -188,9 +199,9 @@ function renderVelogPosts(posts) {
 function buildReadme({ velogPosts, npmPackages }) {
     const now = formatDate(new Date().toISOString());
     const stats = [
-        `${PROFILE.workBuckets.length} ways I work`,
-        `${npmPackages.length} npm packages`,
-        `${velogPosts.length} latest posts synced from Velog`,
+        `${PROFILE.workBuckets.length} operating lanes`,
+        `${npmPackages.length} public npm packages`,
+        `${velogPosts.length} latest technical posts`,
     ];
 
     return `<p align="center">
@@ -214,11 +225,13 @@ function buildReadme({ velogPosts, npmPackages }) {
   ${PROFILE.links.map(renderLinkBadge).join('\n  ')}
 </p>
 
+${renderQuickLinks(PROFILE.quickLinks)}
+
 ## How I Work
 
 ${renderWorkBuckets(PROFILE.workBuckets)}
 
-## Frontend Signals
+## Leadership Signals
 
 ${renderSeniorSignals(PROFILE.seniorSignals)}
 
@@ -234,7 +247,7 @@ ${renderVelogPosts(velogPosts)}
 
 ---
 
-**Last profile refresh:** ${now}  
+**Last profile refresh:** ${now}<br />
 _Updated automatically via GitHub Actions_
 `;
 }
@@ -244,18 +257,32 @@ async function fetchNpmPackages() {
         console.log('📦 NPM 패키지 정보 가져오는 중...');
         const url = `${NPM_SEARCH_URL}?text=${encodeURIComponent('@uiwwsw')}&size=100`;
         const data = JSON.parse(await fetchText(url));
+        const order = PROFILE.npmPackageOrder || [];
+        const overrides = PROFILE.npmPackageOverrides || {};
         const packages = (data.objects || [])
             .map((object) => {
                 const pkg = object.package;
+                const override = overrides[pkg.name] || {};
                 return {
                     name: pkg.name,
                     url: pkg.links.npm,
-                    description: cleanDescription(pkg.description),
+                    description: override.description || cleanDescription(pkg.description),
                     keywords: pkg.keywords || [],
                     date: pkg.date,
                 };
             })
-            .sort((a, b) => new Date(b.date) - new Date(a.date));
+            .sort((a, b) => {
+                const indexA = order.indexOf(a.name);
+                const indexB = order.indexOf(b.name);
+
+                if (indexA !== -1 || indexB !== -1) {
+                    if (indexA === -1) return 1;
+                    if (indexB === -1) return -1;
+                    return indexA - indexB;
+                }
+
+                return new Date(b.date) - new Date(a.date);
+            });
 
         console.log(`✅ ${packages.length}개 NPM 패키지 발견`);
         return packages;
@@ -294,7 +321,11 @@ async function fetchLatestVelogPosts() {
         }
 
         const posts = [];
-        for (const post of parsed.data.posts) {
+        const fetchedPosts = parsed.data && Array.isArray(parsed.data.posts)
+            ? parsed.data.posts
+            : [];
+
+        for (const post of fetchedPosts) {
             if (posts.length >= 5) break;
             const seriesName = post.series ? post.series.name : null;
             if (isExcludedVelogSeries(seriesName)) continue;
