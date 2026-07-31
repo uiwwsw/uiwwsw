@@ -3,39 +3,49 @@
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
-  <img src="./assets/profile-light.svg" alt="uiwwsw frontend engineering profile: Ship the product. Make the next change easier." width="100%">
+  <img src="./assets/profile-light.svg" alt="uiwwsw frontend product engineering profile: Complex products. Clear systems." width="100%">
 </picture>
 
 <p align="center">
-  <strong>제품을 출시하고, 다음 변경이 쉬워지는 구조를 남깁니다.</strong><br>
-  <sub>UI에서 시작해 제품 구축, 운영, 마이그레이션, 아키텍처와 팀 표준까지 이어 왔습니다.</sub>
+  <strong>복잡한 제품을 사용자에게는 단순하게, 팀에게는 계속 바꿀 수 있게 만듭니다.</strong><br>
+  <sub>신규 구축과 운영, 점진적 마이그레이션, 공통 규약과 코드리뷰 기준까지 제품의 전 수명주기를 다뤄왔습니다.</sub>
 </p>
 
 <p align="center">
   <samp><a href="mailto:uiwwsw@icloud.com">EMAIL</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LINKEDIN</a> &nbsp;·&nbsp; <a href="https://velog.io/@uiwwsw">TECH LOG</a> &nbsp;·&nbsp; <a href="https://uiwwsw.github.io/">WRITING UNIVERSE</a> &nbsp;·&nbsp; <a href="https://brewstar-code.github.io/">PRODUCTS</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">RESUME</a></samp>
 </p>
 
+## Product Engineering
+
+- 신규 구축부터 출시, 운영, 리뉴얼까지 제품의 전체 수명주기를 다뤄왔습니다.
+- 레거시를 멈춰 세우지 않고 점진적으로 옮기며, 복잡한 도메인은 경계와 규약으로 단순화합니다.
+- 공통 타입, API 규약, UI 자산, 모노레포와 코드리뷰 기준을 남겨 팀의 변경 비용을 낮춥니다.
+- AI가 만든 초안, 브라우저 예외, 실패 상태를 스키마·테스트·재현 가능한 시나리오로 검증합니다.
+
+<sub>WORKING SET</sub><br>
+<samp>React · TypeScript · Next.js · SvelteKit · TanStack Query · Node.js · Monorepo · GitHub Actions</samp>
+
 ## Selected Work
 
 ### [GitHubPrint](https://githubprint.vercel.app)
-<sub>LIVE PRODUCT · <a href="https://github.com/uiwwsw/githubprint">source</a></sub>
+<sub>PRODUCT / AI RELIABILITY / DOCUMENT EXPORT · <a href="https://github.com/uiwwsw/githubprint">source</a></sub>
 
-Public GitHub evidence into a shareable developer document, with validated AI output, deterministic fallback, and PDF/Word export.
+공개 GitHub 데이터를 근거로 개발자 문서를 생성합니다. AI 출력은 스키마로 검증하고, 실패 시 결정론적 분석으로 전환하며, PDF·Word 내보내기까지 제공합니다.
 
 ### [test-mode](https://github.com/uiwwsw/test-mode)
-<sub>OPEN-SOURCE TOOL</sub>
+<sub>TESTABILITY / API SCENARIOS / COLLABORATION</sub>
 
-Named API scenarios make loading, failure, and edge states reproducible across browser and server boundaries.
+API 성공·지연·실패 상태를 이름 있는 시나리오로 만들어 브라우저와 서버 경계에서 재현합니다. 개발·QA·디자인이 같은 상태를 공유하게 합니다.
 
 ### [virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
-<sub>NPM PACKAGE · <a href="https://github.com/uiwwsw/virtual-keyboard">source</a></sub>
+<sub>BROWSER INTERNALS / HANGUL INPUT / REACT · <a href="https://github.com/uiwwsw/virtual-keyboard">source</a></sub>
 
-A controlled React keyboard that owns Hangul composition instead of patching native IME symptoms.
+네이티브 IME 이벤트를 덧대는 대신 한글 조합 상태를 입력 모델이 직접 소유하도록 설계한 React 패키지입니다.
 
 ### [react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper)
-<sub>NPM PACKAGE · <a href="https://github.com/uiwwsw/react-query-helper">source</a></sub>
+<sub>ABSTRACTION / CODE GENERATION / DX · <a href="https://github.com/uiwwsw/react-query-helper">source</a></sub>
 
-A TypeScript CLI that turns API functions into consistent query, mutation, and infinite-query options.
+TypeScript API 함수를 분석해 query·mutation·infinite query 옵션을 생성하고, 반복되는 규약을 코드로 고정합니다.
 
 ## Independent Products
 

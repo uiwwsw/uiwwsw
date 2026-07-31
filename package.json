@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "test": "node --test scripts/update-projects.test.js",
     "update:projects": "node scripts/update-projects.js"
   },
   "dependencies": {
