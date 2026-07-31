@@ -110,10 +110,14 @@ function renderSelectedWork(items) {
             ? ` · <a href="${item.sourceUrl}">source</a>`
             : '';
         return `### [${item.label}](${item.url})
-<sub>${item.kind.toUpperCase()}${source}</sub>
+<sub>${item.signals}${source}</sub>
 
 ${item.description}`;
     }).join('\n\n');
+}
+
+function renderProductEngineering(items) {
+    return items.map((item) => `- ${item}`).join('\n');
 }
 
 function renderProducts(products) {
@@ -139,7 +143,7 @@ function buildReadme({ products, velogPosts }) {
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
-  <img src="./assets/profile-light.svg" alt="uiwwsw frontend engineering profile: Ship the product. Make the next change easier." width="100%">
+  <img src="./assets/profile-light.svg" alt="uiwwsw frontend product engineering profile: Complex products. Clear systems." width="100%">
 </picture>
 
 <p align="center">
@@ -150,6 +154,13 @@ function buildReadme({ products, velogPosts }) {
 <p align="center">
   <samp>${renderNavigation(PROFILE.links)}</samp>
 </p>
+
+## Product Engineering
+
+${renderProductEngineering(PROFILE.productEngineering)}
+
+<sub>WORKING SET</sub><br>
+<samp>${PROFILE.workingSet.join(' · ')}</samp>
 
 ## Selected Work
 
@@ -291,5 +302,6 @@ module.exports = {
     buildReadme,
     fetchBrewstarProducts,
     fetchLatestVelogPosts,
+    renderProductEngineering,
     updateReadme,
 };
