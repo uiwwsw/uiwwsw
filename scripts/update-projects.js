@@ -113,13 +113,6 @@ function renderProductEngineering(items) {
     return items.map((item) => `- ${item}`).join('\n');
 }
 
-function renderInProgress(items) {
-    return items.map((item) => {
-        const title = item.url ? `[${item.label}](${item.url})` : item.label;
-        return `- **${title}** · <sub>${item.stage}</sub><br>\n  ${item.description}`;
-    }).join('\n');
-}
-
 function renderProducts(products) {
     return products.map((product) => {
         const technologies = product.techStack.map((tech) => `\`${tech}\``);
@@ -146,8 +139,7 @@ function buildReadme({ products, velogPosts }) {
 
 **${PROFILE.identity.role}** · ${PROFILE.identity.handle}
 
-**${PROFILE.identity.headline}**
-
+${PROFILE.identity.headline}<br>
 ${PROFILE.identity.careerLine}
 
 ${renderNavigation(PROFILE.links)}
@@ -159,12 +151,6 @@ ${renderNavigation(PROFILE.links)}
 ${renderProductEngineering(PROFILE.productEngineering)}
 
 주로 React, TypeScript, Next.js를 씁니다.
-
-## 지금 만드는 제품
-
-정식 출시 전입니다. 웹 제품은 프리뷰로 공개하고 있습니다.
-
-${renderInProgress(PROFILE.inProgress)}
 
 ## 반복되는 문제는 도구로
 
@@ -249,36 +235,43 @@ async function fetchLatestVelogPosts() {
 
 function isReleasedService(service) {
     return typeof service.status === 'string'
-        && (service.status === 'live' || service.status.includes('_live'));
+        && (service.status === 'live'
+            || /(?:^|_)(?:ios|android|web)_live(?:_|$)/.test(service.status));
+}
+
+function selectProfileProducts(services) {
+    if (!Array.isArray(services)) {
+        throw new TypeError('Brewstar service data is not an array.');
+    }
+
+    return services
+        .filter((service) => service
+            && Object.hasOwn(PROFILE.productCopy, service.key)
+            && isReleasedService(service))
+        .sort((a, b) => (a.order || 0) - (b.order || 0))
+        .map((service) => ({
+            key: service.key,
+            nameKo: service.name_ko,
+            nameEn: service.name_en,
+            description: PROFILE.productCopy[service.key],
+            homeUrl: new URL(service.links.home, BREWSTAR_BASE_URL).toString(),
+            techStack: Array.isArray(service.tech_stack)
+                ? service.tech_stack.filter((tech) => tech === 'Flutter')
+                : [],
+            platforms: Array.isArray(service.platforms)
+                ? service.platforms.map((platform) => ({
+                    label: platform.label,
+                    url: platform.url,
+                }))
+                : [],
+        }));
 }
 
 async function fetchBrewstarProducts() {
     try {
         console.log('Fetching released products from Brewstar Code...');
         const services = parse(await fetchText(BREWSTAR_SERVICES_URL));
-        if (!Array.isArray(services)) {
-            throw new TypeError('Brewstar service data is not an array.');
-        }
-
-        const products = services
-            .filter((service) => service && isReleasedService(service))
-            .sort((a, b) => (a.order || 0) - (b.order || 0))
-            .map((service) => ({
-                key: service.key,
-                nameKo: service.name_ko,
-                nameEn: service.name_en,
-                description: PROFILE.productCopy[service.key] || service.tagline,
-                homeUrl: new URL(service.links.home, BREWSTAR_BASE_URL).toString(),
-                techStack: Array.isArray(service.tech_stack)
-                    ? service.tech_stack.filter((tech) => tech === 'Flutter')
-                    : [],
-                platforms: Array.isArray(service.platforms)
-                    ? service.platforms.map((platform) => ({
-                        label: platform.label,
-                        url: platform.url,
-                    }))
-                    : [],
-            }));
+        const products = selectProfileProducts(services);
 
         console.log(`Fetched ${products.length} released products.`);
         return products.length > 0 ? products : PROFILE.fallbackProducts;
@@ -316,7 +309,7 @@ module.exports = {
     buildReadme,
     fetchBrewstarProducts,
     fetchLatestVelogPosts,
-    renderInProgress,
     renderProductEngineering,
+    selectProfileProducts,
     updateReadme,
 };
