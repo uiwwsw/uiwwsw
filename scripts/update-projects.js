@@ -105,15 +105,11 @@ function renderNavigation(links) {
 }
 
 function renderSelectedWork(items) {
-    return items.map((item) => {
-        const source = item.sourceUrl
-            ? ` · <a href="${item.sourceUrl}">source</a>`
-            : '';
-        return `### [${item.label}](${item.url})
-<sub>${item.signals}${source}</sub>
+    return items.map((item) => `### [${item.label}](${item.url})
 
-${item.description}`;
-    }).join('\n\n');
+${item.description}
+
+<sub>${renderNavigation(item.links)}</sub>`).join('\n\n');
 }
 
 function renderProductEngineering(items) {
@@ -126,7 +122,7 @@ function renderProducts(products) {
         const platforms = product.platforms.map((platform) => `[${platform.label}](${platform.url})`);
         const details = [...technologies, ...platforms].join(' · ');
 
-        return `- **[${product.nameKo} / ${product.nameEn}](${product.homeUrl})** — ${product.description}<br>
+        return `- **[${product.nameKo}](${product.homeUrl})** · ${product.description}<br>
   ${details}`;
     }).join('\n');
 }
@@ -143,46 +139,45 @@ function buildReadme({ products, velogPosts }) {
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
-  <img src="./assets/profile-light.svg" alt="uiwwsw frontend product engineering profile: Complex products. Clear systems." width="100%">
+  <img src="./assets/profile-light.svg" alt="uiwwsw · Frontend Engineer. Complex products. Clear systems." width="100%">
 </picture>
 
-<p align="center">
-  <strong>${PROFILE.identity.headline}</strong><br>
-  <sub>${PROFILE.identity.careerLine}</sub>
-</p>
+**${PROFILE.identity.name}** · Frontend Engineer
 
-<p align="center">
-  <samp>${renderNavigation(PROFILE.links)}</samp>
-</p>
+${PROFILE.identity.headline}<br>
+${PROFILE.identity.careerLine}
 
-## Product Engineering
+${renderNavigation(PROFILE.links)}
+
+## 설계와 운영
 
 ${renderProductEngineering(PROFILE.productEngineering)}
 
-<sub>WORKING SET</sub><br>
-<samp>${PROFILE.workingSet.join(' · ')}</samp>
-
-## Selected Work
+## 직접 만든 도구와 제품
 
 ${renderSelectedWork(PROFILE.selectedWork)}
 
-## Independent Products
+## 만들면서 쓴 글
 
-[Brewstar Code](https://brewstar-code.github.io/)에서 직접 출시하고 운영하는 제품들입니다.
-
-<!--START_PRODUCTS-->
-${renderProducts(products)}
-<!--END_PRODUCTS-->
-
-## Writing
-
-결과뿐 아니라 선택의 이유와 구현의 맥락을 씁니다.
+구현하다 막힌 지점과, 그때 내린 선택을 기록합니다.
 
 <!--START_VELOG-->
 ${renderVelogPosts(velogPosts)}
 <!--END_VELOG-->
 
-<sub>[모든 기술 글](https://velog.io/@uiwwsw) · [글의 우주](https://uiwwsw.github.io/)</sub>
+[글의 우주](https://uiwwsw.github.io/)에는 글을 별자리로 엮었습니다. React와 Three.js로 만든 인터랙티브 아카이브입니다.
+
+## 앱으로도 출시했습니다
+
+[Brewstar Code](https://brewstar-code.github.io/)에서 만든 제품들입니다.
+
+<!--START_PRODUCTS-->
+${renderProducts(products)}
+<!--END_PRODUCTS-->
+
+---
+
+상세 경력과 함께 일할 이야기는 [uiwwsw@icloud.com](mailto:uiwwsw@icloud.com)으로 연락 주세요.
 `;
 }
 

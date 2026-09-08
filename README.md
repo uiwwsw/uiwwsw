@@ -3,64 +3,51 @@
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
-  <img src="./assets/profile-light.svg" alt="uiwwsw frontend product engineering profile: Complex products. Clear systems." width="100%">
+  <img src="./assets/profile-light.svg" alt="uiwwsw · Frontend Engineer. Complex products. Clear systems." width="100%">
 </picture>
 
-<p align="center">
-  <strong>복잡한 제품을 사용자에게는 단순하게, 팀에게는 계속 바꿀 수 있게 만듭니다.</strong><br>
-  <sub>신규 구축과 운영, 점진적 마이그레이션, 공통 규약과 코드리뷰 기준까지 제품의 전 수명주기를 다뤄왔습니다.</sub>
-</p>
+**윤창원** · Frontend Engineer
 
-<p align="center">
-  <samp><a href="mailto:uiwwsw@icloud.com">EMAIL</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LINKEDIN</a> &nbsp;·&nbsp; <a href="https://velog.io/@uiwwsw">TECH LOG</a> &nbsp;·&nbsp; <a href="https://uiwwsw.github.io/">WRITING UNIVERSE</a> &nbsp;·&nbsp; <a href="https://brewstar-code.github.io/">PRODUCTS</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">RESUME</a></samp>
-</p>
+React와 TypeScript로 서비스와 업무 도구를 개발합니다.<br>
+웹뷰, 어드민, 금융 서비스에서 신규 구축과 운영, 레거시 전환을 맡아왔습니다.
 
-## Product Engineering
+<a href="mailto:uiwwsw@icloud.com">경력 · 포지션 문의</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="https://velog.io/@uiwwsw">Velog</a> &nbsp;·&nbsp; <a href="https://uiwwsw.github.io/">글의 우주</a>
 
-- 신규 구축부터 출시, 운영, 리뉴얼까지 제품의 전체 수명주기를 다뤄왔습니다.
-- 레거시를 멈춰 세우지 않고 점진적으로 옮기며, 복잡한 도메인은 경계와 규약으로 단순화합니다.
-- 공통 타입, API 규약, UI 자산, 모노레포와 코드리뷰 기준을 남겨 팀의 변경 비용을 낮춥니다.
-- AI가 만든 초안, 브라우저 예외, 실패 상태를 스키마·테스트·재현 가능한 시나리오로 검증합니다.
+## 설계와 운영
 
-<sub>WORKING SET</sub><br>
-<samp>React · TypeScript · Next.js · SvelteKit · TanStack Query · Node.js · Monorepo · GitHub Actions</samp>
+- **웹과 앱의 경계**: 하이브리드 앱의 로그인, 위치 권한, 네이티브 브리지 이슈를 다루고 DDD 기반 공통 개발 기준을 정리했습니다.
+- **여러 사람이 바꾸는 코드**: 기사 관리 어드민의 UI와 비즈니스 로직을 분리하고, 서버 상태·권한·오류 처리 규약과 코드리뷰 기준을 마련했습니다.
+- **운영 이후의 구조**: 운영하던 Nuxt.js 서비스를 SvelteKit으로 전환하고, Shadow DOM 기반 공통 UI 라이브러리를 만들었습니다.
 
-## Selected Work
+## 직접 만든 도구와 제품
 
-### [GitHubPrint](https://githubprint.vercel.app)
-<sub>PRODUCT / AI RELIABILITY / DOCUMENT EXPORT · <a href="https://github.com/uiwwsw/githubprint">source</a></sub>
+### [react-query-helper](https://github.com/uiwwsw/react-query-helper)
 
-공개 GitHub 데이터를 근거로 개발자 문서를 생성합니다. AI 출력은 스키마로 검증하고, 실패 시 결정론적 분석으로 전환하며, PDF·Word 내보내기까지 제공합니다.
+TypeScript API 함수에서 TanStack Query 옵션을 생성하는 CLI. **생성 도구와 런타임을 분리**하고, 캐시 키와 페이지 파라미터는 호출부에서 조정할 수 있게 했습니다.
+
+<sub><a href="https://www.npmjs.com/package/@uiwwsw/react-query-helper">npm</a> &nbsp;·&nbsp; <a href="https://github.com/uiwwsw/react-query-helper#빠른-시작">설정과 생성 예시</a></sub>
 
 ### [test-mode](https://github.com/uiwwsw/test-mode)
-<sub>TESTABILITY / API SCENARIOS / COLLABORATION</sub>
 
-API 성공·지연·실패 상태를 이름 있는 시나리오로 만들어 브라우저와 서버 경계에서 재현합니다. 개발·QA·디자인이 같은 상태를 공유하게 합니다.
+API별 mock/patch와 **화면 단위의 story를 분리**한 테스트 도구. 실제 응답의 일부만 바꾸거나 실패 상태를 재현해, 개발·QA·디자인이 같은 화면을 확인할 수 있습니다.
 
-### [virtual-keyboard](https://www.npmjs.com/package/@uiwwsw/virtual-keyboard)
-<sub>BROWSER INTERNALS / HANGUL INPUT / REACT · <a href="https://github.com/uiwwsw/virtual-keyboard">source</a></sub>
+<sub><a href="https://github.com/uiwwsw/test-mode/blob/main/docs/story-test-design.md">설계 문서</a> &nbsp;·&nbsp; <a href="https://raw.githubusercontent.com/uiwwsw/test-mode/main/docs/demo.gif">동작 영상</a></sub>
 
-네이티브 IME 이벤트를 덧대는 대신 한글 조합 상태를 입력 모델이 직접 소유하도록 설계한 React 패키지입니다.
+### [virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)
 
-### [react-query-helper](https://www.npmjs.com/package/@uiwwsw/react-query-helper)
-<sub>ABSTRACTION / CODE GENERATION / DX · <a href="https://github.com/uiwwsw/react-query-helper">source</a></sub>
+한글 조합과 입력 정책을 직접 제어하는 React 가상 키보드. **네이티브 IME와 분리한 입력 모델**을 만들고, 한글·숫자·전화번호별 입력 모드를 제공합니다.
 
-TypeScript API 함수를 분석해 query·mutation·infinite query 옵션을 생성하고, 반복되는 규약을 코드로 고정합니다.
+<sub><a href="https://composed-input.vercel.app/">데모</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/@uiwwsw/virtual-keyboard">npm</a></sub>
 
-## Independent Products
+### [GitHubPrint](https://github.com/uiwwsw/githubprint)
 
-[Brewstar Code](https://brewstar-code.github.io/)에서 직접 출시하고 운영하는 제품들입니다.
+GitHub 데이터를 공유 가능한 개발자 문서로 만드는 서비스. **AI 응답을 Zod로 검증**하고 실패하면 규칙 기반 분석으로 전환합니다. Fixture 기반 회귀 검사와 PDF·Word 내보내기를 갖췄습니다.
 
-<!--START_PRODUCTS-->
-- **[머랭트립 / MeringTrip](https://brewstar-code.github.io/meringuetrip/)** — 반경 검색 기반 여행 설계<br>
-  `Flutter` · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip) · [App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690)
-- **[미유미유 / MeyouMeyou](https://brewstar-code.github.io/meyoumeyou/)** — 커플을 위한 햅틱 연결<br>
-  `Flutter` · [App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)
-<!--END_PRODUCTS-->
+<sub><a href="https://githubprint.vercel.app">서비스</a> &nbsp;·&nbsp; <a href="https://github.com/uiwwsw/githubprint/blob/main/scripts/run-quality-regressions.cjs">회귀 검사</a></sub>
 
-## Writing
+## 만들면서 쓴 글
 
-결과뿐 아니라 선택의 이유와 구현의 맥락을 씁니다.
+구현하다 막힌 지점과, 그때 내린 선택을 기록합니다.
 
 <!--START_VELOG-->
 - [실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) <sub>2026. 05. 22.</sub>
@@ -68,4 +55,19 @@ TypeScript API 함수를 분석해 query·mutation·infinite query 옵션을 생
 - [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) <sub>2026. 03. 18.</sub>
 <!--END_VELOG-->
 
-<sub>[모든 기술 글](https://velog.io/@uiwwsw) · [글의 우주](https://uiwwsw.github.io/)</sub>
+[글의 우주](https://uiwwsw.github.io/)에는 글을 별자리로 엮었습니다. React와 Three.js로 만든 인터랙티브 아카이브입니다.
+
+## 앱으로도 출시했습니다
+
+[Brewstar Code](https://brewstar-code.github.io/)에서 만든 제품들입니다.
+
+<!--START_PRODUCTS-->
+- **[머랭트립](https://brewstar-code.github.io/meringuetrip/)** · 반경 검색 기반 여행 설계<br>
+  `Flutter` · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip) · [App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690)
+- **[미유미유](https://brewstar-code.github.io/meyoumeyou/)** · 커플을 위한 햅틱 연결<br>
+  `Flutter` · [App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)
+<!--END_PRODUCTS-->
+
+---
+
+상세 경력과 함께 일할 이야기는 [uiwwsw@icloud.com](mailto:uiwwsw@icloud.com)으로 연락 주세요.
