@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const test = require('node:test');
 const { PROFILE } = require('./profile-data');
-const { buildReadme, renderInProgress, renderProductEngineering } = require('./update-projects');
+const { buildReadme, renderProductEngineering, selectProfileProducts } = require('./update-projects');
 
 test('renders the product engineering evidence without inflated titles', () => {
     const section = renderProductEngineering(PROFILE.productEngineering);
@@ -19,7 +19,11 @@ test('keeps the profile text-only and the featured article out of the recent fee
 
     assert.doesNotMatch(readme, /<img\b|<picture\b|!\[/);
     assert.match(readme, /## 해온 일/);
-    assert.match(readme, /## 지금 만드는 제품/);
+    assert.deepEqual(readme.match(/^## .+$/gm), [
+        '## 해온 일',
+        '## 반복되는 문제는 도구로',
+        '## 글로 남긴 생각',
+    ]);
     assert.match(readme, /<!--START_PRODUCTS-->/);
     assert.match(readme, /<!--START_VELOG-->/);
     assert.equal(readme.split(PROFILE.featuredWriting.link).length - 1, 1);
@@ -32,14 +36,41 @@ test('keeps the profile text-only and the featured article out of the recent fee
     }
 });
 
-test('distinguishes previews from an unreleased app without inventing public links', () => {
-    const section = renderInProgress(PROFILE.inProgress);
+test('only publishes explicitly selected products with a released platform', () => {
+    const services = PROFILE.fallbackProducts.map((product, index) => ({
+        key: product.key,
+        order: index + 1,
+        name_ko: product.nameKo,
+        name_en: product.nameEn,
+        status: index === 0 ? 'live' : 'ios_live_android_wip',
+        tagline: 'Uncurated feed copy',
+        tech_stack: ['Flutter', 'Other'],
+        links: { home: `/${product.key}/` },
+        platforms: product.platforms,
+    }));
 
-    for (const project of PROFILE.inProgress) {
-        assert.ok(section.includes(project.stage));
-        assert.ok(section.includes(project.label));
+    const products = selectProfileProducts([
+        { key: 'unlisted-product', status: 'live' },
+        null,
+        ...services.toReversed(),
+    ]);
+
+    assert.deepEqual(products, PROFILE.fallbackProducts);
+    assert.deepEqual(selectProfileProducts([]), []);
+    assert.throws(() => selectProfileProducts({}), TypeError);
+});
+
+test('does not treat work in progress or a negated live status as a release', () => {
+    const key = PROFILE.fallbackProducts[0].key;
+
+    for (const status of ['wip', 'preview', 'not_live', 'ios_liveness', '', null, undefined]) {
+        assert.deepEqual(selectProfileProducts([{ key, status }]), []);
     }
-    assert.match(section, /\*\*베디\(Be:D\)\*\*/);
-    assert.doesNotMatch(section, /bestdriver|github\.com/);
-    assert.equal((section.match(/\]\(https:/g) || []).length, 3);
+});
+
+test('fallback products remain inside the explicit publication allowlist', () => {
+    assert.ok(PROFILE.fallbackProducts.length > 0);
+    for (const product of PROFILE.fallbackProducts) {
+        assert.ok(Object.hasOwn(PROFILE.productCopy, product.key));
+    }
 });

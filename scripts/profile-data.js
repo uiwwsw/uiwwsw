@@ -3,8 +3,8 @@ const PROFILE = {
         handle: 'uiwwsw',
         name: '윤창원',
         role: 'Senior Frontend Engineer',
-        headline: '일이 막혔을 때, 풀어야 할 문제부터 다시 정리합니다.',
-        careerLine: '복잡한 요구사항에서 우선순위를 잡고, 설계와 구현을 거쳐 출시 이후의 운영까지 맡아왔습니다.',
+        headline: '복잡한 요구사항을 정리하고, 팀이 움직일 순서를 잡습니다.',
+        careerLine: '반복되는 일은 도구로, 판단의 근거는 글로 남깁니다.',
     },
     links: [
         { label: '이력서', href: 'https://githubprint.vercel.app/showcase' },
@@ -13,34 +13,9 @@ const PROFILE = {
         { label: '메일', href: 'mailto:uiwwsw@icloud.com' },
     ],
     productEngineering: [
-        '**모바일 커머스** · 시니어 3명을 포함한 4인 팀을 리드하며 기술 방향, 코드리뷰 기준과 업무 우선순위를 정했습니다.',
+        '**모바일 커머스** · 4인 프론트엔드 팀을 리드하며 기술 방향과 코드리뷰 기준을 세우고, 일정과 위험도에 따라 업무 우선순위를 조율했습니다.',
         '**한국일보 · 코리아타임스** · 프리랜서 PL로 기사 관리 어드민 2종의 요구사항 분석부터 설계·개발·배포까지 이끌었습니다.',
         '**업라이즈** · 초기 웹서비스와 AWS 환경 구축, 헤이비트 2년 이상 운영, Nuxt.js에서 SvelteKit으로의 점진적 전환을 맡았습니다.',
-    ],
-    inProgress: [
-        {
-            label: '9BOX',
-            url: 'https://9box.duckdns.org/',
-            stage: '프로토타입 · 예시 데이터',
-            description: '공고의 키워드보다 경력의 맥락으로 사람과 팀을 연결하는 인재 탐색 서비스.',
-        },
-        {
-            label: '롱폼리뷰',
-            url: 'https://longform-review.duckdns.org/',
-            stage: '개발 중',
-            description: '별점 대신 구체적인 이용 경험과 검토 근거로 리뷰를 읽고 비교하는 플랫폼.',
-        },
-        {
-            label: 'JSONSURVEY',
-            url: 'https://jsonsurvey.duckdns.org/',
-            stage: '개발 중',
-            description: 'JSON으로 질문·분기·결과를 정의하고, 답변에 반응하는 설문을 제작·공유하는 플랫폼.',
-        },
-        {
-            label: '베디(Be:D)',
-            stage: '앱 출시 준비',
-            description: '좋은 운전을 칭찬으로 연결하는 앱. 주행 중 조작을 제한하고 정차 후 참여하도록 설계합니다.',
-        },
     ],
     selectedWork: [
         {
@@ -82,6 +57,7 @@ const PROFILE = {
         quote: 'AI가 만든 코드라도, 프로젝트에 넣는 순간 그 코드는 개발자의 코드다.',
         context: '팀에서 AI를 쓰며 정리한 설계와 코드리뷰, 책임의 기준.',
     },
+    // Explicit publication allowlist: feed updates must not introduce new products.
     productCopy: {
         meringuetrip: '반경 검색 기반 여행 설계',
         meyoumeyou: '커플을 위한 햅틱 연결',
