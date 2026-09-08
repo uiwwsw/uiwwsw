@@ -105,7 +105,7 @@ function renderNavigation(links) {
 }
 
 function renderSelectedWork(items) {
-    return items.map((item) => `### [${item.label}](${item.url})
+    return items.map((item) => `**[${item.label}](${item.url})**
 
 ${item.description}
 
@@ -114,6 +114,13 @@ ${item.description}
 
 function renderProductEngineering(items) {
     return items.map((item) => `- ${item}`).join('\n');
+}
+
+function renderInProgress(items) {
+    return items.map((item) => {
+        const title = item.url ? `[${item.label}](${item.url})` : item.label;
+        return `- **${title}** · <sub>${item.stage}</sub><br>\n  ${item.description}`;
+    }).join('\n');
 }
 
 function renderProducts(products) {
@@ -134,50 +141,65 @@ function renderVelogPosts(posts) {
 }
 
 function buildReadme({ products, velogPosts }) {
-    return `<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-dark-mobile.svg">
-  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/profile-light-mobile.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-light.svg">
-  <img src="./assets/profile-light.svg" alt="uiwwsw · Frontend Engineer. Complex products. Clear systems." width="100%">
-</picture>
+    const writing = PROFILE.featuredWriting;
+    const recentPosts = velogPosts
+        .filter((post) => post.link !== writing.link)
+        .slice(0, 2);
+    return `# ${PROFILE.identity.name}
 
-**${PROFILE.identity.name}** · Frontend Engineer
+**${PROFILE.identity.role}** · ${PROFILE.identity.handle}
 
-${PROFILE.identity.headline}<br>
+${PROFILE.identity.headline}
+
 ${PROFILE.identity.careerLine}
 
 ${renderNavigation(PROFILE.links)}
 
-## 설계와 운영
+## 해온 일
+
+2015년 UI 개발로 시작해, 서비스의 초기 구축과 운영, 프론트엔드 팀 리딩으로 일을 넓혀왔습니다.
 
 ${renderProductEngineering(PROFILE.productEngineering)}
 
-## 직접 만든 도구와 제품
+주로 React, TypeScript, Next.js를 씁니다. 공통 UI와 API 규약, 자동화 도구로 반복되는 판단을 코드에 남깁니다.
+
+## 지금 만드는 제품
+
+아직 정식 출시 전입니다. 아래 웹 링크는 개발 중인 화면을 미리 볼 수 있는 프리뷰입니다.
+
+${renderInProgress(PROFILE.inProgress)}
+
+## 반복되는 문제는 도구로
 
 ${renderSelectedWork(PROFILE.selectedWork)}
 
-## 만들면서 쓴 글
+## 글로 남긴 생각
 
-구현하다 막힌 지점과, 그때 내린 선택을 기록합니다.
+> ${writing.quote}
+
+[${writing.title}](${writing.link})<br>
+${writing.context}
 
 <!--START_VELOG-->
-${renderVelogPosts(velogPosts)}
+${renderVelogPosts(recentPosts)}
 <!--END_VELOG-->
 
-[글의 우주](https://uiwwsw.github.io/)에는 글을 별자리로 엮었습니다. React와 Three.js로 만든 인터랙티브 아카이브입니다.
+기술 밖에서는 사람과 일상에 관한 에세이를 씁니다. [10년의 회고](https://velog.io/@uiwwsw/10년의-회고)에는 함께 일해온 동료들에 대한 생각을 담았습니다.
 
-## 앱으로도 출시했습니다
+<details>
+<summary><strong>다른 작업과 출시한 앱</strong></summary>
 
-[Brewstar Code](https://brewstar-code.github.io/)에서 만든 제품들입니다.
+건축을 전공했고, 글과 이야기를 좋아합니다. 관심이 오래 머무는 것들은 직접 만들어 봅니다.
+
+${PROFILE.personalProjects.map((project) => `- **[${project.label}](${project.url})** · ${project.description}`).join('\n')}
+
+[Brewstar Code](https://brewstar-code.github.io/)에서는 앱을 출시하고 있습니다.
 
 <!--START_PRODUCTS-->
 ${renderProducts(products)}
 <!--END_PRODUCTS-->
 
----
-
-상세 경력과 함께 일할 이야기는 [uiwwsw@icloud.com](mailto:uiwwsw@icloud.com)으로 연락 주세요.
+</details>
 `;
 }
 
@@ -297,6 +319,7 @@ module.exports = {
     buildReadme,
     fetchBrewstarProducts,
     fetchLatestVelogPosts,
+    renderInProgress,
     renderProductEngineering,
     updateReadme,
 };
