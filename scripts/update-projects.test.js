@@ -6,7 +6,7 @@ const { buildReadme, renderProductEngineering } = require('./update-projects');
 test('renders the product engineering evidence without inflated titles', () => {
     const section = renderProductEngineering(PROFILE.productEngineering);
 
-    assert.match(section, /점진적으로 옮기며/);
+    assert.match(section, /SvelteKit/);
     assert.match(section, /코드리뷰 기준/);
     assert.doesNotMatch(section, /C-Level|CEO|CTO|대표|이사/);
 });
@@ -18,8 +18,8 @@ test('builds a theme-aware profile with stable dynamic sections', () => {
     });
 
     assert.match(readme, /profile-dark-mobile\.svg/);
-    assert.match(readme, /## Product Engineering/);
-    assert.match(readme, /## Selected Work/);
+    assert.match(readme, /## 설계와 운영/);
+    assert.match(readme, /## 직접 만든 도구와 제품/);
     assert.match(readme, /<!--START_PRODUCTS-->/);
     assert.match(readme, /<!--START_VELOG-->/);
 
