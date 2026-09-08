@@ -13,9 +13,9 @@ const PROFILE = {
         { label: '메일', href: 'mailto:uiwwsw@icloud.com' },
     ],
     productEngineering: [
-        '**모바일 커머스** · 시니어 3명을 포함한 4인 프론트엔드 팀을 리드했습니다. 기술 방향과 개발 기준을 정하고, 서비스 리스크와 의존성을 기준으로 우선순위를 조율했습니다.',
-        '**한국일보 · 코리아타임스** · 프리랜서 PL로 기사 관리 어드민 2종의 분석·설계·구현·배포를 리드했습니다. 권한과 API 패턴, 코드리뷰 기준을 공통화했습니다.',
-        '**업라이즈** · 초기 웹서비스와 AWS 운영 환경을 구축하고, 헤이비트를 2년 이상 운영했습니다. 운영 중인 Nuxt.js 코드를 SvelteKit으로 점진적으로 전환했습니다.',
+        '**모바일 커머스** · 시니어 3명을 포함한 4인 팀을 리드하며 기술 방향, 코드리뷰 기준과 업무 우선순위를 정했습니다.',
+        '**한국일보 · 코리아타임스** · 프리랜서 PL로 기사 관리 어드민 2종의 요구사항 분석부터 설계·개발·배포까지 이끌었습니다.',
+        '**업라이즈** · 초기 웹서비스와 AWS 환경 구축, 헤이비트 2년 이상 운영, Nuxt.js에서 SvelteKit으로의 점진적 전환을 맡았습니다.',
     ],
     inProgress: [
         {
@@ -28,25 +28,25 @@ const PROFILE = {
             label: '롱폼리뷰',
             url: 'https://longform-review.duckdns.org/',
             stage: '개발 중',
-            description: '별점보다 구체적인 이용 경험이 먼저 읽히는 리뷰 플랫폼. 검색, 리뷰 검토, 운영 정책을 함께 설계합니다.',
+            description: '별점 대신 구체적인 이용 경험과 검토 근거로 리뷰를 읽고 비교하는 플랫폼.',
         },
         {
             label: 'JSONSURVEY',
             url: 'https://jsonsurvey.duckdns.org/',
             stage: '개발 중',
-            description: '질문·분기·점수·결과를 JSON으로 정의하는 설문 플랫폼. 답변 직후의 반응부터 게시와 공유까지 연결합니다.',
+            description: 'JSON으로 질문·분기·결과를 정의하고, 답변에 반응하는 설문을 제작·공유하는 플랫폼.',
         },
         {
             label: '베디(Be:D)',
             stage: '앱 출시 준비',
-            description: '좋은 운전을 칭찬으로 연결하는 모바일 앱. 주행 중 조작을 제한하고, 안전하게 정차한 뒤 참여하는 흐름을 만듭니다.',
+            description: '좋은 운전을 칭찬으로 연결하는 앱. 주행 중 조작을 제한하고 정차 후 참여하도록 설계합니다.',
         },
     ],
     selectedWork: [
         {
             label: 'react-query-helper',
             url: 'https://github.com/uiwwsw/react-query-helper',
-            description: 'API마다 반복하던 연결 코드를 생성기로 옮겼습니다. TypeScript 함수를 읽어 TanStack Query 옵션을 만들고, 팀이 같은 규약으로 사용하게 합니다.',
+            description: '반복되는 API 연결을 자동화하는 CLI. TypeScript 함수에서 TanStack Query 옵션을 생성합니다.',
             links: [
                 { label: 'npm', href: 'https://www.npmjs.com/package/@uiwwsw/react-query-helper' },
                 { label: '사용 예시', href: 'https://github.com/uiwwsw/react-query-helper#빠른-시작' },
@@ -55,7 +55,7 @@ const PROFILE = {
         {
             label: 'test-mode',
             url: 'https://github.com/uiwwsw/test-mode',
-            description: '실제 응답을 일부 바꾸거나 mock으로 대체해 실패·지연 상태를 재현합니다. 개발·QA·디자인이 같은 화면을 보며 문제를 확인할 수 있게 만들었습니다.',
+            description: '실패·지연 상태를 재현하는 API mock/patch 도구. 개발·QA·디자인이 같은 화면에서 문제를 확인합니다.',
             links: [
                 { label: '설계 문서', href: 'https://github.com/uiwwsw/test-mode/blob/main/docs/story-test-design.md' },
                 { label: '동작 영상', href: 'https://raw.githubusercontent.com/uiwwsw/test-mode/main/docs/demo.gif' },
@@ -64,7 +64,7 @@ const PROFILE = {
         {
             label: 'virtual-keyboard',
             url: 'https://github.com/uiwwsw/virtual-keyboard',
-            description: '한글 조합 문제를 다루다 입력 모델부터 만들었습니다. 네이티브 IME와 분리해 한글 조합과 입력 정책을 직접 제어하는 React 컴포넌트입니다.',
+            description: '브라우저 IME와 분리된 입력 모델로 한글 조합을 직접 제어하는 React 컴포넌트.',
             links: [
                 { label: '데모', href: 'https://composed-input.vercel.app/' },
                 { label: 'npm', href: 'https://www.npmjs.com/package/@uiwwsw/virtual-keyboard' },

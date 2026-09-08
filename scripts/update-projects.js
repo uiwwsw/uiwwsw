@@ -105,10 +105,7 @@ function renderNavigation(links) {
 }
 
 function renderSelectedWork(items) {
-    return items.map((item) => `**[${item.label}](${item.url})**
-
-${item.description}
-
+    return items.map((item) => `**[${item.label}](${item.url})** · ${item.description}<br>
 <sub>${renderNavigation(item.links)}</sub>`).join('\n\n');
 }
 
@@ -149,7 +146,7 @@ function buildReadme({ products, velogPosts }) {
 
 **${PROFILE.identity.role}** · ${PROFILE.identity.handle}
 
-${PROFILE.identity.headline}
+**${PROFILE.identity.headline}**
 
 ${PROFILE.identity.careerLine}
 
@@ -161,11 +158,11 @@ ${renderNavigation(PROFILE.links)}
 
 ${renderProductEngineering(PROFILE.productEngineering)}
 
-주로 React, TypeScript, Next.js를 씁니다. 공통 UI와 API 규약, 자동화 도구로 반복되는 판단을 코드에 남깁니다.
+주로 React, TypeScript, Next.js를 씁니다.
 
 ## 지금 만드는 제품
 
-아직 정식 출시 전입니다. 아래 웹 링크는 개발 중인 화면을 미리 볼 수 있는 프리뷰입니다.
+정식 출시 전입니다. 웹 제품은 프리뷰로 공개하고 있습니다.
 
 ${renderInProgress(PROFILE.inProgress)}
 
