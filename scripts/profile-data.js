@@ -2,34 +2,60 @@ const PROFILE = {
     identity: {
         handle: 'uiwwsw',
         name: '윤창원',
-        headline: 'React와 TypeScript로 서비스와 업무 도구를 개발합니다.',
-        careerLine: '웹뷰, 어드민, 금융 서비스에서 신규 구축과 운영, 레거시 전환을 맡아왔습니다.',
+        role: 'Senior Frontend Engineer',
+        headline: '일이 막혔을 때, 풀어야 할 문제부터 다시 정리합니다.',
+        careerLine: '복잡한 요구사항에서 우선순위를 잡고, 설계와 구현을 거쳐 출시 이후의 운영까지 맡아왔습니다.',
     },
     links: [
-        { label: '경력 · 포지션 문의', href: 'mailto:uiwwsw@icloud.com' },
+        { label: '이력서', href: 'https://githubprint.vercel.app/showcase' },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/uiwwsw/' },
-        { label: 'Velog', href: 'https://velog.io/@uiwwsw' },
-        { label: '글의 우주', href: 'https://uiwwsw.github.io/' },
+        { label: '글', href: 'https://velog.io/@uiwwsw' },
+        { label: '메일', href: 'mailto:uiwwsw@icloud.com' },
     ],
     productEngineering: [
-        '**웹과 앱의 경계**: 하이브리드 앱의 로그인, 위치 권한, 네이티브 브리지 이슈를 다루고 공통 개발 기준과 배포 검증 절차를 정리했습니다.',
-        '**여러 사람이 바꾸는 코드**: Next.js 기반 기사 관리 어드민의 UI와 비즈니스 로직을 분리하고, 서버 상태·권한·오류 처리 규약과 코드리뷰 기준을 마련했습니다.',
-        '**운영과 마이그레이션**: 운영하던 Nuxt.js 서비스를 SvelteKit으로 전환하고, Shadow DOM 기반 공통 UI 라이브러리를 만들었습니다.',
+        '**모바일 커머스** · 시니어 3명을 포함한 4인 팀을 리드하며 기술 방향, 코드리뷰 기준과 업무 우선순위를 정했습니다.',
+        '**한국일보 · 코리아타임스** · 프리랜서 PL로 기사 관리 어드민 2종의 요구사항 분석부터 설계·개발·배포까지 이끌었습니다.',
+        '**업라이즈** · 초기 웹서비스와 AWS 환경 구축, 헤이비트 2년 이상 운영, Nuxt.js에서 SvelteKit으로의 점진적 전환을 맡았습니다.',
+    ],
+    inProgress: [
+        {
+            label: '9BOX',
+            url: 'https://9box.duckdns.org/',
+            stage: '프로토타입 · 예시 데이터',
+            description: '공고의 키워드보다 경력의 맥락으로 사람과 팀을 연결하는 인재 탐색 서비스.',
+        },
+        {
+            label: '롱폼리뷰',
+            url: 'https://longform-review.duckdns.org/',
+            stage: '개발 중',
+            description: '별점 대신 구체적인 이용 경험과 검토 근거로 리뷰를 읽고 비교하는 플랫폼.',
+        },
+        {
+            label: 'JSONSURVEY',
+            url: 'https://jsonsurvey.duckdns.org/',
+            stage: '개발 중',
+            description: 'JSON으로 질문·분기·결과를 정의하고, 답변에 반응하는 설문을 제작·공유하는 플랫폼.',
+        },
+        {
+            label: '베디(Be:D)',
+            stage: '앱 출시 준비',
+            description: '좋은 운전을 칭찬으로 연결하는 앱. 주행 중 조작을 제한하고 정차 후 참여하도록 설계합니다.',
+        },
     ],
     selectedWork: [
         {
             label: 'react-query-helper',
             url: 'https://github.com/uiwwsw/react-query-helper',
-            description: 'TypeScript API 함수에서 TanStack Query 옵션을 생성하는 CLI. **생성 도구와 런타임을 분리**하고, 캐시 키와 페이지 파라미터는 호출부에서 조정할 수 있게 했습니다.',
+            description: '반복되는 API 연결을 자동화하는 CLI. TypeScript 함수에서 TanStack Query 옵션을 생성합니다.',
             links: [
                 { label: 'npm', href: 'https://www.npmjs.com/package/@uiwwsw/react-query-helper' },
-                { label: '설정과 생성 예시', href: 'https://github.com/uiwwsw/react-query-helper#빠른-시작' },
+                { label: '사용 예시', href: 'https://github.com/uiwwsw/react-query-helper#빠른-시작' },
             ],
         },
         {
             label: 'test-mode',
             url: 'https://github.com/uiwwsw/test-mode',
-            description: 'API별 mock/patch와 **화면 단위의 story를 분리**한 테스트 도구. 실제 응답의 일부만 바꾸거나 실패 상태를 재현해, 개발·QA·디자인이 같은 화면을 확인할 수 있습니다.',
+            description: '실패·지연 상태를 재현하는 API mock/patch 도구. 개발·QA·디자인이 같은 화면에서 문제를 확인합니다.',
             links: [
                 { label: '설계 문서', href: 'https://github.com/uiwwsw/test-mode/blob/main/docs/story-test-design.md' },
                 { label: '동작 영상', href: 'https://raw.githubusercontent.com/uiwwsw/test-mode/main/docs/demo.gif' },
@@ -38,22 +64,24 @@ const PROFILE = {
         {
             label: 'virtual-keyboard',
             url: 'https://github.com/uiwwsw/virtual-keyboard',
-            description: '한글 조합과 입력 정책을 직접 제어하는 React 가상 키보드. **네이티브 IME와 분리한 입력 모델**을 만들고, 한글·숫자·전화번호별 입력 모드를 제공합니다.',
+            description: '브라우저 IME와 분리된 입력 모델로 한글 조합을 직접 제어하는 React 컴포넌트.',
             links: [
                 { label: '데모', href: 'https://composed-input.vercel.app/' },
                 { label: 'npm', href: 'https://www.npmjs.com/package/@uiwwsw/virtual-keyboard' },
             ],
         },
-        {
-            label: 'GitHubPrint',
-            url: 'https://github.com/uiwwsw/githubprint',
-            description: 'GitHub 데이터를 공유 가능한 개발자 문서로 만드는 서비스. **AI 응답을 Zod로 검증**하고 실패하면 규칙 기반 분석으로 전환합니다. Fixture 기반 회귀 검사와 PDF·Word 내보내기를 갖췄습니다.',
-            links: [
-                { label: '서비스', href: 'https://githubprint.vercel.app' },
-                { label: '회귀 검사', href: 'https://github.com/uiwwsw/githubprint/blob/main/scripts/run-quality-regressions.cjs' },
-            ],
-        },
     ],
+    personalProjects: [
+        { label: '글의 우주', url: 'https://uiwwsw.github.io/', description: '직접 쓴 글을 별자리에 놓았습니다. React와 Three.js로 만든, 글 사이를 여행하는 읽기 경험.' },
+        { label: 'YAVN', url: 'https://github.com/uiwwsw/yavn', description: '이야기를 플레이할 수 있게. 분기와 연출, 저장·복구를 YAML로 정의하는 비주얼노벨 엔진.' },
+        { label: 'GitHubPrint', url: 'https://githubprint.vercel.app', description: 'GitHub의 기록을 전달 가능한 개발자 문서로. AI 응답 검증부터 PDF·Word 내보내기까지 만든 제품.' },
+    ],
+    featuredWriting: {
+        title: '바이브코딩의 끝에는 누가 서 있어야 하는가',
+        link: 'https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가',
+        quote: 'AI가 만든 코드라도, 프로젝트에 넣는 순간 그 코드는 개발자의 코드다.',
+        context: '팀에서 AI를 쓰며 정리한 설계와 코드리뷰, 책임의 기준.',
+    },
     productCopy: {
         meringuetrip: '반경 검색 기반 여행 설계',
         meyoumeyou: '커플을 위한 햅틱 연결',
