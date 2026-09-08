@@ -1,54 +1,20 @@
-<svg width="1280" height="500" viewBox="0 0 1280 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">uiwwsw frontend product engineering profile</title>
-  <desc id="desc">Complex products. Clear systems. Simple for users and changeable for teams.</desc>
+<svg width="1280" height="320" viewBox="0 0 1280 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">uiwwsw · Frontend Engineer</title>
+  <desc id="desc">Complex products. Clear systems. Product interfaces, developer tools, and writing.</desc>
 
-  <rect width="1280" height="500" fill="#F6F8FA"/>
-  <rect width="14" height="500" fill="#D94C3D"/>
+  <rect width="1280" height="320" fill="#F6F8FA"/>
+  <rect width="8" height="320" fill="#D94C3D"/>
 
   <g font-family="Arial, Helvetica, sans-serif">
-    <text x="64" y="58" fill="#1F2328" font-size="18" font-weight="700">UIWWSW</text>
-    <text x="155" y="58" fill="#656D76" font-size="18">/ FRONTEND PRODUCT ENGINEERING</text>
-    <text x="1216" y="58" fill="#656D76" font-size="14" text-anchor="end">REACT · TYPESCRIPT · AI-AUGMENTED</text>
-    <rect x="64" y="84" width="1152" height="1" fill="#D0D7DE"/>
+    <text x="56" y="48" fill="#656D76" font-size="17">PRODUCT UI · DEVELOPER TOOLS · WRITING</text>
+    <text x="1224" y="48" fill="#656D76" font-size="17" text-anchor="end">REACT / TYPESCRIPT</text>
+    <text x="52" y="176" fill="#1F2328" font-family="Georgia, Times New Roman, serif" font-size="116" font-weight="700">uiwwsw</text>
+    <text x="584" y="170" fill="#1F2328" font-size="40">Frontend Engineer</text>
+    <text x="56" y="238" fill="#424A53" font-size="28">Complex products. Clear systems.</text>
 
-    <text x="64" y="130" fill="#16856F" font-size="14" font-weight="700">PRODUCT CLARITY / SYSTEM CHANGEABILITY</text>
-    <text x="64" y="218" fill="#1F2328" font-family="Georgia, Times New Roman, serif" font-size="82" font-weight="700">Complex products.</text>
-    <text x="64" y="296" fill="#1F2328" font-size="70" font-weight="700">Clear systems.</text>
-    <text x="68" y="342" fill="#656D76" font-size="22">Simple for users. Changeable for teams.</text>
-
-    <rect x="840" y="116" width="1" height="236" fill="#D0D7DE"/>
-
-    <text x="884" y="154" fill="#D94C3D" font-size="14" font-weight="700">01</text>
-    <text x="928" y="154" fill="#656D76" font-size="14" font-weight="700">USER</text>
-    <text x="1216" y="154" fill="#1F2328" font-size="18" font-weight="700" text-anchor="end">CLARITY</text>
-    <rect x="884" y="180" width="332" height="1" fill="#D8DEE4"/>
-
-    <text x="884" y="226" fill="#9A6700" font-size="14" font-weight="700">02</text>
-    <text x="928" y="226" fill="#656D76" font-size="14" font-weight="700">CODEBASE</text>
-    <text x="1216" y="226" fill="#1F2328" font-size="18" font-weight="700" text-anchor="end">CHANGEABILITY</text>
-    <rect x="884" y="252" width="332" height="1" fill="#D8DEE4"/>
-
-    <text x="884" y="298" fill="#315DCE" font-size="14" font-weight="700">03</text>
-    <text x="928" y="298" fill="#656D76" font-size="14" font-weight="700">TEAM</text>
-    <text x="1216" y="298" fill="#1F2328" font-size="18" font-weight="700" text-anchor="end">SHARED STANDARDS</text>
-
-    <rect x="64" y="386" width="294" height="5" fill="#D94C3D"/>
-    <rect x="358" y="386" width="288" height="5" fill="#9A6700"/>
-    <rect x="646" y="386" width="570" height="5" fill="#16856F"/>
-
-    <text x="64" y="435" fill="#424A53" font-size="14" font-weight="700">DISCOVER</text>
-    <text x="161" y="435" fill="#8C959F" font-size="14">→</text>
-    <text x="193" y="435" fill="#424A53" font-size="14" font-weight="700">ABSTRACT</text>
-    <text x="294" y="435" fill="#8C959F" font-size="14">→</text>
-    <text x="326" y="435" fill="#424A53" font-size="14" font-weight="700">BUILD</text>
-    <text x="391" y="435" fill="#8C959F" font-size="14">→</text>
-    <text x="423" y="435" fill="#424A53" font-size="14" font-weight="700">OPERATE</text>
-    <text x="510" y="435" fill="#8C959F" font-size="14">→</text>
-    <text x="542" y="435" fill="#424A53" font-size="14" font-weight="700">MIGRATE</text>
-    <text x="627" y="435" fill="#8C959F" font-size="14">→</text>
-    <text x="659" y="435" fill="#424A53" font-size="14" font-weight="700">SHARE</text>
-
-    <text x="64" y="470" fill="#656D76" font-size="13">PRODUCT DELIVERY / ARCHITECTURE / DEVELOPER EXPERIENCE</text>
-    <text x="1216" y="470" fill="#656D76" font-size="13" text-anchor="end">BUILD · OPERATE · IMPROVE</text>
+    <rect x="56" y="281" width="128" height="4" fill="#D94C3D"/>
+    <rect x="184" y="281" width="64" height="4" fill="#9A6700"/>
+    <rect x="248" y="281" width="128" height="4" fill="#16856F"/>
+    <rect x="392" y="282" width="832" height="1" fill="#D0D7DE"/>
   </g>
 </svg>
