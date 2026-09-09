@@ -1,6 +1,6 @@
 # 윤창원
 
-**Senior Frontend Engineer** · [English](./README.md)
+**Senior Frontend Engineer** · [English](https://github.com/uiwwsw)
 
 복잡한 요구사항을 정리하고, 다음에 할 일을 분명하게 만듭니다.<br>
 반복되는 일은 도구로 만들고, 코드에 담긴 판단은 글로 남깁니다.

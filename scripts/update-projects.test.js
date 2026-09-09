@@ -59,6 +59,8 @@ for (const locale of ['en', 'ko']) {
 test('defaults to English and keeps the expanded introduction within 150 words', () => {
     const readme = buildReadme(fixture);
     assert.equal(readme, buildReadme({ ...fixture, locale: 'en' }));
+    assert.ok(readme.includes('[한국어](https://github.com/uiwwsw/uiwwsw/blob/main/README.ko.md)'));
+    assert.ok(buildReadme({ ...fixture, locale: 'ko' }).includes('[English](https://github.com/uiwwsw)'));
     const visible = readme.split('<details>')[0]
         .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
         .replace(/<[^>]*>/g, '')

@@ -14,7 +14,7 @@ const PROFILE = {
     },
     copy: {
         en: {
-            languageLink: '[한국어](./README.ko.md)',
+            languageLink: '[한국어](https://github.com/uiwwsw/uiwwsw/blob/main/README.ko.md)',
             workHeading: 'Selected work',
             personalHeading: 'Away from the backlog',
             personal: 'I studied architecture and write essays. Some of those essays became [a constellation you can explore](https://uiwwsw.github.io/).',
@@ -24,7 +24,7 @@ const PROFILE = {
             appsIntro: 'Apps released through [Brewstar Code](https://brewstar-code.github.io/):',
         },
         ko: {
-            languageLink: '[English](./README.md)',
+            languageLink: '[English](https://github.com/uiwwsw)',
             workHeading: '직접 만든 도구',
             personalHeading: '코드 밖에서는',
             personal: '건축을 전공했고, 에세이를 씁니다. 직접 쓴 글을 모아 [별자리 사이를 여행하는 공간](https://uiwwsw.github.io/)도 만들었습니다.',

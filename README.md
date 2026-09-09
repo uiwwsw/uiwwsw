@@ -1,6 +1,6 @@
 # Changwon Yoon
 
-**Senior Frontend Engineer** · [한국어](./README.ko.md)
+**Senior Frontend Engineer** · [한국어](https://github.com/uiwwsw/uiwwsw/blob/main/README.ko.md)
 
 I turn messy requirements into clear next steps.<br>
 I build tools for the repetitive parts, and write about the decisions behind the code.
