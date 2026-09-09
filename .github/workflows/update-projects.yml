@@ -11,6 +11,7 @@ on:
       - '.github/workflows/update-projects.yml'
       - 'scripts/profile-data.js'
       - 'scripts/update-projects.js'
+      - 'scripts/update-projects.test.js'
 
 jobs:
   update-projects:
@@ -47,7 +48,7 @@ jobs:
     - name: Check for changes
       id: verify-changed-files
       run: |
-        if [ -n "$(git status --porcelain README.md)" ]; then
+        if [ -n "$(git status --porcelain README.md README.ko.md)" ]; then
           echo "changed=true" >> $GITHUB_OUTPUT
         else
           echo "changed=false" >> $GITHUB_OUTPUT
@@ -58,7 +59,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add README.md
+        git add README.md README.ko.md
         git commit -m "Update profile content - $(date +'%Y-%m-%d')"
         git push
         

@@ -3,6 +3,7 @@ const https = require('https');
 const path = require('path');
 const { parse } = require('yaml');
 const { PROFILE } = require('./profile-data');
+const README_FILES = { en: 'README.md', ko: 'README.ko.md' };
 
 const VELOG_GRAPHQL_URL = 'https://v2cdn.velog.io/graphql';
 const BREWSTAR_SERVICES_URL = 'https://raw.githubusercontent.com/brewstar-code/brewstar-code.github.io/main/_data/services.yml';
@@ -98,88 +99,86 @@ function escapeMarkdown(text) {
     return String(text).replace(/([[\]])/g, '\\$1');
 }
 
-function renderNavigation(links) {
+function renderNavigation(links, locale) {
     return links
-        .map((link) => `<a href="${link.href}">${link.label}</a>`)
+        .map((link) => `<a href="${link.href}">${link.label[locale]}</a>`)
         .join(' &nbsp;·&nbsp; ');
 }
 
-function renderSelectedWork(items) {
-    return items.map((item) => `**[${item.label}](${item.url})** · ${item.description}<br>
-<sub>${renderNavigation(item.links)}</sub>`).join('\n\n');
+function renderSelectedWork(items, locale) {
+    return items.map((item) => `- **[${item.label}](${item.url})** · ${item.description[locale]}`).join('\n');
 }
 
-function renderProductEngineering(items) {
-    return items.map((item) => `- ${item}`).join('\n');
-}
-
-function renderProducts(products) {
+function renderProducts(products, locale) {
     return products.map((product) => {
+        const name = locale === 'en' ? product.nameEn : product.nameKo;
+        const description = PROFILE.productCopy[product.key][locale];
         const technologies = product.techStack.map((tech) => `\`${tech}\``);
         const platforms = product.platforms.map((platform) => `[${platform.label}](${platform.url})`);
         const details = [...technologies, ...platforms].join(' · ');
 
-        return `- **[${product.nameKo}](${product.homeUrl})** · ${product.description}<br>
+        return `- **[${name}](${product.homeUrl})** · ${description}<br>
   ${details}`;
     }).join('\n');
 }
 
-function renderVelogPosts(posts) {
+function renderVelogPosts(posts, locale) {
     return posts
-        .map((post) => `- [${escapeMarkdown(post.title)}](${post.link}) <sub>${post.date}</sub>`)
+        .map((post) => {
+            const translation = PROFILE.fallbackVelogPosts.find((known) => known.link === post.link);
+            const title = locale === 'en' ? translation?.titleEn || post.title : post.title;
+            return `- [${escapeMarkdown(title)}](${post.link}) <sub>${post.date}</sub>`;
+        })
         .join('\n');
 }
 
-function buildReadme({ products, velogPosts }) {
+function buildReadme({ products, velogPosts, locale = 'en' }) {
+    if (!Object.hasOwn(README_FILES, locale)) {
+        throw new RangeError(`Unsupported README locale: ${locale}`);
+    }
+    const copy = PROFILE.copy[locale];
     const writing = PROFILE.featuredWriting;
     const recentPosts = velogPosts
         .filter((post) => post.link !== writing.link)
         .slice(0, 2);
-    return `# ${PROFILE.identity.name}
+    return `# ${PROFILE.identity.name[locale]}
 
-**${PROFILE.identity.role}** · ${PROFILE.identity.handle}
+**${PROFILE.identity.role}** · ${copy.languageLink}
 
-${PROFILE.identity.headline}<br>
-${PROFILE.identity.careerLine}
+${PROFILE.identity.headline[locale]}<br>
+${PROFILE.identity.introduction[locale]}
 
-${renderNavigation(PROFILE.links)}
+## ${copy.workHeading}
 
-## 해온 일
+${renderSelectedWork(PROFILE.selectedWork, locale)}
 
-2015년 UI 개발로 시작해, 서비스의 초기 구축과 운영, 프론트엔드 팀 리딩으로 일을 넓혀왔습니다.
+## ${copy.personalHeading}
 
-${renderProductEngineering(PROFILE.productEngineering)}
+${copy.personal}
 
-주로 React, TypeScript, Next.js를 씁니다.
+[${writing.title[locale]}](${writing.link})<br>
+${writing.context[locale]} <sub>${copy.articleLanguage}</sub>
 
-## 반복되는 문제는 도구로
-
-${renderSelectedWork(PROFILE.selectedWork)}
-
-## 글로 남긴 생각
-
-> ${writing.quote}
-
-[${writing.title}](${writing.link})<br>
-${writing.context}
-
-<!--START_VELOG-->
-${renderVelogPosts(recentPosts)}
-<!--END_VELOG-->
-
-기술 밖에서는 사람과 일상에 관한 에세이를 씁니다. [10년의 회고](https://velog.io/@uiwwsw/10년의-회고)에는 함께 일해온 동료들에 대한 생각을 담았습니다.
+${renderNavigation(PROFILE.links, locale)}
 
 <details>
-<summary><strong>다른 작업과 출시한 앱</strong></summary>
+<summary><strong>${copy.recentSummary}</strong></summary>
 
-건축을 전공했고, 글과 이야기를 좋아합니다. 관심이 오래 머무는 것들은 직접 만들어 봅니다.
+<!--START_VELOG-->
+${renderVelogPosts(recentPosts, locale)}
+<!--END_VELOG-->
 
-${PROFILE.personalProjects.map((project) => `- **[${project.label}](${project.url})** · ${project.description}`).join('\n')}
+</details>
 
-[Brewstar Code](https://brewstar-code.github.io/)에서는 앱을 출시하고 있습니다.
+<details>
+<summary><strong>${copy.projectsSummary}</strong></summary>
+
+${renderSelectedWork(PROFILE.personalProjects, locale)}
+
+${copy.appsIntro}
 
 <!--START_PRODUCTS-->
-${renderProducts(products)}
+${renderProducts(products, locale)}
 <!--END_PRODUCTS-->
 
 </details>
@@ -253,7 +252,7 @@ function selectProfileProducts(services) {
             key: service.key,
             nameKo: service.name_ko,
             nameEn: service.name_en,
-            description: PROFILE.productCopy[service.key],
+            description: PROFILE.productCopy[service.key].ko,
             homeUrl: new URL(service.links.home, BREWSTAR_BASE_URL).toString(),
             techStack: Array.isArray(service.tech_stack)
                 ? service.tech_stack.filter((tech) => tech === 'Flutter')
@@ -281,10 +280,12 @@ async function fetchBrewstarProducts() {
     }
 }
 
-function updateReadme(products, velogPosts) {
-    const readmeContent = buildReadme({ products, velogPosts });
-    fs.writeFileSync(path.join(__dirname, '../README.md'), readmeContent);
-    console.log('README.md updated.');
+function updateReadme(products, velogPosts, outputDirectory = path.join(__dirname, '..')) {
+    for (const [locale, filename] of Object.entries(README_FILES)) {
+        const readmeContent = buildReadme({ products, velogPosts, locale });
+        fs.writeFileSync(path.join(outputDirectory, filename), readmeContent);
+        console.log(`${filename} updated.`);
+    }
 }
 
 async function main() {
@@ -309,7 +310,6 @@ module.exports = {
     buildReadme,
     fetchBrewstarProducts,
     fetchLatestVelogPosts,
-    renderProductEngineering,
     selectProfileProducts,
     updateReadme,
 };
