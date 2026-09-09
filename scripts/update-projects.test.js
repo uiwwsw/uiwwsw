@@ -45,6 +45,7 @@ for (const locale of ['en', 'ko']) {
 
         assert.equal(readme.split(PROFILE.featuredWriting.link).length - 1, 1);
         assert.ok(visible.includes(PROFILE.featuredWriting.link));
+        assert.ok(visible.includes(`[${PROFILE.featuredWriting.title}](${PROFILE.featuredWriting.link})`));
         assert.ok(visible.includes(PROFILE.copy[locale].articleLanguage));
         assert.equal(recentFeed.trim().split('\n').length, 2);
         assert.ok(!recentFeed.includes(PROFILE.featuredWriting.link));
@@ -64,7 +65,8 @@ test('defaults to English and keeps the expanded introduction within 150 words',
     const visible = readme.split('<details>')[0]
         .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
         .replace(/<[^>]*>/g, '')
-        .replace('한국어', '');
+        .replace('한국어', '')
+        .replace(PROFILE.featuredWriting.title, '');
     const words = [...new Intl.Segmenter('en', { granularity: 'word' }).segment(visible)]
         .filter((segment) => segment.isWordLike);
 
@@ -73,20 +75,41 @@ test('defaults to English and keeps the expanded introduction within 150 words',
     assert.throws(() => buildReadme({ ...fixture, locale: 'fr' }), RangeError);
 });
 
-test('uses curated English article labels but keeps unknown posts in their original language', () => {
+test('preserves original titles for existing, new, and renamed posts in both languages', () => {
     const knownPost = PROFILE.fallbackVelogPosts[0];
     const unknownPost = {
         title: '새 글 [예시]',
         link: 'https://example.com/new-post',
         date: '2026. 09. 09.',
     };
-    const en = buildReadme({ ...fixture, velogPosts: [knownPost, unknownPost], locale: 'en' });
-    const ko = buildReadme({ ...fixture, velogPosts: [knownPost, unknownPost], locale: 'ko' });
+    for (const post of [knownPost, { ...knownPost, title: '벨로그에서 바꾼 제목' }]) {
+        const en = buildReadme({ ...fixture, velogPosts: [post, unknownPost], locale: 'en' });
+        const ko = buildReadme({ ...fixture, velogPosts: [post, unknownPost], locale: 'ko' });
 
-    assert.ok(en.includes(`[${knownPost.titleEn}](${knownPost.link})`));
-    assert.ok(ko.includes(`[${knownPost.title}](${knownPost.link})`));
-    assert.ok(en.includes('[새 글 \\[예시\\]](https://example.com/new-post)'));
-    assert.match(en, /Recent writing \(Korean\)/);
+        for (const readme of [en, ko]) {
+            assert.ok(readme.includes(`[${post.title}](${post.link})`));
+            assert.ok(readme.includes('[새 글 \\[예시\\]](https://example.com/new-post)'));
+        }
+        const enFeed = en.split('<!--START_VELOG-->')[1].split('<!--END_VELOG-->')[0];
+        const koFeed = ko.split('<!--START_VELOG-->')[1].split('<!--END_VELOG-->')[0];
+        assert.equal(enFeed, koFeed);
+        assert.match(en, /Recent writing \(Korean\)/);
+    }
+});
+
+test('prefers the fetched original title for the featured article when available', () => {
+    const featuredPost = {
+        title: '대표 글의 수정된 제목 [원문]',
+        link: PROFILE.featuredWriting.link,
+        date: '2026. 09. 09.',
+    };
+
+    for (const locale of ['en', 'ko']) {
+        const readme = buildReadme({ ...fixture, velogPosts: [featuredPost], locale });
+        assert.ok(readme.includes(`[대표 글의 수정된 제목 \\[원문\\]](${featuredPost.link})`));
+        assert.ok(!readme.includes(PROFILE.featuredWriting.title));
+        assert.equal(readme.split(featuredPost.link).length - 1, 1);
+    }
 });
 
 test('updates both language files from the same feed data on every run', (t) => {
@@ -103,6 +126,7 @@ test('updates both language files from the same feed data on every run', (t) => 
     for (const filename of ['README.md', 'README.ko.md']) {
         const content = fs.readFileSync(path.join(directory, filename), 'utf8');
         assert.ok(content.includes(nextPosts[0].link));
+        assert.ok(content.includes(`[${nextPosts[0].title}](${nextPosts[0].link})`));
         assert.ok(!content.includes(PROFILE.fallbackVelogPosts[0].link));
     }
 });

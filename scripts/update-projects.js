@@ -122,13 +122,9 @@ function renderProducts(products, locale) {
     }).join('\n');
 }
 
-function renderVelogPosts(posts, locale) {
+function renderVelogPosts(posts) {
     return posts
-        .map((post) => {
-            const translation = PROFILE.fallbackVelogPosts.find((known) => known.link === post.link);
-            const title = locale === 'en' ? translation?.titleEn || post.title : post.title;
-            return `- [${escapeMarkdown(title)}](${post.link}) <sub>${post.date}</sub>`;
-        })
+        .map((post) => `- [${escapeMarkdown(post.title)}](${post.link}) <sub>${post.date}</sub>`)
         .join('\n');
 }
 
@@ -138,6 +134,7 @@ function buildReadme({ products, velogPosts, locale = 'en' }) {
     }
     const copy = PROFILE.copy[locale];
     const writing = PROFILE.featuredWriting;
+    const featuredTitle = velogPosts.find((post) => post.link === writing.link)?.title || writing.title;
     const recentPosts = velogPosts
         .filter((post) => post.link !== writing.link)
         .slice(0, 2);
@@ -156,7 +153,7 @@ ${renderSelectedWork(PROFILE.selectedWork, locale)}
 
 ${copy.personal}
 
-[${writing.title[locale]}](${writing.link})<br>
+[${escapeMarkdown(featuredTitle)}](${writing.link})<br>
 ${writing.context[locale]} <sub>${copy.articleLanguage}</sub>
 
 ${renderNavigation(PROFILE.links, locale)}
@@ -165,7 +162,7 @@ ${renderNavigation(PROFILE.links, locale)}
 <summary><strong>${copy.recentSummary}</strong></summary>
 
 <!--START_VELOG-->
-${renderVelogPosts(recentPosts, locale)}
+${renderVelogPosts(recentPosts)}
 <!--END_VELOG-->
 
 </details>

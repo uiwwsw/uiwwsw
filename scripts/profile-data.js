@@ -85,10 +85,7 @@ const PROFILE = {
         },
     ],
     featuredWriting: {
-        title: {
-            en: 'Who is responsible for AI-generated code?',
-            ko: '바이브코딩의 끝에는 누가 서 있어야 하는가',
-        },
+        title: '바이브코딩의 끝에는 누가 서 있어야 하는가',
         link: 'https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가',
         context: {
             en: 'How I think about design, code review, and responsibility when working with AI.',
@@ -137,19 +134,16 @@ const PROFILE = {
     fallbackVelogPosts: [
         {
             title: '실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계',
-            titleEn: 'Testing without changing production code: API interception and mock data',
             link: 'https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계',
             date: '2026. 05. 22.',
         },
         {
             title: '바이브코딩의 끝에는 누가 서 있어야 하는가',
-            titleEn: 'Who is responsible for AI-generated code?',
             link: 'https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가',
             date: '2026. 05. 13.',
         },
         {
             title: '전달 가능한 개발자 문서(깃허브 프린트)',
-            titleEn: 'Turning GitHub history into shareable developer documents',
             link: 'https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다',
             date: '2026. 03. 18.',
         },
