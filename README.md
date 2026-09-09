@@ -15,7 +15,7 @@ I build tools for the repetitive parts, and write about the decisions behind the
 
 I studied architecture and write essays. Some of those essays became [a constellation you can explore](https://uiwwsw.github.io/).
 
-[Who is responsible for AI-generated code?](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가)<br>
+[바이브코딩의 끝에는 누가 서 있어야 하는가](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가)<br>
 How I think about design, code review, and responsibility when working with AI. <sub>Written in Korean</sub>
 
 <a href="https://velog.io/@uiwwsw">Writing (Korean)</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">Resume (Korean)</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">Email</a>
@@ -24,8 +24,8 @@ How I think about design, code review, and responsibility when working with AI. 
 <summary><strong>Recent writing (Korean)</strong></summary>
 
 <!--START_VELOG-->
-- [Testing without changing production code: API interception and mock data](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) <sub>2026. 05. 22.</sub>
-- [Turning GitHub history into shareable developer documents](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) <sub>2026. 03. 18.</sub>
+- [실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) <sub>2026. 05. 22.</sub>
+- [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) <sub>2026. 03. 18.</sub>
 <!--END_VELOG-->
 
 </details>
