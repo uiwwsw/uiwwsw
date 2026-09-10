@@ -2,8 +2,8 @@ name: Update Profile Content
 
 on:
   schedule:
-    # 매주 월요일 09:00 KST (UTC+9) 실행
-    - cron: '0 0 * * 1'
+    # 배포된 글 목록을 6시간마다 확인 (KST 03:17, 09:17, 15:17, 21:17)
+    - cron: '17 */6 * * *'
   workflow_dispatch: # 수동 실행도 가능
   push:
     branches: [ main ]
@@ -12,10 +12,17 @@ on:
       - 'scripts/profile-data.js'
       - 'scripts/update-projects.js'
       - 'scripts/update-projects.test.js'
+      - 'package.json'
+      - 'package-lock.json'
+
+concurrency:
+  group: profile-content
+  cancel-in-progress: false
 
 jobs:
   update-projects:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     
     permissions:
       contents: write
