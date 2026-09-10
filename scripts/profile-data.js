@@ -35,7 +35,7 @@ const PROFILE = {
         },
     },
     links: [
-        { label: { en: 'Writing (Korean)', ko: '글' }, href: 'https://velog.io/@uiwwsw' },
+        { label: { en: 'Writing (Korean)', ko: '글' }, href: 'https://uiwwsw.github.io/writing/' },
         { label: { en: 'Resume (Korean)', ko: '이력서' }, href: 'https://githubprint.vercel.app/showcase' },
         { label: { en: 'LinkedIn', ko: 'LinkedIn' }, href: 'https://www.linkedin.com/in/uiwwsw/' },
         { label: { en: 'Email', ko: '메일' }, href: 'mailto:uiwwsw@icloud.com' },
@@ -86,7 +86,7 @@ const PROFILE = {
     ],
     featuredWriting: {
         title: '바이브코딩의 끝에는 누가 서 있어야 하는가',
-        link: 'https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가',
+        link: new URL('https://uiwwsw.github.io/writing/바이브코딩의-끝에는-누가-서-있어야-하는가/').href,
         context: {
             en: 'How I think about design, code review, and responsibility when working with AI.',
             ko: '팀에서 AI를 쓰며 정리한 설계와 코드리뷰, 책임에 관한 생각.',
@@ -129,23 +129,6 @@ const PROFILE = {
                     url: 'https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662',
                 },
             ],
-        },
-    ],
-    fallbackVelogPosts: [
-        {
-            title: '실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계',
-            link: 'https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계',
-            date: '2026. 05. 22.',
-        },
-        {
-            title: '바이브코딩의 끝에는 누가 서 있어야 하는가',
-            link: 'https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가',
-            date: '2026. 05. 13.',
-        },
-        {
-            title: '전달 가능한 개발자 문서(깃허브 프린트)',
-            link: 'https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다',
-            date: '2026. 03. 18.',
         },
     ],
 };

@@ -2,21 +2,13 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 const { parse } = require('yaml');
+const { load } = require('cheerio');
 const { PROFILE } = require('./profile-data');
 const README_FILES = { en: 'README.md', ko: 'README.ko.md' };
 
-const VELOG_GRAPHQL_URL = 'https://v2cdn.velog.io/graphql';
+const WRITING_ARCHIVE_URL = 'https://uiwwsw.github.io/writing/';
 const BREWSTAR_SERVICES_URL = 'https://raw.githubusercontent.com/brewstar-code/brewstar-code.github.io/main/_data/services.yml';
 const BREWSTAR_BASE_URL = 'https://brewstar-code.github.io';
-const DEFAULT_EXCLUDED_VELOG_SERIES = ['essay', 'photo', '링크드인'];
-const EXTRA_EXCLUDED_VELOG_SERIES = (process.env.VELOG_EXCLUDED_SERIES || '')
-    .split(',')
-    .map((series) => series.trim())
-    .filter(Boolean);
-const EXCLUDED_VELOG_SERIES = [...new Set([
-    ...DEFAULT_EXCLUDED_VELOG_SERIES,
-    ...EXTRA_EXCLUDED_VELOG_SERIES,
-])];
 
 function fetchText(url) {
     return new Promise((resolve, reject) => {
@@ -46,55 +38,6 @@ function fetchText(url) {
     });
 }
 
-function postJson(url, payload) {
-    return new Promise((resolve, reject) => {
-        const body = JSON.stringify(payload);
-        const request = https.request(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': Buffer.byteLength(body),
-            },
-        }, (response) => {
-            const chunks = [];
-            response.on('data', (chunk) => chunks.push(chunk));
-            response.on('end', () => {
-                if (response.statusCode !== 200) {
-                    reject(new Error(`Request failed: ${url} (${response.statusCode})`));
-                    return;
-                }
-
-                try {
-                    resolve(JSON.parse(Buffer.concat(chunks).toString()));
-                } catch (error) {
-                    reject(error);
-                }
-            });
-        });
-
-        request.on('error', reject);
-        request.write(body);
-        request.end();
-    });
-}
-
-function formatDate(dateValue) {
-    return new Date(dateValue)
-        .toLocaleDateString('ko-KR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            timeZone: 'Asia/Seoul',
-        })
-        .replace(/(\d{4})\. (\d{2})\. (\d{2})\./, '$1. $2. $3.');
-}
-
-function isExcludedVelogSeries(seriesName) {
-    if (!seriesName) return false;
-    const normalized = seriesName.toLowerCase();
-    return EXCLUDED_VELOG_SERIES.some((series) => normalized.includes(series.toLowerCase()));
-}
-
 function escapeMarkdown(text) {
     return String(text).replace(/([[\]])/g, '\\$1');
 }
@@ -122,20 +65,20 @@ function renderProducts(products, locale) {
     }).join('\n');
 }
 
-function renderVelogPosts(posts) {
+function renderWritingPosts(posts) {
     return posts
         .map((post) => `- [${escapeMarkdown(post.title)}](${post.link}) <sub>${post.date}</sub>`)
         .join('\n');
 }
 
-function buildReadme({ products, velogPosts, locale = 'en' }) {
+function buildReadme({ products, writingPosts, locale = 'en' }) {
     if (!Object.hasOwn(README_FILES, locale)) {
         throw new RangeError(`Unsupported README locale: ${locale}`);
     }
     const copy = PROFILE.copy[locale];
     const writing = PROFILE.featuredWriting;
-    const featuredTitle = velogPosts.find((post) => post.link === writing.link)?.title || writing.title;
-    const recentPosts = velogPosts
+    const featuredTitle = writingPosts.find((post) => post.link === writing.link)?.title || writing.title;
+    const recentPosts = writingPosts
         .filter((post) => post.link !== writing.link)
         .slice(0, 2);
     return `# ${PROFILE.identity.name[locale]}
@@ -161,9 +104,9 @@ ${renderNavigation(PROFILE.links, locale)}
 <details>
 <summary><strong>${copy.recentSummary}</strong></summary>
 
-<!--START_VELOG-->
-${renderVelogPosts(recentPosts)}
-<!--END_VELOG-->
+<!--START_WRITING-->
+${renderWritingPosts(recentPosts)}
+<!--END_WRITING-->
 
 </details>
 
@@ -182,51 +125,47 @@ ${renderProducts(products, locale)}
 `;
 }
 
-async function fetchLatestVelogPosts() {
-    try {
-        console.log('Fetching technical posts from Velog...');
-        const payload = {
-            query: `
-                query Posts($username: String, $limit: Int) {
-                    posts(username: $username, limit: $limit) {
-                        title
-                        url_slug
-                        released_at
-                        series {
-                            name
-                        }
-                    }
-                }
-            `,
-            variables: {
-                username: PROFILE.identity.handle,
-                limit: 100,
-            },
-        };
+function parseWritingArchive(html) {
+    const $ = load(html);
+    const articles = $('ol.writing-list > li > article').toArray();
+    if (articles.length === 0) {
+        throw new Error('The writing archive contains no readable articles.');
+    }
 
-        const parsed = await postJson(VELOG_GRAPHQL_URL, payload);
-        if (parsed.errors) {
-            throw new Error(JSON.stringify(parsed.errors));
+    const seen = new Set();
+    return articles.map((article) => {
+        const entry = $(article);
+        const anchor = entry.find('h2 a').first();
+        const title = anchor.text().trim();
+        const href = anchor.attr('href');
+        const time = entry.find('time').first();
+        const date = time.text().trim();
+        const publishedAt = Date.parse(time.attr('datetime'));
+        if (!title || !href || !date || !Number.isFinite(publishedAt)) {
+            throw new Error('An archive article is missing its title, link, or publication date.');
         }
 
-        const fetchedPosts = parsed.data && Array.isArray(parsed.data.posts)
-            ? parsed.data.posts
-            : [];
-        const posts = fetchedPosts
-            .filter((post) => !isExcludedVelogSeries(post.series ? post.series.name : null))
-            .slice(0, 3)
-            .map((post) => ({
-                title: post.title,
-                link: `https://velog.io/@${PROFILE.identity.handle}/${post.url_slug}`,
-                date: formatDate(post.released_at),
-            }));
+        const url = new URL(href, WRITING_ARCHIVE_URL);
+        if (url.origin !== new URL(WRITING_ARCHIVE_URL).origin
+            || !/^\/writing\/[^/]+\/$/.test(url.pathname)
+            || url.search || url.hash || url.username || url.password) {
+            throw new Error('An archive article does not link to a GitHub Pages writing page.');
+        }
+        if (seen.has(url.href)) {
+            throw new Error('The writing archive contains a duplicate article link.');
+        }
+        seen.add(url.href);
+        return { title, link: url.href, date, publishedAt };
+    })
+        .sort((a, b) => b.publishedAt - a.publishedAt)
+        .map(({ publishedAt, ...post }) => post);
+}
 
-        console.log(`Fetched ${posts.length} technical posts.`);
-        return posts.length > 0 ? posts : PROFILE.fallbackVelogPosts;
-    } catch (error) {
-        console.error(`Velog fetch failed: ${error.message}`);
-        return PROFILE.fallbackVelogPosts;
-    }
+async function fetchLatestWritingPosts(fetch = fetchText) {
+    console.log('Fetching published posts from GitHub Pages...');
+    const posts = parseWritingArchive(await fetch(WRITING_ARCHIVE_URL));
+    console.log(`Fetched ${posts.length} published posts.`);
+    return posts;
 }
 
 function isReleasedService(service) {
@@ -277,9 +216,9 @@ async function fetchBrewstarProducts() {
     }
 }
 
-function updateReadme(products, velogPosts, outputDirectory = path.join(__dirname, '..')) {
+function updateReadme(products, writingPosts, outputDirectory = path.join(__dirname, '..')) {
     for (const [locale, filename] of Object.entries(README_FILES)) {
-        const readmeContent = buildReadme({ products, velogPosts, locale });
+        const readmeContent = buildReadme({ products, writingPosts, locale });
         fs.writeFileSync(path.join(outputDirectory, filename), readmeContent);
         console.log(`${filename} updated.`);
     }
@@ -287,12 +226,12 @@ function updateReadme(products, velogPosts, outputDirectory = path.join(__dirnam
 
 async function main() {
     try {
-        const [products, velogPosts] = await Promise.all([
+        const [products, writingPosts] = await Promise.all([
             fetchBrewstarProducts(),
-            fetchLatestVelogPosts(),
+            fetchLatestWritingPosts(),
         ]);
 
-        updateReadme(products, velogPosts);
+        updateReadme(products, writingPosts);
     } catch (error) {
         console.error(error);
         process.exitCode = 1;
@@ -306,7 +245,8 @@ if (require.main === module) {
 module.exports = {
     buildReadme,
     fetchBrewstarProducts,
-    fetchLatestVelogPosts,
+    fetchLatestWritingPosts,
+    parseWritingArchive,
     selectProfileProducts,
     updateReadme,
 };

@@ -15,18 +15,18 @@ I build tools for the repetitive parts, and write about the decisions behind the
 
 I studied architecture and write essays. Some of those essays became [a constellation you can explore](https://uiwwsw.github.io/).
 
-[바이브코딩의 끝에는 누가 서 있어야 하는가](https://velog.io/@uiwwsw/바이브코딩의-끝에는-누가-서-있어야-하는가)<br>
+[바이브코딩의 끝에는 누가 서 있어야 하는가](https://uiwwsw.github.io/writing/%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EC%9D%98-%EB%81%9D%EC%97%90%EB%8A%94-%EB%88%84%EA%B0%80-%EC%84%9C-%EC%9E%88%EC%96%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80/)<br>
 How I think about design, code review, and responsibility when working with AI. <sub>Written in Korean</sub>
 
-<a href="https://velog.io/@uiwwsw">Writing (Korean)</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">Resume (Korean)</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">Email</a>
+<a href="https://uiwwsw.github.io/writing/">Writing (Korean)</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">Resume (Korean)</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">Email</a>
 
 <details>
 <summary><strong>Recent writing (Korean)</strong></summary>
 
-<!--START_VELOG-->
-- [실 서비스 코드를 건드리지 않고 테스트하기: API 인터셉터 기반 목 데이터 설계](https://velog.io/@uiwwsw/실-서비스-코드를-건드리지-않고-테스트하기-API-인터셉터-기반-목-데이터-설계) <sub>2026. 05. 22.</sub>
-- [전달 가능한 개발자 문서(깃허브 프린트)](https://velog.io/@uiwwsw/GitHub를-전달-가능한-개발자-문서로-바꾸는-GitFolio를-만들었습니다) <sub>2026. 03. 18.</sub>
-<!--END_VELOG-->
+<!--START_WRITING-->
+- [화면의 테스트 분기를 줄이는 API 인터셉터 기반 목 데이터 설계](https://uiwwsw.github.io/writing/%EC%8B%A4-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BD%94%EB%93%9C%EB%A5%BC-%EA%B1%B4%EB%93%9C%EB%A6%AC%EC%A7%80-%EC%95%8A%EA%B3%A0-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0-API-%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0-%EA%B8%B0%EB%B0%98-%EB%AA%A9-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%A4%EA%B3%84/) <sub>2026. 05. 21.</sub>
+- [인격이라는 소설에 대해](https://uiwwsw.github.io/writing/%EC%9D%B8%EA%B2%A9%EC%9D%B4%EB%9D%BC%EB%8A%94-%EC%86%8C%EC%84%A4%EC%97%90-%EB%8C%80%ED%95%B4/) <sub>2026. 05. 15.</sub>
+<!--END_WRITING-->
 
 </details>
 
