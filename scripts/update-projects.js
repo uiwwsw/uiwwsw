@@ -7,8 +7,8 @@ const { PROFILE } = require('./profile-data');
 const README_FILES = { en: 'README.md', ko: 'README.ko.md' };
 
 const WRITING_ARCHIVE_URL = 'https://uiwwsw.github.io/writing/';
-const BREWSTAR_SERVICES_URL = 'https://raw.githubusercontent.com/brewstar-code/brewstar-code.github.io/main/_data/services.yml';
-const BREWSTAR_BASE_URL = 'https://brewstar-code.github.io';
+const LEGACY_SERVICE_REGISTRY_URL = 'https://raw.githubusercontent.com/brewstar-code/brewstar-code.github.io/main/_data/services.yml';
+const MOB_BASE_URL = 'https://uiwwsw.github.io/mob/';
 
 function fetchText(url) {
     return new Promise((resolve, reject) => {
@@ -189,7 +189,7 @@ function selectProfileProducts(services) {
             nameKo: service.name_ko,
             nameEn: service.name_en,
             description: PROFILE.productCopy[service.key].ko,
-            homeUrl: new URL(service.links.home, BREWSTAR_BASE_URL).toString(),
+            homeUrl: new URL(`${service.key}/`, MOB_BASE_URL).toString(),
             techStack: Array.isArray(service.tech_stack)
                 ? service.tech_stack.filter((tech) => tech === 'Flutter')
                 : [],
@@ -205,7 +205,7 @@ function selectProfileProducts(services) {
 async function fetchBrewstarProducts() {
     try {
         console.log('Fetching released products from MOB...');
-        const services = parse(await fetchText(BREWSTAR_SERVICES_URL));
+        const services = parse(await fetchText(LEGACY_SERVICE_REGISTRY_URL));
         const products = selectProfileProducts(services);
 
         console.log(`Fetched ${products.length} released products.`);

@@ -36,12 +36,12 @@ How I think about design, code review, and responsibility when working with AI. 
 - **[YAVN](https://github.com/uiwwsw/yavn)** · A YAML-driven visual novel engine with branching stories and save recovery.
 - **[GitHubPrint](https://githubprint.vercel.app)** · Turn GitHub history into developer documents, with validated AI output and PDF/Word export.
 
-Apps released by [MOB](https://brewstar-code.github.io/):
+Apps released by [MOB](https://uiwwsw.github.io/mob/):
 
 <!--START_PRODUCTS-->
-- **[MeringTrip](https://brewstar-code.github.io/meringuetrip/)** · Plan trips with radius-based search.<br>
+- **[MeringTrip](https://uiwwsw.github.io/mob/meringuetrip/)** · Plan trips with radius-based search.<br>
   `Flutter` · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip) · [App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690)
-- **[MeyouMeyou](https://brewstar-code.github.io/meyoumeyou/)** · Stay connected through haptics, made for couples.<br>
+- **[MeyouMeyou](https://uiwwsw.github.io/mob/meyoumeyou/)** · Stay connected through haptics, made for couples.<br>
   `Flutter` · [App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)
 <!--END_PRODUCTS-->
 

@@ -36,12 +36,12 @@
 - **[YAVN](https://github.com/uiwwsw/yavn)** · 분기와 연출, 저장·복구를 YAML로 정의하는 비주얼노벨 엔진.
 - **[GitHubPrint](https://githubprint.vercel.app)** · GitHub 기록을 개발자 문서로. AI 응답 검증과 PDF·Word 내보내기를 제공합니다.
 
-[모브](https://brewstar-code.github.io/)에서 출시한 앱입니다.
+[모브](https://uiwwsw.github.io/mob/)에서 출시한 앱입니다.
 
 <!--START_PRODUCTS-->
-- **[머랭트립](https://brewstar-code.github.io/meringuetrip/)** · 반경 검색 기반 여행 설계<br>
+- **[머랭트립](https://uiwwsw.github.io/mob/meringuetrip/)** · 반경 검색 기반 여행 설계<br>
   `Flutter` · [Google Play](https://play.google.com/store/apps/details?id=io.brewstar.meringuetrip) · [App Store](https://apps.apple.com/kr/app/%EB%A8%B8%EB%9E%AD%ED%8A%B8%EB%A6%BD/id6751193690)
-- **[미유미유](https://brewstar-code.github.io/meyoumeyou/)** · 커플을 위한 햅틱 연결<br>
+- **[미유미유](https://uiwwsw.github.io/mob/meyoumeyou/)** · 커플을 위한 햅틱 연결<br>
   `Flutter` · [App Store](https://apps.apple.com/kr/app/%EB%AF%B8%EC%9C%A0%EB%AF%B8%EC%9C%A0/id6756718662)
 <!--END_PRODUCTS-->
 
