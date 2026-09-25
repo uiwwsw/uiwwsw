@@ -36,7 +36,7 @@ How I think about design, code review, and responsibility when working with AI. 
 - **[YAVN](https://github.com/uiwwsw/yavn)** · A YAML-driven visual novel engine with branching stories and save recovery.
 - **[GitHubPrint](https://githubprint.vercel.app)** · Turn GitHub history into developer documents, with validated AI output and PDF/Word export.
 
-Apps released through [Brewstar Code](https://brewstar-code.github.io/):
+Apps released by [MOB](https://brewstar-code.github.io/):
 
 <!--START_PRODUCTS-->
 - **[MeringTrip](https://brewstar-code.github.io/meringuetrip/)** · Plan trips with radius-based search.<br>

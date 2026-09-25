@@ -36,7 +36,7 @@
 - **[YAVN](https://github.com/uiwwsw/yavn)** · 분기와 연출, 저장·복구를 YAML로 정의하는 비주얼노벨 엔진.
 - **[GitHubPrint](https://githubprint.vercel.app)** · GitHub 기록을 개발자 문서로. AI 응답 검증과 PDF·Word 내보내기를 제공합니다.
 
-[Brewstar Code](https://brewstar-code.github.io/)에서 출시한 앱입니다.
+[모브](https://brewstar-code.github.io/)에서 출시한 앱입니다.
 
 <!--START_PRODUCTS-->
 - **[머랭트립](https://brewstar-code.github.io/meringuetrip/)** · 반경 검색 기반 여행 설계<br>
