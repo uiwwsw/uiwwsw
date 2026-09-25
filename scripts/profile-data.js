@@ -21,7 +21,7 @@ const PROFILE = {
             articleLanguage: 'Written in Korean',
             recentSummary: 'Recent writing (Korean)',
             projectsSummary: 'More projects & released apps',
-            appsIntro: 'Apps released by [MOB](https://brewstar-code.github.io/):',
+            appsIntro: 'Apps released by [MOB](https://uiwwsw.github.io/mob/):',
         },
         ko: {
             languageLink: '[English](https://github.com/uiwwsw)',
@@ -31,7 +31,7 @@ const PROFILE = {
             articleLanguage: '한국어 원문',
             recentSummary: '최근에 쓴 글',
             projectsSummary: '다른 작업과 출시한 앱',
-            appsIntro: '[모브](https://brewstar-code.github.io/)에서 출시한 앱입니다.',
+            appsIntro: '[모브](https://uiwwsw.github.io/mob/)에서 출시한 앱입니다.',
         },
     },
     links: [
@@ -103,7 +103,7 @@ const PROFILE = {
             nameKo: '머랭트립',
             nameEn: 'MeringTrip',
             description: '반경 검색 기반 여행 설계',
-            homeUrl: 'https://brewstar-code.github.io/meringuetrip/',
+            homeUrl: 'https://uiwwsw.github.io/mob/meringuetrip/',
             techStack: ['Flutter'],
             platforms: [
                 {
@@ -121,7 +121,7 @@ const PROFILE = {
             nameKo: '미유미유',
             nameEn: 'MeyouMeyou',
             description: '커플을 위한 햅틱 연결',
-            homeUrl: 'https://brewstar-code.github.io/meyoumeyou/',
+            homeUrl: 'https://uiwwsw.github.io/mob/meyoumeyou/',
             techStack: ['Flutter'],
             platforms: [
                 {
