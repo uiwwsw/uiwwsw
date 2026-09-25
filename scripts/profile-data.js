@@ -21,7 +21,7 @@ const PROFILE = {
             articleLanguage: 'Written in Korean',
             recentSummary: 'Recent writing (Korean)',
             projectsSummary: 'More projects & released apps',
-            appsIntro: 'Apps released through [Brewstar Code](https://brewstar-code.github.io/):',
+            appsIntro: 'Apps released by [MOB](https://brewstar-code.github.io/):',
         },
         ko: {
             languageLink: '[English](https://github.com/uiwwsw)',
@@ -31,7 +31,7 @@ const PROFILE = {
             articleLanguage: '한국어 원문',
             recentSummary: '최근에 쓴 글',
             projectsSummary: '다른 작업과 출시한 앱',
-            appsIntro: '[Brewstar Code](https://brewstar-code.github.io/)에서 출시한 앱입니다.',
+            appsIntro: '[모브](https://brewstar-code.github.io/)에서 출시한 앱입니다.',
         },
     },
     links: [

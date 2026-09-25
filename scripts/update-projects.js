@@ -176,7 +176,7 @@ function isReleasedService(service) {
 
 function selectProfileProducts(services) {
     if (!Array.isArray(services)) {
-        throw new TypeError('Brewstar service data is not an array.');
+        throw new TypeError('MOB service data is not an array.');
     }
 
     return services
@@ -204,14 +204,14 @@ function selectProfileProducts(services) {
 
 async function fetchBrewstarProducts() {
     try {
-        console.log('Fetching released products from Brewstar Code...');
+        console.log('Fetching released products from MOB...');
         const services = parse(await fetchText(BREWSTAR_SERVICES_URL));
         const products = selectProfileProducts(services);
 
         console.log(`Fetched ${products.length} released products.`);
         return products.length > 0 ? products : PROFILE.fallbackProducts;
     } catch (error) {
-        console.error(`Brewstar fetch failed: ${error.message}`);
+        console.error(`MOB fetch failed: ${error.message}`);
         return PROFILE.fallbackProducts;
     }
 }
