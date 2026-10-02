@@ -1,1 +1,3 @@
 node_modules/
+# Private local document review previews; never publish to GitHub.
+/tmp/
