@@ -24,8 +24,8 @@ How I think about design, code review, and responsibility when working with AI. 
 <summary><strong>Recent writing (Korean)</strong></summary>
 
 <!--START_WRITING-->
-- [화면의 테스트 분기를 줄이는 API 인터셉터 기반 목 데이터 설계](https://uiwwsw.github.io/writing/%EC%8B%A4-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BD%94%EB%93%9C%EB%A5%BC-%EA%B1%B4%EB%93%9C%EB%A6%AC%EC%A7%80-%EC%95%8A%EA%B3%A0-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0-API-%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0-%EA%B8%B0%EB%B0%98-%EB%AA%A9-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%A4%EA%B3%84/) <sub>2026. 05. 21.</sub>
-- [인격이라는 소설에 대해](https://uiwwsw.github.io/writing/%EC%9D%B8%EA%B2%A9%EC%9D%B4%EB%9D%BC%EB%8A%94-%EC%86%8C%EC%84%A4%EC%97%90-%EB%8C%80%ED%95%B4/) <sub>2026. 05. 15.</sub>
+- [AI가 코드를 대신해도 남는 것 — 프리랜서 개발팀에서 본 사람과 조직](https://uiwwsw.github.io/writing/AI%EA%B0%80-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%8C%80%EC%8B%A0%ED%95%B4%EB%8F%84-%EB%82%A8%EB%8A%94-%EA%B2%83/) <sub>2026. 10. 01.</sub>
+- [AI를 잘 쓰는 사람](https://uiwwsw.github.io/writing/AI%EB%A5%BC-%EC%9E%98-%EC%93%B0%EB%8A%94-%EC%82%AC%EB%9E%8C/) <sub>2026. 09. 27.</sub>
 <!--END_WRITING-->
 
 </details>
