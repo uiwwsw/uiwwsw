@@ -15,7 +15,7 @@
 
 건축을 전공했고, 에세이를 씁니다. 직접 쓴 글을 모아 [별자리 사이를 여행하는 공간](https://uiwwsw.github.io/)도 만들었습니다.
 
-[AI가 코드를 대신해도 남는 것 — 프리랜서 개발팀에서 본 사람과 조직](https://uiwwsw.github.io/writing/AI%EA%B0%80-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%8C%80%EC%8B%A0%ED%95%B4%EB%8F%84-%EB%82%A8%EB%8A%94-%EA%B2%83/)<br>
+[좋은 펜을 가진 개발자들](https://uiwwsw.github.io/writing/%EC%A2%8B%EC%9D%80-%ED%8E%9C%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4/)<br>
 글의 우주에 가장 최근에 올린 글입니다. <sub>2026. 10. 01. · 한국어 원문</sub>
 
 <a href="https://uiwwsw.github.io/writing/">글</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">이력서</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">메일</a>
