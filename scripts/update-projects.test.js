@@ -4,7 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 const { PROFILE } = require('./profile-data');
-const { buildReadme, fetchLatestWritingPosts, parseWritingArchive, selectProfileProducts, updateReadme } = require('./update-projects');
+const { buildReadme, selectPinnedWork, fetchPinnedWork, fetchLatestWritingPosts, parseWritingArchive, selectProfileProducts, updateReadme } = require('./update-projects');
 
 const ARCHIVE_ENTRIES = [
     { title: '도구를 만든 기록', href: '/writing/tool-notes/', datetime: '2026-09-08T23:00:00Z', date: '2026. 09. 09.' },
@@ -26,6 +26,7 @@ function archiveHtml(entries = ARCHIVE_ENTRIES) {
 
 const fixture = {
     products: PROFILE.fallbackProducts,
+    selectedWork: PROFILE.selectedWork,
     writingPosts: WRITING_POSTS,
 };
 
@@ -63,12 +64,12 @@ for (const locale of ['en', 'ko']) {
         const visible = readme.split('<details>')[0];
         const recentFeed = readme.split('<!--START_WRITING-->')[1].split('<!--END_WRITING-->')[0];
 
-        assert.equal(readme.split(PROFILE.featuredWriting.link).length - 1, 1);
-        assert.ok(visible.includes(PROFILE.featuredWriting.link));
-        assert.ok(visible.includes(`[${PROFILE.featuredWriting.title}](${PROFILE.featuredWriting.link})`));
+        assert.equal(readme.split(WRITING_POSTS[0].link).length - 1, 1);
+        assert.ok(visible.includes(WRITING_POSTS[0].link));
+        assert.ok(visible.includes(`[${WRITING_POSTS[0].title}](${WRITING_POSTS[0].link})`));
         assert.ok(visible.includes(PROFILE.copy[locale].articleLanguage));
         assert.equal(recentFeed.trim().split('\n').length, 2);
-        assert.ok(!recentFeed.includes(PROFILE.featuredWriting.link));
+        assert.ok(!recentFeed.includes(WRITING_POSTS[0].link));
         assert.doesNotMatch(visible, /<!--START_WRITING-->|<!--START_PRODUCTS-->/);
         assert.match(readme, /<details>\s*<summary>[^]*?<!--START_WRITING-->[^]*?<!--END_WRITING-->\s*<\/details>/);
         assert.match(readme, /<details>\s*<summary>[^]*?<!--START_PRODUCTS-->[^]*?<!--END_PRODUCTS-->\s*<\/details>/);
@@ -86,7 +87,7 @@ test('defaults to English and keeps the expanded introduction within 150 words',
         .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
         .replace(/<[^>]*>/g, '')
         .replace('한국어', '')
-        .replace(PROFILE.featuredWriting.title, '');
+        .replace(WRITING_POSTS[0].title, '');
     const words = [...new Intl.Segmenter('en', { granularity: 'word' }).segment(visible)]
         .filter((segment) => segment.isWordLike);
 
@@ -135,14 +136,14 @@ test('prefers the fetched original title for the featured article when available
 test('updates both language files from the same feed data on every run', (t) => {
     const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'profile-readmes-'));
     t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
-    updateReadme(fixture.products, fixture.writingPosts, directory);
+    updateReadme(fixture.products, fixture.writingPosts, fixture.selectedWork, directory);
 
     for (const [locale, filename] of [['en', 'README.md'], ['ko', 'README.ko.md']]) {
         assert.equal(fs.readFileSync(path.join(directory, filename), 'utf8'), buildReadme({ ...fixture, locale }));
     }
 
     const nextPosts = [{ title: '새로운 글', link: 'https://uiwwsw.github.io/writing/latest/', date: '2026. 09. 10.' }];
-    updateReadme(fixture.products, nextPosts, directory);
+    updateReadme(fixture.products, nextPosts, fixture.selectedWork, directory);
     for (const filename of ['README.md', 'README.ko.md']) {
         const content = fs.readFileSync(path.join(directory, filename), 'utf8');
         assert.ok(content.includes(nextPosts[0].link));
@@ -235,4 +236,43 @@ test('fallback products remain inside the explicit publication allowlist', () =>
     for (const product of PROFILE.fallbackProducts) {
         assert.ok(Object.hasOwn(PROFILE.productCopy, product.key));
     }
+});
+
+const pin = (name, description = 'Repository description') => ({
+    name, nameWithOwner: `uiwwsw/${name}`, url: `https://github.com/uiwwsw/${name}`,
+    description, isPrivate: false,
+});
+const pinnedResponse = (nodes) => ({ data: { user: { pinnedItems: { nodes } } } });
+test('selected work follows pins in order, including new pins and unpins', () => {
+    const selectedWork = selectPinnedWork(pinnedResponse([pin('new-project'), pin('next-test-mode')]));
+    assert.deepEqual(selectedWork.map(item => item.label), ['new-project', 'next-test-mode']);
+    for (const locale of ['en', 'ko']) {
+        const readme = buildReadme({ ...fixture, selectedWork, locale });
+        const work = readme.split('## ')[1];
+        assert.ok(work.indexOf('[new-project]') < work.indexOf('[next-test-mode]'));
+        assert.ok(work.includes('Repository description'));
+        assert.ok(work.includes(PROFILE.selectedWork[1].description[locale]));
+        assert.ok(!work.includes('virtual-keyboard'));
+    }
+    assert.deepEqual(selectPinnedWork(pinnedResponse([])), []);
+});
+test('failed pin responses cannot silently publish static or private projects', async () => {
+    for (const payload of [{}, { errors: [{}] }, pinnedResponse([null]),
+        pinnedResponse([{ ...pin('secret'), isPrivate: true }]),
+        pinnedResponse([{ ...pin('external'), url: 'https://example.com' }]),
+        pinnedResponse([pin('duplicate'), pin('duplicate')])]) {
+        assert.throws(() => selectPinnedWork(payload));
+    }
+    await assert.rejects(fetchPinnedWork(async () => { throw new Error('Unavailable'); }), /Unavailable/);
+    assert.deepEqual(await fetchPinnedWork(async () => pinnedResponse([pin('test')])),
+        selectPinnedWork(pinnedResponse([pin('test')])));
+});
+test('latest article replaces the visible featured article on the next refresh', () => {
+    const latest = { title: 'New latest post', link: 'https://uiwwsw.github.io/writing/new/', date: '2026. 10. 08.' };
+    const readme = buildReadme({ ...fixture, writingPosts: [latest, ...WRITING_POSTS] });
+    const visible = readme.split('<details>')[0];
+    assert.ok(visible.includes(latest.link));
+    assert.ok(visible.includes(latest.date));
+    assert.ok(!visible.includes(WRITING_POSTS[0].link));
+    assert.throws(() => buildReadme({ ...fixture, writingPosts: [] }), /No writing posts/);
 });
