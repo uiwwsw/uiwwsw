@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { execFileSync } = require('node:child_process');
 const https = require('https');
 const path = require('path');
 const { parse } = require('yaml');
@@ -34,6 +35,7 @@ function fetchText(url) {
             response.on('end', () => resolve(Buffer.concat(chunks).toString()));
         });
 
+        request.setTimeout(20000, () => request.destroy(new Error(`Request timed out: ${url}`)));
         request.on('error', reject);
     });
 }
@@ -49,7 +51,7 @@ function renderNavigation(links, locale) {
 }
 
 function renderSelectedWork(items, locale) {
-    return items.map((item) => `- **[${item.label}](${item.url})** · ${item.description[locale]}`).join('\n');
+    return items.map((item) => `- **[${escapeMarkdown(item.label)}](${item.url})**${item.description[locale] ? ` · ${escapeMarkdown(item.description[locale])}` : ''}`).join('\n');
 }
 
 function renderProducts(products, locale) {
@@ -71,16 +73,14 @@ function renderWritingPosts(posts) {
         .join('\n');
 }
 
-function buildReadme({ products, writingPosts, locale = 'en' }) {
+function buildReadme({ products, writingPosts, selectedWork, locale = 'en' }) {
     if (!Object.hasOwn(README_FILES, locale)) {
         throw new RangeError(`Unsupported README locale: ${locale}`);
     }
     const copy = PROFILE.copy[locale];
-    const writing = PROFILE.featuredWriting;
-    const featuredTitle = writingPosts.find((post) => post.link === writing.link)?.title || writing.title;
-    const recentPosts = writingPosts
-        .filter((post) => post.link !== writing.link)
-        .slice(0, 2);
+    if (!writingPosts.length) throw new Error('No writing posts to publish.');
+    const writing = writingPosts[0];
+    const recentPosts = writingPosts.slice(1, 3);
     return `# ${PROFILE.identity.name[locale]}
 
 **${PROFILE.identity.role}** · ${copy.languageLink}
@@ -90,14 +90,14 @@ ${PROFILE.identity.introduction[locale]}
 
 ## ${copy.workHeading}
 
-${renderSelectedWork(PROFILE.selectedWork, locale)}
+${renderSelectedWork(selectedWork, locale)}
 
 ## ${copy.personalHeading}
 
 ${copy.personal}
 
-[${escapeMarkdown(featuredTitle)}](${writing.link})<br>
-${writing.context[locale]} <sub>${copy.articleLanguage}</sub>
+[${escapeMarkdown(writing.title)}](${writing.link})<br>
+${copy.latestWriting} <sub>${writing.date} · ${copy.articleLanguage}</sub>
 
 ${renderNavigation(PROFILE.links, locale)}
 
@@ -168,6 +168,43 @@ async function fetchLatestWritingPosts(fetch = fetchText) {
     return posts;
 }
 
+function selectPinnedWork(payload) {
+    if (payload.errors?.length) throw new Error('GitHub pinned repository query failed.');
+    const nodes = payload.data?.user?.pinnedItems?.nodes;
+    if (!Array.isArray(nodes)) throw new Error('Invalid GitHub pinned repository response.');
+    const seen = new Set();
+    return nodes.map((repo) => {
+        if (!repo || typeof repo.name !== 'string' || !repo.name
+            || typeof repo.nameWithOwner !== 'string'
+            || !/^[\w.-]+\/[\w.-]+$/.test(repo.nameWithOwner)
+            || repo.url !== `https://github.com/${repo.nameWithOwner}`
+            || repo.isPrivate !== false || seen.has(repo.url)) {
+            throw new Error('Invalid public pinned repository.');
+        }
+        seen.add(repo.url);
+        const curated = PROFILE.selectedWork.find((item) => item.url === repo.url)
+            || PROFILE.personalProjects.find((item) => item.url === repo.url);
+        const description = typeof repo.description === 'string'
+            ? repo.description.replace(/\s+/g, ' ').trim() : '';
+        return { label: repo.name, url: repo.url,
+            description: curated?.description || { en: description, ko: description } };
+    });
+}
+
+async function fetchPinnedWork(query = async () => JSON.parse(execFileSync('gh', [
+    'api', 'graphql', '-f', `query=query {
+        user(login: "${PROFILE.identity.handle}") {
+            pinnedItems(first: 6, types: REPOSITORY) {
+                nodes { ... on Repository { name nameWithOwner url description isPrivate } }
+            }
+        }
+    }`,
+], { encoding: 'utf8', timeout: 30000 }))) {
+    const selected = selectPinnedWork(await query());
+    console.log(`Fetched ${selected.length} public pinned repositories.`);
+    return selected;
+}
+
 function isReleasedService(service) {
     return typeof service.status === 'string'
         && (service.status === 'live'
@@ -216,9 +253,9 @@ async function fetchBrewstarProducts() {
     }
 }
 
-function updateReadme(products, writingPosts, outputDirectory = path.join(__dirname, '..')) {
+function updateReadme(products, writingPosts, selectedWork, outputDirectory = path.join(__dirname, '..')) {
     for (const [locale, filename] of Object.entries(README_FILES)) {
-        const readmeContent = buildReadme({ products, writingPosts, locale });
+        const readmeContent = buildReadme({ products, writingPosts, selectedWork, locale });
         fs.writeFileSync(path.join(outputDirectory, filename), readmeContent);
         console.log(`${filename} updated.`);
     }
@@ -226,12 +263,13 @@ function updateReadme(products, writingPosts, outputDirectory = path.join(__dirn
 
 async function main() {
     try {
-        const [products, writingPosts] = await Promise.all([
+        const [products, writingPosts, selectedWork] = await Promise.all([
             fetchBrewstarProducts(),
             fetchLatestWritingPosts(),
+            fetchPinnedWork(),
         ]);
 
-        updateReadme(products, writingPosts);
+        updateReadme(products, writingPosts, selectedWork);
     } catch (error) {
         console.error(error);
         process.exitCode = 1;
@@ -244,6 +282,8 @@ if (require.main === module) {
 
 module.exports = {
     buildReadme,
+    selectPinnedWork,
+    fetchPinnedWork,
     fetchBrewstarProducts,
     fetchLatestWritingPosts,
     parseWritingArchive,

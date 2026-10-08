@@ -48,6 +48,8 @@ jobs:
         npm test
         
     - name: Update profile content
+      env:
+        GH_TOKEN: ${{ github.token }}
       run: |
         cd ${{ github.workspace }}
         npm run update:projects
@@ -73,4 +75,4 @@ jobs:
     - name: No changes detected
       if: steps.verify-changed-files.outputs.changed == 'false'
       run: |
-        echo "✅ No changes to project list"
+        echo "✅ Profile already matches published writing and pinned repositories"
