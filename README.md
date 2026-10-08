@@ -15,7 +15,7 @@ I build tools for the repetitive parts, and write about the decisions behind the
 
 I studied architecture and write essays. Some of those essays became [a constellation you can explore](https://uiwwsw.github.io/).
 
-[AI가 코드를 대신해도 남는 것 — 프리랜서 개발팀에서 본 사람과 조직](https://uiwwsw.github.io/writing/AI%EA%B0%80-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%8C%80%EC%8B%A0%ED%95%B4%EB%8F%84-%EB%82%A8%EB%8A%94-%EA%B2%83/)<br>
+[좋은 펜을 가진 개발자들](https://uiwwsw.github.io/writing/%EC%A2%8B%EC%9D%80-%ED%8E%9C%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4/)<br>
 Latest from my writing universe. <sub>2026. 10. 01. · Written in Korean</sub>
 
 <a href="https://uiwwsw.github.io/writing/">Writing (Korean)</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">Resume (Korean)</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">Email</a>
