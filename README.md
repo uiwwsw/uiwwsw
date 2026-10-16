@@ -15,8 +15,8 @@ I build tools for the repetitive parts, and write about the decisions behind the
 
 I studied architecture and write essays. Some of those essays became [a constellation you can explore](https://uiwwsw.github.io/).
 
-[좋은 펜을 가진 개발자들](https://uiwwsw.github.io/writing/%EC%A2%8B%EC%9D%80-%ED%8E%9C%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4/)<br>
-Latest from my writing universe. <sub>2026. 10. 01. · Written in Korean</sub>
+[땀은 배신하지 않는다](https://uiwwsw.github.io/writing/%EB%95%80%EC%9D%80-%EB%B0%B0%EC%8B%A0%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4/)<br>
+Latest from my writing universe. <sub>2026. 10. 14. · Written in Korean</sub>
 
 <a href="https://uiwwsw.github.io/writing/">Writing (Korean)</a> &nbsp;·&nbsp; <a href="https://githubprint.vercel.app/showcase">Resume (Korean)</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/uiwwsw/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:uiwwsw@icloud.com">Email</a>
 
@@ -24,8 +24,8 @@ Latest from my writing universe. <sub>2026. 10. 01. · Written in Korean</sub>
 <summary><strong>Recent writing (Korean)</strong></summary>
 
 <!--START_WRITING-->
+- [좋은 펜을 가진 개발자들](https://uiwwsw.github.io/writing/%EC%A2%8B%EC%9D%80-%ED%8E%9C%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4/) <sub>2026. 10. 01.</sub>
 - [AI를 잘 쓰는 사람](https://uiwwsw.github.io/writing/AI%EB%A5%BC-%EC%9E%98-%EC%93%B0%EB%8A%94-%EC%82%AC%EB%9E%8C/) <sub>2026. 09. 27.</sub>
-- [확언하지 않는 이유](https://uiwwsw.github.io/writing/%ED%99%95%EC%96%B8%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%9D%B4%EC%9C%A0/) <sub>2026. 09. 17.</sub>
 <!--END_WRITING-->
 
 </details>
