@@ -1,5 +1,7 @@
 # Changwon Yoon
 
+Author-owned writing and images: [Content rights](CONTENT-RIGHTS.md). Personal reading, linking and search indexing are permitted; unauthorized republication and collection for AI training are not. Legal exceptions, existing permissions, and code/third-party licenses remain unchanged.
+
 **Senior Frontend Engineer** · [한국어](https://github.com/uiwwsw/uiwwsw/blob/main/README.ko.md)
 
 I turn messy requirements into clear next steps.<br>
