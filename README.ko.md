@@ -12,6 +12,7 @@
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)** · TypeScript API 함수에서 TanStack Query 옵션을 생성합니다.
 - **[next-test-mode](https://github.com/uiwwsw/next-test-mode)** · 서비스 코드를 수정하지 않고 API 실패와 지연 상태를 재현합니다.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)** · 브라우저 IME와 분리해 한글 조합을 직접 제어하는 React 입력 컴포넌트.
+- **[yavn](https://github.com/uiwwsw/yavn)** · 분기와 연출, 저장·복구를 YAML로 정의하는 비주얼노벨 엔진.
 
 ## 코드 밖에서는
 

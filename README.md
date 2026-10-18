@@ -12,6 +12,7 @@ I build tools for the repetitive parts, and write about the decisions behind the
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)** · Generate TanStack Query options from TypeScript APIs.
 - **[next-test-mode](https://github.com/uiwwsw/next-test-mode)** · Reproduce API failures and delays without changing production code.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)** · A React input component with direct control over Korean text composition.
+- **[yavn](https://github.com/uiwwsw/yavn)** · A YAML-driven visual novel engine with branching stories and save recovery.
 
 ## Away from the backlog
 
