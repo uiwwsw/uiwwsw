@@ -4,7 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 const { PROFILE } = require('./profile-data');
-const { buildReadme, selectPinnedWork, fetchPinnedWork, fetchLatestWritingPosts, parseWritingArchive, selectProfileProducts, updateReadme } = require('./update-projects');
+const { fetchText, buildReadme, selectPinnedWork, fetchPinnedWork, fetchLatestWritingPosts, parseWritingArchive, selectProfileProducts, updateReadme } = require('./update-projects');
 
 const ARCHIVE_ENTRIES = [
     { title: '도구를 만든 기록', href: '/writing/tool-notes/', datetime: '2026-09-08T23:00:00Z', date: '2026. 09. 09.' },
@@ -275,4 +275,34 @@ test('latest article replaces the visible featured article on the next refresh',
     assert.ok(visible.includes(latest.date));
     assert.ok(!visible.includes(WRITING_POSTS[0].link));
     assert.throws(() => buildReadme({ ...fixture, writingPosts: [] }), /No writing posts/);
+});
+
+
+test('retries transient network and HTTP failures with bounded backoff', async () => {
+    for (const failure of [{ code: 'ETIMEDOUT' }, { code: 'ECONNRESET' }, { statusCode: 503 }, { statusCode: 429 }]) {
+        let attempts = 0;
+        const delays = [];
+        const result = await fetchText('https://example.com/', {
+            request: async () => {
+                if (++attempts < 3) throw Object.assign(new Error('temporary'), failure);
+                return 'published content';
+            },
+            sleep: async (ms) => delays.push(ms),
+        });
+        assert.equal(result, 'published content');
+        assert.equal(attempts, 3);
+        assert.deepEqual(delays, [1000, 2000]);
+    }
+});
+
+test('propagates permanent errors immediately and transient errors after three attempts', async () => {
+    for (const [failure, expected] of [[{ statusCode: 404 }, 1], [{ code: 'CERT_HAS_EXPIRED' }, 1], [{ code: 'ETIMEDOUT' }, 3]]) {
+        let attempts = 0;
+        const error = Object.assign(new Error('unavailable'), failure);
+        await assert.rejects(fetchText('https://example.com/', {
+            request: async () => { attempts++; throw error; },
+            sleep: async () => {},
+        }), (actual) => actual === error);
+        assert.equal(attempts, expected);
+    }
 });

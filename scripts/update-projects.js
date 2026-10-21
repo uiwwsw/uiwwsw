@@ -11,7 +11,7 @@ const WRITING_ARCHIVE_URL = 'https://uiwwsw.github.io/writing/';
 const LEGACY_SERVICE_REGISTRY_URL = 'https://raw.githubusercontent.com/brewstar-code/brewstar-code.github.io/main/_data/services.yml';
 const MOB_BASE_URL = 'https://uiwwsw.github.io/mob/';
 
-function fetchText(url) {
+function requestText(url, redirects = 0) {
     return new Promise((resolve, reject) => {
         const request = https.get(url, (response) => {
             if (
@@ -20,12 +20,18 @@ function fetchText(url) {
                 && response.headers.location
             ) {
                 response.resume();
-                resolve(fetchText(new URL(response.headers.location, url).toString()));
+                if (redirects >= 5) {
+                    reject(new Error(`Too many redirects: ${url}`));
+                    return;
+                }
+                resolve(requestText(new URL(response.headers.location, url).toString(), redirects + 1));
                 return;
             }
 
             if (response.statusCode !== 200) {
-                reject(new Error(`Request failed: ${url} (${response.statusCode})`));
+                const error = new Error(`Request failed: ${url} (${response.statusCode})`);
+                error.statusCode = response.statusCode;
+                reject(error);
                 response.resume();
                 return;
             }
@@ -33,11 +39,38 @@ function fetchText(url) {
             const chunks = [];
             response.on('data', (chunk) => chunks.push(chunk));
             response.on('end', () => resolve(Buffer.concat(chunks).toString()));
+            response.on('error', reject);
         });
 
-        request.setTimeout(20000, () => request.destroy(new Error(`Request timed out: ${url}`)));
+        request.setTimeout(20000, () => {
+            const error = new Error(`Request timed out: ${url}`);
+            error.code = 'ETIMEDOUT';
+            request.destroy(error);
+        });
         request.on('error', reject);
     });
+}
+
+async function fetchText(url, {
+    request = requestText,
+    sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+} = {}) {
+    const transientCodes = new Set([
+        'ECONNRESET', 'ECONNREFUSED', 'ETIMEDOUT', 'EAI_AGAIN',
+        'ENETUNREACH', 'EHOSTUNREACH', 'ERR_STREAM_PREMATURE_CLOSE',
+    ]);
+    for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+            return await request(url);
+        } catch (error) {
+            const retryable = transientCodes.has(error.code)
+                || error.statusCode === 429
+                || error.statusCode >= 500;
+            if (!retryable || attempt === 3) throw error;
+            console.warn(`Fetch attempt ${attempt}/3 failed for ${url}: ${error.message}; retrying.`);
+            await sleep(1000 * 2 ** (attempt - 1));
+        }
+    }
 }
 
 function escapeMarkdown(text) {
@@ -283,6 +316,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+    fetchText,
     buildReadme,
     selectPinnedWork,
     fetchPinnedWork,
