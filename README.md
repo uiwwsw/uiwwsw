@@ -9,7 +9,7 @@ I build tools for the repetitive parts, and write about the decisions behind the
 
 ## Selected work
 
-- **[hangulscript](https://github.com/uiwwsw/hangulscript)** · 한글스크립트 HangulScript — 한글 문장과 들여쓰기로 작성하고 JavaScript·타입 선언으로 빌드하는 실험적 프로그래밍 언어.
+- **[hangulscript](https://github.com/uiwwsw/hangulscript)** · An experimental Korean-language programming language that compiles to JavaScript and TypeScript declarations.
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)** · Generate TanStack Query options from TypeScript APIs.
 - **[next-test-mode](https://github.com/uiwwsw/next-test-mode)** · Reproduce API failures and delays without changing production code.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)** · A React input component with direct control over Korean text composition.
