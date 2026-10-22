@@ -39,7 +39,7 @@ Latest from my writing universe. <sub>2026. 10. 20. · Written in Korean</sub>
 - **[YAVN](https://github.com/uiwwsw/yavn)** · A YAML-driven visual novel engine with branching stories and save recovery.
 - **[GitHubPrint](https://githubprint.vercel.app)** · Turn GitHub history into developer documents, with validated AI output and PDF/Word export.
 
-Apps released by [MOB](https://uiwwsw.github.io/mob/):
+Apps released by [MOVV](https://movvcorp.duckdns.org/):
 
 <!--START_PRODUCTS-->
 - **[MeringTrip](https://uiwwsw.github.io/mob/meringuetrip/)** · Plan trips with radius-based search.<br>

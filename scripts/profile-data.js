@@ -22,7 +22,7 @@ const PROFILE = {
             latestWriting: 'Latest from my writing universe.',
             recentSummary: 'Recent writing (Korean)',
             projectsSummary: 'More projects & released apps',
-            appsIntro: 'Apps released by [MOB](https://uiwwsw.github.io/mob/):',
+            appsIntro: 'Apps released by [MOVV](https://movvcorp.duckdns.org/):',
         },
         ko: {
             languageLink: '[English](https://github.com/uiwwsw)',
@@ -33,7 +33,7 @@ const PROFILE = {
             latestWriting: '글의 우주에 가장 최근에 올린 글입니다.',
             recentSummary: '최근에 쓴 글',
             projectsSummary: '다른 작업과 출시한 앱',
-            appsIntro: '[모브](https://uiwwsw.github.io/mob/)에서 출시한 앱입니다.',
+            appsIntro: '[MOVV](https://movvcorp.duckdns.org/)에서 출시한 앱입니다.',
         },
     },
     links: [
