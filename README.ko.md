@@ -9,6 +9,7 @@
 
 ## 주요 작업
 
+- **[hangulscript](https://github.com/uiwwsw/hangulscript)** · 한글스크립트 HangulScript — 한글 문장과 들여쓰기로 작성하고 JavaScript·타입 선언으로 빌드하는 실험적 프로그래밍 언어.
 - **[react-query-helper](https://github.com/uiwwsw/react-query-helper)** · TypeScript API 함수에서 TanStack Query 옵션을 생성합니다.
 - **[next-test-mode](https://github.com/uiwwsw/next-test-mode)** · 서비스 코드를 수정하지 않고 API 실패와 지연 상태를 재현합니다.
 - **[virtual-keyboard](https://github.com/uiwwsw/virtual-keyboard)** · 브라우저 IME와 분리해 한글 조합을 직접 제어하는 React 입력 컴포넌트.
