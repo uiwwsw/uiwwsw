@@ -8,6 +8,17 @@ from urllib.robotparser import RobotFileParser
 
 root = Path(__file__).resolve().parents[2]
 config = json.loads((root / '.github/ai-notice.json').read_text())
+
+if config.get('exempt'):
+    violations = []
+    for path in root.glob('README*.md'):
+        text = path.read_text()
+        if any(marker in text for marker in ['<!-- ai-training-notice -->', 'AI-TRAINING-NOTICE.md', 'collection for AI training', 'AI 학습용 수집']):
+            violations.append(path.name)
+    if (root / 'AI-TRAINING-NOTICE.md').exists():
+        violations.append('AI-TRAINING-NOTICE.md')
+    print('Profile notice exemption check: ' + str(len(violations)) + ' failure(s).')
+    sys.exit(bool(violations))
 failures = []
 notice_path = root / 'AI-TRAINING-NOTICE.md'
 notice = notice_path.read_text() if notice_path.exists() else ''

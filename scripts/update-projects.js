@@ -116,7 +116,7 @@ function buildReadme({ products, writingPosts, selectedWork, locale = 'en' }) {
     const recentPosts = writingPosts.slice(1, 3);
     return `# ${PROFILE.identity.name[locale]}
 
-${locale === 'ko' ? '본인 소유의 글·이미지에는 [콘텐츠 이용 안내](CONTENT-RIGHTS.md)가 적용됩니다. 개인 열람·링크 공유·검색 색인은 허용하며, 무단 재게시와 AI 학습용 수집은 허용하지 않습니다. 법령상 이용 예외·기존 이용 허락·코드 및 제삼자 라이선스는 유지합니다.' : 'Author-owned writing and images: [Content rights](CONTENT-RIGHTS.md). Personal reading, linking and search indexing are permitted; unauthorized republication and collection for AI training are not. Legal exceptions, existing permissions, and code/third-party licenses remain unchanged.'}
+${locale === 'ko' ? '본인 소유의 글·이미지에는 [콘텐츠 이용 안내](CONTENT-RIGHTS.md)가 적용됩니다. 개인 열람·링크 공유·검색 색인은 허용하며, 무단 재게시는 허용하지 않습니다. 법령상 이용 예외·기존 이용 허락·코드 및 제삼자 라이선스는 유지합니다.' : 'Author-owned writing and images: [Content rights](CONTENT-RIGHTS.md). Personal reading, linking and search indexing are permitted; unauthorized republication is not. Legal exceptions, existing permissions, and code/third-party licenses remain unchanged.'}
 
 **${PROFILE.identity.role}** · ${copy.languageLink}
 

@@ -5,6 +5,7 @@ import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const config = JSON.parse(await readFile(join(root, '.github/ai-notice.json'), 'utf8'));
+if (config.exempt) { console.log('Profile repository is exempt from the shared AI notice.'); process.exit(0); }
 const notice = await readFile(join(root, 'AI-TRAINING-NOTICE.md'), 'utf8');
 const short = '사전 서면 동의 없는 AI 학습·미세조정 및 학습용 데이터 수집에 반대합니다.';
 const english = 'No AI training, fine-tuning or training-data collection without prior written consent.';

@@ -1,4 +1,4 @@
-name: AI use notice
+name: Profile content policy
 on: [push, pull_request]
 permissions:
   contents: read

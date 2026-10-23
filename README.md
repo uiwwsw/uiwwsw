@@ -1,6 +1,6 @@
 # Changwon Yoon
 
-Author-owned writing and images: [Content rights](CONTENT-RIGHTS.md). Personal reading, linking and search indexing are permitted; unauthorized republication and collection for AI training are not. Legal exceptions, existing permissions, and code/third-party licenses remain unchanged.
+Author-owned writing and images: [Content rights](CONTENT-RIGHTS.md). Personal reading, linking and search indexing are permitted; unauthorized republication is not. Legal exceptions, existing permissions, and code/third-party licenses remain unchanged.
 
 **Senior Frontend Engineer** · [한국어](https://github.com/uiwwsw/uiwwsw/blob/main/README.ko.md)
 
@@ -50,10 +50,3 @@ Apps released by [MOVV](https://movvcorp.duckdns.org/):
 <!--END_PRODUCTS-->
 
 </details>
-
-<!-- ai-training-notice -->
-## AI 학습·수집 반대 / AI training notice
-
-사전 서면 동의 없는 AI 학습·미세조정 및 학습용 데이터 수집에 반대합니다. No AI training, fine-tuning or training-data collection without prior written consent.
-
-[전문 / Full notice](AI-TRAINING-NOTICE.md). 기존 라이선스와 제삼자·사용자 콘텐츠의 권리는 유지됩니다. Existing licenses and third-party/user rights remain unchanged.

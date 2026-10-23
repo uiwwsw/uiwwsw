@@ -1,6 +1,6 @@
 # 윤창원
 
-본인 소유의 글·이미지에는 [콘텐츠 이용 안내](CONTENT-RIGHTS.md)가 적용됩니다. 개인 열람·링크 공유·검색 색인은 허용하며, 무단 재게시와 AI 학습용 수집은 허용하지 않습니다. 법령상 이용 예외·기존 이용 허락·코드 및 제삼자 라이선스는 유지합니다.
+본인 소유의 글·이미지에는 [콘텐츠 이용 안내](CONTENT-RIGHTS.md)가 적용됩니다. 개인 열람·링크 공유·검색 색인은 허용하며, 무단 재게시는 허용하지 않습니다. 법령상 이용 예외·기존 이용 허락·코드 및 제삼자 라이선스는 유지합니다.
 
 **Senior Frontend Engineer** · [English](https://github.com/uiwwsw)
 
@@ -50,10 +50,3 @@
 <!--END_PRODUCTS-->
 
 </details>
-
-<!-- ai-training-notice -->
-## AI 학습·수집 반대 / AI training notice
-
-사전 서면 동의 없는 AI 학습·미세조정 및 학습용 데이터 수집에 반대합니다. No AI training, fine-tuning or training-data collection without prior written consent.
-
-[전문 / Full notice](AI-TRAINING-NOTICE.md). 기존 라이선스와 제삼자·사용자 콘텐츠의 권리는 유지됩니다. Existing licenses and third-party/user rights remain unchanged.
